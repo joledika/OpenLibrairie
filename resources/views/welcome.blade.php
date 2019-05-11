@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Open Librairies</title>
+  <title>{{env('APP_NAME')}}</title>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- css -->
@@ -11,8 +11,14 @@
   <link href="{{asset('home_page/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
   <link href="{{asset('home_page/css/style.css')}}" rel="stylesheet" media="screen">
   <link href="{{asset('home_page/css/color.css')}}" rel="stylesheet" media="screen">
+  <link href="{{asset('icons/fontawesome.min.css')}}" rel="stylesheet" media="screen">
+  <link href="{{asset('home_page/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
 
-
+  <style>
+    .shadow{
+        text-shadow: 1px 1px black;
+    }
+  </style>
 </head>
 
 <body>
@@ -29,7 +35,7 @@
         </button>
 
         <!-- Logo text or image -->
-        <a class="navbar-brand" href="index.html">Biblio</a>
+        <a class="navbar-brand shadow" href="index.html"><i class="fa fa-book"></i> {{env('APP_NAME')}}</a>
 
       </div>
       <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
@@ -58,7 +64,7 @@
             <div class="carousel-background"><img src="{{asset('home_page/img/intro/1.jpg')}}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animated fadeInDown">Bibliothèque Jodii</h2>
+                <h2 class="animated fadeInDown">{{env('APP_NAME')}}</h2>
                 <p class="animated fadeInUp">Bibliothèque qui regroupe plusieurs livres que vous pouvez télécharger gratuitement.<br>
                 Alors souscrivez vous des maintenant</p>
                 <a href="#about" class="btn-get-started animated fadeInUp">Lire plus</a>
@@ -277,37 +283,37 @@
             </li>
             <li>
               <a href="#" data-largesrc="img/works/6.jpg" data-title="Portfolio title" data-description="Id elit saepe pro. In atomorum constituam definitionem quo, at torquatos sadipscing eum, ut eum wisi meis mentitum. Probo feugiat ea duo. An usu platonem instructior, qui dolores inciderint ad. Te elit essent mea, vim ne atqui legimus invenire, ad dolor vitae sea.">
-                <img src="img/works/thumbs/6.jpg" alt="img01" />
+                <img src="{{asset('home_page/img/works/thumbs/6.jpg')}}" alt="img01" />
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/works/7.jpg" data-title="Portfolio title" data-description="Duo te dico volutpat, unum elit oblique per id. Ne duo mollis sapientem intellegebat. Per at augue vidisse percipit, pri vocibus assueverit interesset ut, no dolore luptatum incorrupte nec. In mentitum forensibus nec, nibh eripuit ut pri, tale illud voluptatum ut sea. Sed oratio repudiare ei, cum an magna labitur, eu atqui augue mei.">
-                <img src="img/works/thumbs/7.jpg" alt="img01" />
+                <img src="{{asset('home_page/img/works/thumbs/7.jpg')}}" alt="img01" />
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/works/8.jpg" data-title="Portfolio title" data-description="No nisl legere recusabo nam, ius an tale pericula evertitur, dicat phaedrum qui in. Usu numquam legendos in, voluptaria sadipscing ut vel. Eu eum mandamus volutpat gubergren, eos ad detracto nominati, ne eum idque elitr aliquam.">
-                <img src="img/works/thumbs/8.jpg" alt="img01" />
+                <img src="{{asset('home_page/img/works/thumbs/8.jpg')}}" alt="img01" />
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/works/9.jpg" data-title="Portfolio title" data-description="Lorem ipsum dolor sit amet, ex pri quod ferri fastidii. Mazim philosophia eum ad, facilisis laboramus te est. Eam magna fabellas ut. Ne vis diceret accumsan salutandi, pro in impedit accusamus dissentias, ut nonumy eloquentiam ius.">
-                <img src="img/works/thumbs/9.jpg" alt="img01" />
+                <img src="{{asset('home_page/img/works/thumbs/9.jpg')}}" alt="img01" />
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/works/10.jpg" data-title="Portfolio title" data-description="Duo te dico volutpat, unum elit oblique per id. Ne duo mollis sapientem intellegebat. Per at augue vidisse percipit, pri vocibus assueverit interesset ut, no dolore luptatum incorrupte nec. In mentitum forensibus nec, nibh eripuit ut pri, tale illud voluptatum ut sea. Sed oratio repudiare ei, cum an magna labitur, eu atqui augue mei. Pri consul detracto eu, solet nusquam accusam ex vim.">
-                <img src="img/works/thumbs/10.jpg" alt="img01" />
+                <img src="{{asset('home_page/img/works/thumbs/10.jpg')}}" alt="img01" />
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/works/11.jpg" data-title="Portfolio title" data-description="Vim ad persecuti appellantur. Eam ignota deterruisset eu, in omnis fierent convenire sed. Ne nulla veritus vel, liber euripidis in eos. Postea comprehensam vis in, detracto deseruisse mei ea. Ex sadipscing deterruisset concludaturque quo.">
-                <img src="img/works/thumbs/11.jpg" alt="img01" />
+                <img src="{{asset('home_page/img/works/thumbs/11.jpg')}}" alt="img01')}}" />
               </a>
             </li>
             <li>
               <a href="#" data-largesrc="img/works/12.jpg" data-title="Portfolio title" data-description="Mea an eros periculis dignissim, quo mollis nostrum elaboraret et. Id quem perfecto mel, no etiam perfecto qui. No nisl legere recusabo nam, ius an tale pericula evertitur, dicat phaedrum qui in. Usu numquam legendos in, voluptaria sadipscing ut vel. Eu eum mandamus volutpat gubergren, eos ad detracto nominati, ne eum idque elitr aliquam.">
-                <img src="img/works/thumbs/12.jpg" alt="img01" />
+                <img src="{{asset('home_page/img/works/thumbs/12.jpg')}}" alt="img01" />
               </a>
             </li>
           </ul>
@@ -356,21 +362,21 @@
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.3s">
           <div class="box-team wow bounceInUp">
-            <img src="img/team/2.jpg" alt="" class="img-circle img-responsive" />
+            <img src="{{asset('home_page/img/team/2.jpg')}}" alt="" class="img-circle img-responsive" />
             <h4>Thomas Jeffersonn</h4>
             <p>Web Designer</p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.5s">
           <div class="box-team wow bounceInUp">
-            <img src="img/team/3.jpg" alt="" class="img-circle img-responsive" />
+            <img src="{{asset('home_page/img/team/3.jpg')}}" alt="" class="img-circle img-responsive" />
             <h4>Nola Maurin</h4>
             <p>Illustrator</p>
           </div>
         </div>
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.7s">
           <div class="box-team wow bounceInUp">
-            <img src="img/team/4.jpg" alt="" class="img-circle img-responsive" />
+            <img src="{{asset('home_page/img/team/4.jpg')}}" alt="" class="img-circle img-responsive" />
             <h4>Mira Ladovic</h4>
             <p>Typographer</p>
           </div>
@@ -489,7 +495,7 @@
             <li><a href="#">
                 <span class="fa-stack fa-2x">
                   <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-dribbble fa-stack-1x fa-inverse"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                 </span></a>
             </li>
             <li><a href="#">
@@ -515,7 +521,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <p>Copyright &copy; Joledika.</p>
+          <p>Copyright &copy; {{date('Y')}} .</p>
 
         </div>
       </div>
