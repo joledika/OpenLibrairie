@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +19,7 @@ Route::get('/', function () {
 
 
 Route::get('/test', function () {
-    return view('pages/blogs/posts');
+    return view('auth/login');
 });
 
 
@@ -26,3 +28,19 @@ Route::get('/test', function () {
 
 Route::get('membres', 'UsersController@index')->name('members_path');
 Route::get('posts', 'PostController@index')->name('posts_path');
+
+
+
+
+
+/****
+ *
+ * auth
+ *
+ */
+
+
+ Route::group(['namespace' => 'Auth'], function() {
+    Route::get('login', 'LoginController@create')->name('login');
+    Route::get('register', 'RegisterController@create')->name('register');
+ });

@@ -36,4 +36,15 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function create()
+    {
+        /***********************************
+         * *********************************
+         * Envoi du formulaire de connexion
+         * *********************************
+         ***********************************/
+
+        return view('auth.login');
+    }
 }
