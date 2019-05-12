@@ -11,8 +11,7 @@
   <link href="{{asset('home_page/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
   <link href="{{asset('home_page/css/style.css')}}" rel="stylesheet" media="screen">
   <link href="{{asset('home_page/css/color.css')}}" rel="stylesheet" media="screen">
-  <link href="{{asset('icons/fontawesome.min.css')}}" rel="stylesheet" media="screen">
-  <link href="{{asset('home_page/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
+
 
   <style>
     .shadow{
@@ -35,7 +34,7 @@
         </button>
 
         <!-- Logo text or image -->
-        <a class="navbar-brand shadow" href="index.html"><i class="fa fa-book"></i> {{env('APP_NAME')}}</a>
+        <a class="navbar-brand shadow" href="index.html"><i class="fa fa-book"></i> OL </a>
 
       </div>
       <div class="navigation collapse navbar-collapse navbar-ex1-collapse">
@@ -64,7 +63,7 @@
             <div class="carousel-background"><img src="{{asset('home_page/img/intro/1.jpg')}}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animated fadeInDown">{{env('APP_NAME')}}</h2>
+                <h2 class="animated fadeInDown shadow">{{env('APP_NAME')}}</h2>
                 <p class="animated fadeInUp">Bibliothèque qui regroupe plusieurs livres que vous pouvez télécharger gratuitement.<br>
                 Alors souscrivez vous des maintenant</p>
                 <a href="#about" class="btn-get-started animated fadeInUp">Lire plus</a>
@@ -77,7 +76,7 @@
             <div class="carousel-background"><img src="{{asset('home_page/img/intro/2.jpg')}}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animated fadeInDown">Simple et moderne</span></h2>
+                <h2 class="animated fadeInDown shadow">Simple et moderne</span></h2>
                 <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
                 <a href="#about" class="btn-get-started animated fadeInUp">Lire plus</a>
               </div>
@@ -89,7 +88,7 @@
             <div class="carousel-background"><img src="{{asset('home_page/img/intro/3.jpg')}}" alt=""></div>
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animated fadeInDown">Disponible partout</span></h2>
+                <h2 class="animated fadeInDown shadow">Disponible partout</span></h2>
                 <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
                 <a href="#about" class="btn-get-started animated fadeInUp">Lire plus</a>
               </div>
