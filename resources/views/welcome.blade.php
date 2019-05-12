@@ -6,6 +6,7 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- css -->
+  <link rel="shortcut icon" href="{{asset('icons/favicon.png')}}" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
 
   <link href="{{asset('home_page/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">

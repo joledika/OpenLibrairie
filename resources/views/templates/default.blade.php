@@ -15,6 +15,7 @@
     <meta name="author" content="Mamisoa" />
     <meta name="theme-color" content="#ffffff" />
     <title>{{env('APP_NAME')}} - @yield('title',"Acceuil")</title>
+    <link rel="shortcut icon" href="{{asset('icons/favicon.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('dist/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('dist/semantic.min.css')}}">
     <link href="{{asset('home_page/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
