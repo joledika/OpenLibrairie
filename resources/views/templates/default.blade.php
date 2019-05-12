@@ -29,7 +29,7 @@
       <div class="ui heading vertical segment" style="padding-top:28px">
         <div class="ui container">
           <h2 class="ui huge header">
-            <span id="title"><i class="fa fa-book"></i> OL </span>
+            <span id="title"><i class="ui book icon"></i>OL </span>
             <div id="subtitle" class="sub header">
                 {{env('APP_NAME')}}
             </div>
@@ -41,6 +41,8 @@
             <a class="item" data-tab="blog">Blog</a>
 
           </div>
+          <h3 class="ui purge header"><u>@yield('heading',"Titre")</u></h3>
+
         </div>
       </div>
       <div class="ui demo vertical segment">

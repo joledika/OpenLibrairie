@@ -17,5 +17,11 @@ Route::get('/', function () {
 
 
 Route::get('/test', function () {
-    return view('templates.default');
+    return view('pages/membres/membres');
 });
+
+
+
+
+
+Route::get('membres', 'UsersController@index');
