@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/test', function () {
-    return view('pages/membres/membres');
+    return view('pages/blogs/posts');
 });
 
 
@@ -25,3 +25,4 @@ Route::get('/test', function () {
 
 
 Route::get('membres', 'UsersController@index')->name('members_path');
+Route::get('posts', 'PostController@index')->name('posts_path');
