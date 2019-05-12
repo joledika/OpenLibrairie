@@ -15,6 +15,8 @@ class CreateRationsTable extends Migration
     {
         Schema::create('rations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('book_id')->index();
+            $table->unsignedInteger('user_id')->index();
             $table->timestamps();
         });
     }

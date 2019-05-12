@@ -15,6 +15,9 @@ class CreateCommentariesTable extends Migration
     {
         Schema::create('commentaries', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('user_id')->index();
+            $table->unsignedInteger('book_id')->index();
+            $table->text('commentary');
             $table->timestamps();
         });
     }

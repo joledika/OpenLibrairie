@@ -15,6 +15,10 @@ class CreateBooksTable extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('slug');
+            $table->string('content');
+            $table->unsignedInteger('user_id')->index();
             $table->timestamps();
         });
     }
