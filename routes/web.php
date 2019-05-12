@@ -24,4 +24,4 @@ Route::get('/test', function () {
 
 
 
-Route::get('membres', 'UsersController@index');
+Route::get('membres', 'UsersController@index')->name('members_path');

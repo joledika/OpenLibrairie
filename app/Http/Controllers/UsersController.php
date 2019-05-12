@@ -9,6 +9,11 @@ class UsersController extends Controller
 {
     public function index()
     {
+        /******************************************************
+         *
+         *Récuperation des utilisateur et renvoyer vers la vue
+         *
+         ******************************************************/
         $users = User::get();
         return view('pages/membres/membres',compact('users'));
     }

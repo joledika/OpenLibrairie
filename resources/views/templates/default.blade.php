@@ -34,13 +34,9 @@
                 {{env('APP_NAME')}}
             </div>
           </h2>
-          <div class="ui four item stackable tabs menu">
-            <a class="item active" data-tab="Membres">Membres</a>
-            <a class="item" data-tab="Livres">Livres</a>
-            <a class="item" data-tab="Discussions">Discussions</a>
-            <a class="item" data-tab="blog">Blog</a>
+          {{-- NAVIGATION --}}
+          @include('templates/partials/_navigation')
 
-          </div>
           <h3 class="ui purge header"><u>@yield('heading',"Titre")</u></h3>
 
         </div>
