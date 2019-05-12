@@ -11,7 +11,8 @@
   <link href="{{asset('home_page/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
   <link href="{{asset('home_page/css/style.css')}}" rel="stylesheet" media="screen">
   <link href="{{asset('home_page/css/color.css')}}" rel="stylesheet" media="screen">
-
+  <link href="{{asset('icons/fontawesome.min.css')}}" rel="stylesheet" media="screen">
+  <link href="{{asset('home_page/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
 
   <style>
     .shadow{

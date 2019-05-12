@@ -21,6 +21,7 @@
     <link href="{{asset('icons/fontawesome.min.css')}}" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="{{asset('css/default.css')}}">
 
+
   </head>
   <body>
     <div class="pusher">
