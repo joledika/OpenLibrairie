@@ -45,3 +45,14 @@ Route::get('posts/{id}', 'PostController@show')->name('post_path');
     Route::get('login', 'LoginController@create')->name('login');
     Route::get('register', 'RegisterController@create')->name('register');
  });
+
+
+
+
+
+
+ Route::group(['prefix'=>'contact'], function() {
+
+    Route::post('store','GuardContactController@store');
+
+ });

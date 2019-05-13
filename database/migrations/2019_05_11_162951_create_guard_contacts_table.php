@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGuadContactsTable extends Migration
+class CreateGuardContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateGuadContactsTable extends Migration
      */
     public function up()
     {
-        Schema::create('guad_contacts', function (Blueprint $table) {
+        Schema::create('guard_contacts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('email');
+            $table->string('subject');
+            $table->mediumText('message');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateGuadContactsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guad_contacts');
+        Schema::dropIfExists('guard_contacts');
     }
 }
