@@ -15,7 +15,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home_path');
 
 
 Route::get('/test', function () {

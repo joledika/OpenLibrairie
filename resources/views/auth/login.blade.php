@@ -5,9 +5,11 @@
 
 @section('form')
     <form class="login100-form validate-form">
-        <span class="login100-form-logo">
-            <i class="zmdi zmdi-landscape"></i>
-        </span>
+        <a href="{{route('home_path')}}">
+            <span class="login100-form-logo">
+                <i class="zmdi zmdi-book"></i>
+            </span>
+        </a>
 
         <span class="login100-form-title p-b-34 p-t-27">
            Page de connexion

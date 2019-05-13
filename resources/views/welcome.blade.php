@@ -47,7 +47,7 @@
           <li><a href="#portfolio">Works</a></li>
           <li><a href="#team">Administrateur</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Se Connecter</a></li>
+          <li><a href="{{route('login')}}">Se Connecter</a></li>
         </ul>
       </div>
     </div>
