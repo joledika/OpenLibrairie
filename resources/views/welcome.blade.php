@@ -66,7 +66,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animated fadeInDown shadow">{{env('APP_NAME')}}</h2>
-                <p class="animated fadeInUp">Bibliothèque qui regroupe plusieurs livres que vous pouvez télécharger gratuitement.<br>
+                <p class="animated fadeInUp" style="font-size:20px;text-shadow: 2px 2px black">La bibliothèque numérique s'enrichit tous les mois automatiquement des nouvelles parutions et productions ENI ainsi que de parcours thématiques pour accompagner votre veille technologique..<br>
                 Alors souscrivez vous des maintenant</p>
                 <a href="#about" class="btn-get-started animated fadeInUp">Lire plus</a>
               </div>
@@ -79,7 +79,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animated fadeInDown shadow">Simple et moderne</span></h2>
-                <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <p class="animated fadeInUp" style="font-size:20px;text-shadow: 2px 2px black">Facile à utiliser et adapter aux besoin de tous.</p>
                 <a href="#about" class="btn-get-started animated fadeInUp">Lire plus</a>
               </div>
             </div>
@@ -91,7 +91,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animated fadeInDown shadow">Disponible partout</span></h2>
-                <p class="animated fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+                <p class="animated fadeInUp" style="font-size:20px;text-shadow: 2px 2px black"> accessibles à distance , proposant différentes modalités d'accès à l'information aux publics.</p>
                 <a href="#about" class="btn-get-started animated fadeInUp">Lire plus</a>
               </div>
             </div>
@@ -119,9 +119,9 @@
       <div class="row">
         <div class="col-md-offset-2 col-md-8">
           <div class="section-heading">
-            <h2>A propos</h2>
+            <h2>Qui somme nous ?</h2>
             <div class="heading-line"></div>
-            <p>We’ve been building unique digital products, platforms, and experiences for the past 6 years.</p>
+            <p>A propos de {{env('APP_NAME')}}</p>
           </div>
         </div>
       </div>
@@ -135,12 +135,11 @@
           <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
             laborum.</h3>
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum Libero justo laoreet sit amet
-            cursus sit amet dictum sit. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend
-            donec Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum
+            Montréal dispose d’un réseau de 45 bibliothèques situées dans les 19 arrondissements, qui sont autant de fenêtres ouvertes sur la lecture, l’information, le savoir, la culture et le loisir.
+
+            Soutenues par une programmation audacieuse et des équipes dévouées, les Bibliothèques de Montréal constituent des destinations de choix où le visiteur expérimente la connaissance sous toutes ses formes.
+
+            Avec son partenaire Bibliothèque et Archives nationales du Québec (BAnQ), dont la Grande Bibliothèque agit à titre de bibliothèque centrale pour la Ville de Montréal, le réseau des bibliothèques contribue à faire de Montréal une ville de création, d’innovation et de savoir, où il fait bon vivre.
           </p>
         </div>
       </div>
