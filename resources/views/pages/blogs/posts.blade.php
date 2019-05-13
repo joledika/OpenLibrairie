@@ -15,7 +15,7 @@
                 <a class="ui red ribbon label">Overview</a>
                 <span>{{$post->name}}</span>
                 <p>{{str_limit($post->body,100)}}</p>
-                <a class="ui teal right ribbon label">Afficher plus</a>
+                <a href="{{route('post_path',$post->id)}}" class="ui teal right ribbon label">Afficher plus</a>
 
             </div>
         </div>

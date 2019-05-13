@@ -19,4 +19,18 @@ class PostController extends Controller
             'posts'=> Post::latest()->get()
         ]);
     }
+
+
+    public function show($id)
+    {
+        /********************************************************
+         *
+         ***recherche  de post cliqué et renvoyer vers la vue***
+         *
+         ********************************************************/
+
+        $post = Post::findOrFail($id);
+
+        return view('pages/blogs/show',compact('post'));
+    }
 }

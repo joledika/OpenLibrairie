@@ -28,6 +28,7 @@ Route::get('/test', function () {
 
 Route::get('membres', 'UsersController@index')->name('members_path');
 Route::get('posts', 'PostController@index')->name('posts_path');
+Route::get('posts/{id}', 'PostController@show')->name('post_path');
 
 
 
