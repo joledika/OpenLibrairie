@@ -17,11 +17,23 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home_path');
 
+// Auth
 
-Route::get('/test', function () {
-    return view('auth/login');
+Route::group(['namespace' => 'Auth'], function() {
+    Route::get('login','LoginController@create')->name('login');
+    Route::post('login','LoginController@store');
+
+    Route::get('register', 'RegisterController@create')->name('register');
 });
 
+
+// Route::get('/test', function () {
+//     return view('auth/login');
+// });
+
+// Route::get('/posts', function () {
+//     return view('pages/blogs/posts');
+// })->name('home');
 
 
 
@@ -41,10 +53,10 @@ Route::get('posts/{id}', 'PostController@show')->name('post_path');
  */
 
 
- Route::group(['namespace' => 'Auth'], function() {
-    Route::get('login', 'LoginController@create')->name('login');
-    Route::get('register', 'RegisterController@create')->name('register');
- });
+//  Route::group(['namespace' => 'Auth'], function() {
+//     Route::get('login', 'LoginController@create')->name('login');
+//     Route::get('register', 'RegisterController@create')->name('register');
+//  });
 
 
 

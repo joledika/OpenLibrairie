@@ -8,7 +8,7 @@
 
 
 @section('content')
-<div class="ui two column grid mt-3">
+    <div class="ui two column grid mt-3">
         @forelse ($posts as $post)
         <div class="column">
             <div class="ui raised segment">

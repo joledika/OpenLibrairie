@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -25,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/posts';
 
     /**
      * Create a new controller instance.
@@ -39,12 +41,27 @@ class LoginController extends Controller
 
     public function create()
     {
+        
         /***********************************
          * *********************************
          * Envoi du formulaire de connexion
          * *********************************
          ***********************************/
+        if(auth()->check())
+            return redirect()->route('posts_path');
 
         return view('auth.login');
+    }
+
+    public function store(LoginRequest $request)
+    {
+
+      $result = \Auth::attempt(['email' => $request->email, 'password' => $request->password]);
+      if($result)
+        return redirect()->route('posts_path');
+
+
+      return redirect()->back()->withErrors('identification incorrect')->withInput();
+
     }
 }
