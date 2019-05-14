@@ -32,10 +32,17 @@
         <div class="ui container">
           <h2 class="ui huge header">
             <a href="{{route('home_path')}}"><span id="title"><i class="ui book icon"></i>OL </span></a>
+
             <div id="subtitle" class="sub header">
                 {{env('APP_NAME')}}
+                  <div class="ui d-flex justify-content-end">
+
+                    <a class="ui orange button" href="{{route('home_path')}}"><span id="title"><i class="ui logout icon"></i>Déconnecter  </span></a>
+                  </div>
             </div>
           </h2>
+
+
           {{-- NAVIGATION --}}
           @include('templates/partials/_navigation')
 
