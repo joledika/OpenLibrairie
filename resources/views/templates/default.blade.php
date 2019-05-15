@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{asset('css/default.css')}}">
 
 
+
   </head>
   <body>
     <div class="pusher">
@@ -64,9 +65,12 @@
     </div>
 
 
-
-    <script>
+    <script src="{{asset('dist/semantic.min.js')}}"></script>
+    <script src="{{asset('js/Jquery.js')}}"></script>
+    <script type="text/javascript">
         {{-- LES SCRIPTS UTILISÉS --}}
+
+        @yield('script')
     </script>
   </body>
 </html>
