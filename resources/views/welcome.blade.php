@@ -8,7 +8,7 @@
   <!-- css -->
   <link rel="shortcut icon" href="{{asset('icons/favicon.png')}}" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,300,700,800" rel="stylesheet" media="screen">
-
+    <link rel="stylesheet" href="{{asset('dist/semantic.min.css')}}">
   <link href="{{asset('home_page/css/bootstrap.min.css')}}" rel="stylesheet" media="screen">
   <link href="{{asset('home_page/css/style.css')}}" rel="stylesheet" media="screen">
   <link href="{{asset('home_page/css/color.css')}}" rel="stylesheet" media="screen">

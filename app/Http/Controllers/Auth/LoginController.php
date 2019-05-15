@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     public function create()
     {
-        
+
         /***********************************
          * *********************************
          * Envoi du formulaire de connexion
@@ -63,5 +63,17 @@ class LoginController extends Controller
 
       return redirect()->back()->withErrors('identification incorrect')->withInput();
 
+    }
+
+
+    public function logout()
+    {
+        /***********************************
+         * *********************************
+         ****déconnecter l'user connecté****
+         * *********************************
+         ***********************************/
+        auth()->logout();
+        return redirect()->route('login');
     }
 }

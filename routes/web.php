@@ -24,6 +24,7 @@ Route::group(['namespace' => 'Auth'], function() {
     Route::post('login','LoginController@store');
 
     Route::get('register', 'RegisterController@create')->name('register');
+    Route::get('logout', 'LoginController@logout')->name('logout');
 });
 
 

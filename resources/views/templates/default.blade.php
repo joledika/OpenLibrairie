@@ -36,8 +36,12 @@
             <div id="subtitle" class="sub header">
                 {{env('APP_NAME')}}
                   <div class="ui d-flex justify-content-end">
+                    <form action="{{route('logout')}}" method="get">
+                        @csrf
+                        <button class="ui orange button" type="submit"><span id="title"><i class="ui logout icon"></i>Déconnexion</span></button>
+                        {{--  <a class="ui orange button" href="{{route('home_path')}}"><span id="title"><i class="ui logout icon"></i>Déconnecter  </span></a>  --}}
+                    </form>
 
-                    <a class="ui orange button" href="{{route('home_path')}}"><span id="title"><i class="ui logout icon"></i>Déconnecter  </span></a>
                   </div>
             </div>
           </h2>
