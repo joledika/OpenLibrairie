@@ -410,33 +410,39 @@
             @csrf
             <div class="col-md-offset-2 col-md-8">
               <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" required placeholder="Ton nom" data-rule="minlen:4"
+                <input value="{{old('name')}}" type="text" name="name" class="form-control" id="name" required placeholder="Ton nom" data-rule="minlen:4"
                   data-msg="Please enter at least 4 chars" />
                 <div class="validation"></div>
+                {!! $errors->first('password','<span style="color:#9B1708">:message</span>')  !!}
               </div>
             </div>
 
             <div class="col-md-offset-2 col-md-8">
               <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" required placeholder="Ton Email" data-rule="email"
+                <input value="{{old('email')}}" type="email" class="form-control" name="email" id="email" required placeholder="Ton Email" data-rule="email"
                   data-msg="Please enter a valid email" />
                 <div class="validation"></div>
+                {!! $errors->first('email','<span style="color:#9B1708">:message</span>')  !!}
               </div>
             </div>
 
             <div class="col-md-offset-2 col-md-8">
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" required placeholder="Sujet" data-rule="minlen:4"
+                <input value="{{old('email')}}" type="text" class="form-control" name="subject" id="subject" required placeholder="Sujet" data-rule="minlen:4"
                   data-msg="Please enter at least 8 chars of subject" />
                 <div class="validation"></div>
+                {!! $errors->first('subject','<span style="color:#9B1708">:message</span>')  !!}
               </div>
             </div>
 
             <div class="col-md-offset-2 col-md-8">
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" data-rule="required" required data-msg="Please write something for us"
-                  placeholder="Message"></textarea>
-                <div class="validation"></div>
+                  placeholder="Message">{{old('message')}}</textarea>
+                  <div class="validation">
+                </div>
+                {!! $errors->first('message','<span style="color:#9B1708">:message</span>')  !!}
+
               </div>
             </div>
             <div class="form-group">
