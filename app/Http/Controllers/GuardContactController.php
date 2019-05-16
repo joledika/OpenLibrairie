@@ -18,8 +18,13 @@ class GuardContactController extends Controller
          ******************************************************/
 
         GuardContact::create($request->all());
-
+        /******************************
+        *******************************
+        *message flash sur la page home
+        *******************************
+        *******************************/
         \Flashy::success('Votre message à été envoyé avec succèss');
+
        return redirect()->route('home_path');
     }
 }

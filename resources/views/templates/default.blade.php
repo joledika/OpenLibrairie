@@ -69,9 +69,10 @@
     <script src="{{asset('js/Jquery.js')}}"></script>
     <script type="text/javascript">
         {{-- LES SCRIPTS UTILISÉS --}}
-
         @yield('script')
+
     </script>
+
     @include('flashy::message')
   </body>
 </html>
