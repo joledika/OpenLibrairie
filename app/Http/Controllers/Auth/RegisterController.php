@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use MercurySeries\Flashy\Flashy as flashy;
 
 class RegisterController extends Controller
 {
@@ -80,12 +82,22 @@ class RegisterController extends Controller
 
         return view('auth.register');
     }
-    public function store(Request $request)
+    public function store(RegisterRequest $request)
     {
         /***********************************
          * *********************************
          ***Enregistrement des utilisateur**
          * *********************************
          ***********************************/
+        //
+        User::create([
+            'email' => $request->email,
+            'name' => $request->name,
+            'password' => bcrypt($request->pseudo),
+            ]);
+
+        flashy()->success('Votre inscription est belle et bien effectué avec succéss',route('login'));
+
+        return redirect()->route('home_path');
     }
 }

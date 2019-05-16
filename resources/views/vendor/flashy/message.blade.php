@@ -5,6 +5,7 @@
     border-radius: 4px;
     font-weight: 400;
     position: fixed;
+    z-index: 9999999;
     top: 20px;
     right: 20px;
     font-size: 16px;
@@ -100,6 +101,9 @@
 @if(Session::has('flashy_notification.message'))
 <script id="flashy-template" type="text/template">
     <div class="flashy flashy--{{ Session::get('flashy_notification.type') }}">
+
+        <span class=""></span>
+        &nbsp;&nbsp;
         <a href="#" class="flashy__body" target="_blank"></a>
     </div>
 </script>

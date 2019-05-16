@@ -24,6 +24,8 @@ Route::group(['namespace' => 'Auth'], function() {
     Route::post('login','LoginController@store');
 
     Route::get('register', 'RegisterController@create')->name('register');
+    Route::post('register', 'RegisterController@store');
+
     Route::get('logout', 'LoginController@logout')->name('logout');
 });
 
@@ -72,3 +74,8 @@ Route::view('get', 'pages/livres/get');
     Route::post('store','GuardContactController@store');
 
  });
+
+
+
+
+

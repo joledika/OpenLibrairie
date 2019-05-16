@@ -24,6 +24,7 @@ class CreateProfilesTable extends Migration
             $table->string('address')->nullable();
             $table->unsignedSmallInteger('contact_id')->index();
             $table->string('picture')->nullable();
+            $table->unsignedInteger('profile_id')->index();
             $table->timestamps();
         });
     }
