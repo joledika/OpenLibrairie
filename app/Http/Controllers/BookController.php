@@ -17,4 +17,15 @@ class BookController extends Controller
         $livres = Book::get();
         return view('pages/livres/books',compact('livres'));
     }
+
+    public function show($id)
+    {
+        /******************************************************
+         *
+         *Récuperation de livre et renvoyer vers la vue
+         *
+         ******************************************************/
+        $livre = Book::where('id',$id);
+        return view('pages/livres/show',compact('livre'));
+    }
 }

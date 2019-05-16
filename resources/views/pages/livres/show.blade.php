@@ -1,32 +1,38 @@
 @extends('templates.default')
 
 
-@section('title',"Articles")
-{{-- @section('description',{{$post->body}}) --}}
+{{--  @section('title',"Livres")
+@section('description',"liste des livres")
 
-{{-- @section('heading',{{$post->tile}}) --}}
+@section('heading',"liste des livres")  --}}
 
 
 @section('content')
+
+
+
+
     <div class="d-flex justify-content-end mt-2">
 
         <button class="ui tiny teal button" type="submit"><i class="edit icon"></i>Modifier</button>
         <button class="ui tiny orange button" type="submit"><i class="trash icon"></i>supprimer</button>
+        <button class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</button>
 
     </div>
 
 
-
-
+    <div style="margin-top:10px">
+        <img class="ui small centered circular image" src="{{asset('img/elliot.jpg')}}">
+    </div>
     <div class="ui one column grid mt-2">
 
         <div class="column">
 
             <div class="ui raised segment">
 
-                <span class="ui header">{{$post->name}}</span>
-                <p>{!!$post->body!!}</p>
-
+                <span class="ui header">titre</span>
+                <p>description</p>
+                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, reiciendis. Exercitationem harum dolorem nihil obcaecati perferendis deserunt quos repudiandae quidem, delectus pariatur distinctio nesciunt explicabo corrupti atque assumenda sequi consectetur excepturi necessitatibus commodi dolor officiis aspernatur rem? Eaque, obcaecati eius. Nesciunt nemo id iste asperiores dolores nostrum cumque earum vero rerum quos error, labore facilis, voluptatum, libero molestiae iure doloremque officia itaque repudiandae facere? Error, suscipit, iste similique eligendi hic cupiditate quae consequuntur repellendus expedita quod unde harum nam nulla ipsam autem praesentium magnam eius rem? Dolor fuga assumenda, magnam quos repellendus deserunt quibusdam maiores, possimus odio quis odit facere? </p>
 
             </div>
         </div>
@@ -34,6 +40,7 @@
     </div>
 
     <div class="ui comments">
+
         <div class="comment">
             <a class="avatar">
             <img src="{{asset('img/elliot.jpg')}}">
@@ -81,7 +88,4 @@
 
 
 
-
-
-
-@endsection
+@stop

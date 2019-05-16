@@ -25,7 +25,7 @@
         <div class="content">
         <div class="header"><a href="#">Titre du livre</a></div>
         <div class="meta">
-            <a class="ui teal ribbon label">Categorie</a>
+            <a class="ui teal right ribbon label">Categorie</a>
 
 
         </div>
