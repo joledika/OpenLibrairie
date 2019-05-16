@@ -16,12 +16,12 @@
                         <img src="{{asset('img/daniel.jpg')}}">
                     </div>
                     <div class="content">
-                        <a class="header">{{$user->pseudo}}</a>
+                        <a class="header">{{$user->name}}</a>
                     </div>
                 </div>
             </div>
+            @empty
     </div>
-        @empty
 
     <div class="ui icon message mt-5" >
         <i class="info icon"></i>
