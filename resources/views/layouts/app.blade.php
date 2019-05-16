@@ -57,6 +57,7 @@
 	<script src="{{asset('authentification/vendor/countdowntime/countdowntime.js')}}"></script>
 <!--===============================================================================================-->
 	<script src="{{asset('authentification/js/main.js')}}"></script>
+	@include('flashy::message')
 
 </body>
 </html>

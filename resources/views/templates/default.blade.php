@@ -72,5 +72,6 @@
 
         @yield('script')
     </script>
+    @include('flashy::message')
   </body>
 </html>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\GuardContact;
 use Illuminate\Http\Request;
 use App\Http\Requests\GuardContactRequest;
+use MercurySeries\Flashy;
 
 class GuardContactController extends Controller
 {
@@ -18,9 +19,7 @@ class GuardContactController extends Controller
 
         GuardContact::create($request->all());
 
-       return redirect()->route('home_path',[
-        "message" => "Votre message à été envoyé avec succèss"
-       ]
-        );
+        \Flashy::success('Votre message à été envoyé avec succèss');
+       return redirect()->route('home_path');
     }
 }

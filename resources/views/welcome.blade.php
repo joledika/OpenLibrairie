@@ -546,7 +546,7 @@
 
   <!-- Template Custom Javascript File -->
   <script src="{{asset('home_page/js/custom.js')}}"></script>
-
+  @include('flashy::message')
 </body>
 
 </html>
