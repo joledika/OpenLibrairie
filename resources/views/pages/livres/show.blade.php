@@ -40,48 +40,39 @@
     </div>
 
     <div class="ui comments">
+        @forelse($commentaires as $commentaire)
+
 
         <div class="comment">
             <a class="avatar">
             <img src="{{asset('img/elliot.jpg')}}">
             </a>
             <div class="content">
-            <a class="author">Joe Henderson</a>
+            <a class="author">{{$commentaire->user->name}}</a>
             <div class="metadata">
-                <div class="date">1 day ago</div>
+                <div class="date">{{$commentaire->created_at->diffForHumans()}}</div>
             </div>
             <div class="text">
-                <p>The hours, minutes and seconds stand as visible reminders that your effort put them all there. </p>
-                <p>Preserve until your next run, when the watch lets you see how Impermanent your efforts are.</p>
+                <p>
+                    {!! $commentaire->commentary !!}
+                </p>
+
             </div>
-            <div class="actions">
-                <a class="reply">Reply</a>
-            </div>
-            </div>
+
         </div>
-        <div class="comment">
-            <a class="avatar">
-            <img src="{{asset('img/elliot.jpg')}}">
-            </a>
-            <div class="content">
-            <a class="author">Christian Rocha</a>
-            <div class="metadata">
-                <div class="date">2 days ago</div>
-            </div>
-            <div class="text">
-                I re-tweeted this.
-            </div>
-            <div class="actions">
-                <a class="reply">Reply</a>
-            </div>
-            </div>
-        </div>
-        <form class="ui reply form">
+        @empty
+        @endforelse
+    </div>
+
+
+        <form action="" method="POST" class="ui reply form">
+            @csrf
             <div class="field">
-            <textarea></textarea>
+            <textarea name="commentary" placeholder="votre commentaire....."></textarea>
             </div>
             <div class="ui primary submit labeled icon button">
-            <i class="icon edit"></i> Add Comment
+            <i class="icon edit"></i>
+            Ajouter commentaire
             </div>
         </form>
     </div>

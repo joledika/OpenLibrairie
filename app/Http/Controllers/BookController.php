@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Commentary;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -26,8 +27,9 @@ class BookController extends Controller
          *
          ******************************************************/
         $livre = Book::where('id',$id)->first();
+        $commentaires = Commentary::where('book_id',$id)->get();
 
-        return view('pages/livres/show',compact('livre'));
+        return view('pages/livres/show',compact('livre','commentaires'));
     }
 
     public function get($categorie, $id)
