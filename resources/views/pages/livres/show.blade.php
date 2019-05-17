@@ -60,19 +60,25 @@
             </div>
 
         </div>
+        <hr>
         @empty
         @endforelse
     </div>
 
 
-        <form action="" method="POST" class="ui reply form">
+        <form action="{{route('add_commentary_path',[$livre->category->name,$livre])}}" method="POST" class="ui reply form">
             @csrf
             <div class="field">
-            <textarea name="commentary" placeholder="votre commentaire....."></textarea>
+            @if(session()->has('errors'))
+            <textarea required style="border:1px solid crimson;box-shadow:.6px .6px crimson" name="commentary" placeholder="votre commentaire.....">{{old('commentary')}}</textarea>
+            <span style="color:crimson">Le commentaire doit contenir entre 5 et 500 caractères.</span>
+
+            @else
+            <textarea required name="commentary" placeholder="votre commentaire.....">{{old('commentary')}}</textarea>
+            @endif
             </div>
-            <div class="ui primary submit labeled icon button">
-            <i class="icon edit"></i>
-            Ajouter commentaire
+            <div class="d-flex justify-content-end">
+                <button class="ui primary button" type="submit"><span id="title"><i class="ui add icon"></i>Ajouter commentaire</span></button>
             </div>
         </form>
     </div>
