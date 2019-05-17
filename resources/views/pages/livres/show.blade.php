@@ -14,9 +14,9 @@
 
     <div class="d-flex justify-content-end mt-2">
 
-        <button class="ui tiny teal button" type="submit"><i class="edit icon"></i>Modifier</button>
-        <button class="ui tiny orange button" type="submit"><i class="trash icon"></i>supprimer</button>
-        <button class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</button>
+        <a href="" class="ui tiny teal button" type="submit"><i class="edit icon"></i>Modifier</a>
+        <a href="" class="ui tiny orange button" type="submit"><i class="trash icon"></i>supprimer</a>
+        <a href="{{route('get_book_path',[$livre->category->name,$livre])}}" class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</a>
 
     </div>
 
@@ -30,9 +30,9 @@
 
             <div class="ui raised segment">
 
-                <span class="ui header">titre</span>
+                <span class="ui header">{{$livre->title}}</span>
                 <p>description</p>
-                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, reiciendis. Exercitationem harum dolorem nihil obcaecati perferendis deserunt quos repudiandae quidem, delectus pariatur distinctio nesciunt explicabo corrupti atque assumenda sequi consectetur excepturi necessitatibus commodi dolor officiis aspernatur rem? Eaque, obcaecati eius. Nesciunt nemo id iste asperiores dolores nostrum cumque earum vero rerum quos error, labore facilis, voluptatum, libero molestiae iure doloremque officia itaque repudiandae facere? Error, suscipit, iste similique eligendi hic cupiditate quae consequuntur repellendus expedita quod unde harum nam nulla ipsam autem praesentium magnam eius rem? Dolor fuga assumenda, magnam quos repellendus deserunt quibusdam maiores, possimus odio quis odit facere? </p>
+                <p class="text-justify">{!!$livre->body!!}</p>
 
             </div>
         </div>

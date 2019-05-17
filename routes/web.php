@@ -42,11 +42,12 @@ Route::group(['namespace' => 'Auth'], function() {
 
 
 Route::get('membres', 'UsersController@index')->name('members_path');
-Route::get('posts', 'PostController@index')->name('posts_path');
-Route::get('posts/{id}', 'PostController@show')->name('post_path');
+// Route::get('posts', 'PostController@index')->name('posts_path');
+// Route::get('posts/{id}', 'PostController@show')->name('post_path');
 
 Route::get('books', 'BookController@index')->name('books_path');
-Route::get('books/{id}', 'BookController@show')->name('book_path');
+Route::get('books/{categorie}/{id}', 'BookController@show')->name('book_path');
+Route::get('books/get/{categorie}/{id}', 'BookController@get')->name('get_book_path');
 
 Route::view('livre', 'pages/livres/show');
 Route::view('get', 'pages/livres/get');

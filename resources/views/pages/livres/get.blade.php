@@ -4,7 +4,7 @@
 @section('title',"Page de téléchargement de livres")
 {{--  @section('description',"liste des livres")  --}}
 
-@section('heading',"livre [nom....]")
+@section('heading',$livre->title)
 
 
 @section('content')

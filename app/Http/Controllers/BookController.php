@@ -14,18 +14,31 @@ class BookController extends Controller
          *Récuperation des livres et renvoyer vers la vue
          *
          ******************************************************/
-        $livres = Book::get();
+        $livres = Book::with(['category','user'])->get();
         return view('pages/livres/books',compact('livres'));
     }
 
-    public function show($id)
+    public function show($categorie, $id)
     {
         /******************************************************
          *
          *Récuperation de livre et renvoyer vers la vue
          *
          ******************************************************/
-        $livre = Book::where('id',$id);
+        $livre = Book::where('id',$id)->first();
+
         return view('pages/livres/show',compact('livre'));
+    }
+
+    public function get($categorie, $id)
+    {
+       /******************************************************
+         *
+         *Récuperation de livre et renvoyer vers la vue
+         *
+         ******************************************************/
+        $livre = Book::where('id',$id)->first();
+
+        return view('pages/livres/get',compact('livre'));
     }
 }

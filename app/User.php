@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Book;
+use App\Commentary;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -36,4 +38,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function books()
+    {
+        return $this->hasMany(Book::class);
+    }
+
+    public function commentaries()
+    {
+        return $this->hasMany(Commentary::class);
+    }
 }
