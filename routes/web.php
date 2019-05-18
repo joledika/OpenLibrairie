@@ -49,10 +49,14 @@ Route::get('books', 'BookController@index')->name('books_path');
 Route::get('books/{categorie}/{id}', 'BookController@show')->name('book_path');
 Route::post('books/{categorie}/{id}', 'BookController@store')->name('add_commentary_path');
 Route::get('books/get/{categorie}/{id}', 'BookController@get')->name('get_book_path');
+Route::put('books/get/{categorie}/{id}', 'BookController@update')->name('put_book_path');;
+Route::get('books/edit/{categorie}/{id}', 'BookController@create')->name('edit_book_path');
 
 
 Route::view('livre', 'pages/livres/show');
 Route::view('get', 'pages/livres/get');
+Route::view('edit', 'pages/livres/edit');
+
 
 
 /****

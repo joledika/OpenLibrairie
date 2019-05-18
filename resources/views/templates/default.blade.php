@@ -74,8 +74,8 @@
 
     </script>
     <script src=""></script>
-    <script src="{{asset('dist/semantic.min.js')}}"></script>
     <script src="{{asset('js/Jquery.js')}}"></script>
+    <script src="{{asset('dist/semantic.min.js')}}"></script>
 
     @include('flashy::message')
   </body>

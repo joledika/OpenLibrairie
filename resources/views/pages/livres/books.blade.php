@@ -35,7 +35,7 @@
     </div>
 
     <div class="ui link cards">
-        @for ($i = 0; $i < 10; $i++)
+
 
 
             @forelse ($livres as $livre)
@@ -83,7 +83,7 @@
             </div>
         </div>
         @endforelse
-        @endfor
+
     </div>
 
 </div>

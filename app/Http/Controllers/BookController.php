@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Category;
 use App\Commentary;
 use Illuminate\Http\Request;
 use App\Http\Requests\CommentaryRequest;
@@ -71,5 +72,34 @@ class BookController extends Controller
          ***********redirection vers la page du livres*************
          **********************************************************/
         return redirect()->back();
+    }
+
+    public function update(Request $request, $categorie,$id)
+    {
+        $livre = Book::where('id',$id)->first();
+
+        $livre->update(
+            [
+                'title' => $request->title,
+                'category_id' => $request->category_id,
+                'user_id' => auth()->user()->id,
+                'description' => $request->description,
+
+            ]
+        );
+        return redirect()->route('book_path',[$categorie,$id]);
+    }
+
+    public function create($categorie,$id)
+    {
+        /********************************************************************
+         *
+         **Récuperation de livre et renvoyer vers la formulaire les données**
+         *
+         ********************************************************************/
+        $livre = Book::where('id',$id)->first();
+        $categories = Category::get();
+
+        return view('pages/livres/edit',compact('livre','categories'));
     }
 }
