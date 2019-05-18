@@ -18,6 +18,8 @@ class BookController extends Controller
          *
          ******************************************************/
         $livres = Book::with(['category','user'])->get();
+
+
         return view('pages/livres/books',compact('livres'));
     }
 

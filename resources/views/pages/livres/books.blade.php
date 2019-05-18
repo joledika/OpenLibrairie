@@ -18,6 +18,10 @@
 
 
             <div class="card">
+                <div class="ui small content">
+                    <div class="right floated meta">{{$livre->created_at->diffForHumans()}}</div>
+                    <img class="ui avatar image" src="{{asset('img/helen.jpg')}}">{{$livre->user->name}}
+                  </div>
 
             <div class="image">
 
@@ -27,24 +31,19 @@
             <div class="content">
             <div class="header"><a href="{{route('book_path',[$livre->category->name,$livre])}}">Titre du livre</a></div>
             <div class="meta">
-                <a class="ui teal right ribbon label">{{$livre->category->name}}</a>
+                <a class="ui orange small left ribbon label">{{$livre->category->name}}</a>
 
+            </div>
 
-            </div>
-            <div class="description">
-                description du livres
-            </div>
-            </div>
-            <div class="extra content">
+            <div class="content">
             <span class="right floated">
-                date de publication
+                <i class="heart outline like icon"></i>
+                17 likes
             </span>
-            <span>
-                <i class="user icon"></i>
-                nb commentaires
-            </span>
+            <i class="comment icon"></i>
+            {{$livre->commentaries()->count()}} commentaires
             </div>
-
+            </div>
         </div>
 
         @empty
@@ -59,12 +58,6 @@
         </div>
         @endforelse
     </div>
-
-
-
-
-
-
 
 </div>
 
