@@ -24,6 +24,8 @@
 
 
 
+
+
   </head>
   <body>
     <div class="pusher">
@@ -65,13 +67,15 @@
     </div>
 
 
-    <script src="{{asset('dist/semantic.min.js')}}"></script>
-    <script src="{{asset('js/Jquery.js')}}"></script>
+
     <script type="text/javascript">
         {{-- LES SCRIPTS UTILISÉS --}}
         @yield('script')
 
     </script>
+    <script src=""></script>
+    <script src="{{asset('dist/semantic.min.js')}}"></script>
+    <script src="{{asset('js/Jquery.js')}}"></script>
 
     @include('flashy::message')
   </body>

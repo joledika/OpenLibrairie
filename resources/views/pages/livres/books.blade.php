@@ -10,9 +10,34 @@
 @section('content')
 
 <div class="mt-3">
+    {{--  DROPDOWN FILTER  --}}
+    <div class="d-flex justify-content-end mb-3">
 
+            <div class="ui compact menu">
+                <div class="ui simple dropdown item">
+                    <i class="filter icon"></i>
+                    Filtrer
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+
+                    <a hreff="#" class="item">Choice 1</a>
+                    <a hreff="#" class="item">Choice 2</a>
+                    <a hreff="#" class="item">Choice 3</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+    {{--  END DROPDOWN FILTER  --}}
+    </div>
 
     <div class="ui link cards">
+        @for ($i = 0; $i < 10; $i++)
+
+
             @forelse ($livres as $livre)
 
 
@@ -38,6 +63,7 @@
             <div class="content">
             <span class="right floated">
                 <i class="heart outline like icon"></i>
+                <i class="heart like icon"></i>
                 17 likes
             </span>
             <i class="comment icon"></i>
@@ -57,6 +83,7 @@
             </div>
         </div>
         @endforelse
+        @endfor
     </div>
 
 </div>
