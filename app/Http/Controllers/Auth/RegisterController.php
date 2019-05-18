@@ -93,7 +93,7 @@ class RegisterController extends Controller
         User::create([
             'email' => $request->email,
             'name' => $request->name,
-            'password' => bcrypt($request->pseudo),
+            'password' => bcrypt($request->password),
             ]);
 
         flashy()->success('Votre inscription est belle et bien effectué avec succéss',route('login'));

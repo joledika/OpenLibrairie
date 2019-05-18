@@ -58,7 +58,7 @@ class LoginController extends Controller
 
       $result = \Auth::attempt(['email' => $request->email, 'password' => $request->password]);
       if($result)
-        return redirect()->route('posts_path');
+        return redirect()->route('books_path');
 
 
       return redirect()->back()->withErrors('identification incorrect')->withInput();
