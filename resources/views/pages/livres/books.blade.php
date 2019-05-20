@@ -149,14 +149,14 @@
             <div class="ui dimmer">
               <div class="content">
                 <div class="center">
-                  <a href="{{route('book_path',[$livre->category->name,$livre])}}" class="ui inverted button"><i class="ui eye icon"></i> Regarder</a>
+                  <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="ui inverted button"><i class="ui eye icon"></i> Regarder</a>
                 </div>
               </div>
             </div>
             <img src="{{asset('img/helen.jpg')}}">
           </div>
           <div class="content text-center">
-            <a href="{{route('book_path',[$livre->category->name,$livre])}}" class="header">{{$livre->title}}</a>
+            <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="header">{{$livre->title}}</a>
 
           </div>
 

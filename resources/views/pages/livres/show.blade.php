@@ -14,9 +14,9 @@
 
     <div class="d-flex justify-content-end mt-2">
 
-        <a href="{{route('edit_book_path',[$livre->category->name,$livre])}}" class="ui tiny teal button" type="submit"><i class="edit icon"></i>Modifier</a>
+        <a href="{{route('edit_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny teal button" type="submit"><i class="edit icon"></i>Modifier</a>
         <a href="" class="ui tiny orange button" type="submit"><i class="trash icon"></i>supprimer</a>
-        <a href="{{route('get_book_path',[$livre->category->name,$livre])}}" class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</a>
+        <a href="{{route('get_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</a>
 
     </div>
 
@@ -67,7 +67,7 @@
     </div>
 
 
-        <form action="{{route('add_commentary_path',[$livre->category->name,$livre])}}" method="POST" class="ui reply form">
+        <form action="{{route('add_commentary_path',[$livre->category->name,$livre->slug])}}" method="POST" class="ui reply form">
             @csrf
             <div class="field">
             @if(session()->has('errors'))

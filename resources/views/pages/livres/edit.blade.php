@@ -8,7 +8,7 @@
 
 
 @section('content')
-<form action="{{route('put_book_path',[$livre->category->name,$livre])}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('put_book_path',[$livre->category->name,$livre->slug])}}" method="POST" enctype="multipart/form-data">
 @csrf
 @method('PUT')
     <div class="ui form">

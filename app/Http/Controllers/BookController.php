@@ -24,27 +24,27 @@ class BookController extends Controller
         return view('pages/livres/books',compact('livres'));
     }
 
-    public function show($categorie, $id)
+    public function show($categorie, $slug)
     {
         /******************************************************
          *
          *Récuperation de livre et renvoyer vers la vue
          *
          ******************************************************/
-        $livre = Book::where('id',$id)->first();
-        $commentaires = Commentary::where('book_id',$id)->get();
+        $livre = Book::where('slug',$slug)->firstOrFail();
+        $commentaires = Commentary::where('book_id',$livre->id)->get();
 
         return view('pages/livres/show',compact('livre','commentaires'));
     }
 
-    public function get($categorie, $id)
+    public function get($categorie, $slug)
     {
        /******************************************************
          *
          *Récuperation de livre et renvoyer vers la vue
          *
          ******************************************************/
-        $livre = Book::where('id',$id)->first();
+        $livre = Book::where('slug',$slug)->first();
 
         return view('pages/livres/get',compact('livre'));
     }
@@ -74,9 +74,9 @@ class BookController extends Controller
         return redirect()->back();
     }
 
-    public function update(Request $request, $categorie,$id)
+    public function update(Request $request, $categorie,$slug)
     {
-        $livre = Book::where('id',$id)->first();
+        $livre = Book::where('slug',$slug)->firstOrFail();
 
         $livre->update(
             [
@@ -87,17 +87,26 @@ class BookController extends Controller
 
             ]
         );
-        return redirect()->route('book_path',[$categorie,$id]);
+
+        /**********************************************************
+         * ***********petite message de notification****************
+         **********************************************************/
+        flashy()->success('Modification éffectué');
+
+        /**********************************************************
+         ***redirection vers la page du livre qui a ete modifier***
+         **********************************************************/
+        return redirect()->route('book_path',[$categorie,$slug]);
     }
 
-    public function create($categorie,$id)
+    public function create($categorie,$slug)
     {
         /********************************************************************
          *
          **Récuperation de livre et renvoyer vers la formulaire les données**
          *
          ********************************************************************/
-        $livre = Book::where('id',$id)->first();
+        $livre = Book::where('slug',$slug)->firstOrFail();
         $categories = Category::get();
 
         return view('pages/livres/edit',compact('livre','categories'));

@@ -10,6 +10,15 @@ class Book extends Model
 {
     protected $guarded = [];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function($model){
+            $model->slug =str_slug($model->title.$model->id);
+        });
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

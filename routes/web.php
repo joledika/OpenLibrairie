@@ -46,11 +46,11 @@ Route::get('membres', 'UsersController@index')->name('members_path');
 // Route::get('posts/{id}', 'PostController@show')->name('post_path');
 
 Route::get('books', 'BookController@index')->name('books_path');
-Route::get('books/{categorie}/{id}', 'BookController@show')->name('book_path');
-Route::post('books/{categorie}/{id}', 'BookController@store')->name('add_commentary_path');
-Route::get('books/get/{categorie}/{id}', 'BookController@get')->name('get_book_path');
-Route::put('books/get/{categorie}/{id}', 'BookController@update')->name('put_book_path');;
-Route::get('books/edit/{categorie}/{id}', 'BookController@create')->name('edit_book_path');
+Route::get('books/{categorie}/{slug}', 'BookController@show')->name('book_path');
+Route::post('books/{categorie}/{slug}', 'BookController@store')->name('add_commentary_path');
+Route::get('books/get/{categorie}/{slug}', 'BookController@get')->name('get_book_path');
+Route::put('books/get/{categorie}/{slug}', 'BookController@update')->name('put_book_path');;
+Route::get('books/edit/{categorie}/{slug}', 'BookController@create')->name('edit_book_path');
 
 
 Route::view('livre', 'pages/livres/show');
