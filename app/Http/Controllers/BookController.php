@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\User;
 use App\Category;
 use App\Commentary;
 use Illuminate\Http\Request;
+use App\Http\Requests\AddBookRequest;
 use App\Http\Requests\CommentaryRequest;
 use MercurySeries\Flashy\Flashy as flashy;
 
@@ -18,11 +20,20 @@ class BookController extends Controller
          *Récuperation des livres et renvoyer vers la vue
          *
          ******************************************************/
-        $livres = Book::with(['category','user'])->get();
+        $livres = Book::with(['category','user'])->latest()->get();
 
 
         return view('pages/livres/books',compact('livres'));
     }
+
+    public function add()
+    {
+        $categories = Category::get();
+        $users = User::all();
+        return view('pages/livres/add',compact('categories','users'));
+    }
+
+
 
     public function show($categorie, $slug)
     {
@@ -49,33 +60,21 @@ class BookController extends Controller
         return view('pages/livres/get',compact('livre'));
     }
 
-    public function store(CommentaryRequest $request,$category,$slug)
+    public function store(AddBookRequest $request)
     {
 
-         /***********recherche du livre a modifier************* */
-        $livre = Book::where('slug',$slug)->firstOrFail();
-
-        /******************************************************
-         *
-         ***********ajout du commentaire dans la base***********
-         *
-         ******************************************************/
-        Commentary::create(
+        Book::create(
             [
-                'user_id' => auth()->user()->id,
-                'book_id' => $livre->id,
-                'commentary' => $request->commentary
+                'title'=>$request->title,
+                'category_id'=>$request->category_id,
+                'user_id'=>$request->user_id,
+                'description'=>$request->description,
+                'book'=>$request->book, //a remplacer
+                'slug'=>str_slug($request->title)
+
             ]
         );
-        /**********************************************************
-         * ***********petite message de notification****************
-         **********************************************************/
-        flashy()->success('Votre commentaire est belle et bien ajouté');
-
-         /**********************************************************
-         ***********redirection vers la page du livres*************
-         **********************************************************/
-        return redirect()->back();
+        return \back();
     }
 
     public function update(Request $request, $categorie,$slug)
