@@ -49,8 +49,12 @@ class BookController extends Controller
         return view('pages/livres/get',compact('livre'));
     }
 
-    public function store(CommentaryRequest $request,$category,$id)
+    public function store(CommentaryRequest $request,$category,$slug)
     {
+
+         /***********recherche du livre a modifier************* */
+        $livre = Book::where('slug',$slug)->firstOrFail();
+
         /******************************************************
          *
          ***********ajout du commentaire dans la base***********
@@ -58,8 +62,8 @@ class BookController extends Controller
          ******************************************************/
         Commentary::create(
             [
-                'user_id' => 1, //test seulement
-                'book_id' => $id, //a remplacer par le slug dans le future
+                'user_id' => auth()->user()->id,
+                'book_id' => $livre->id,
                 'commentary' => $request->commentary
             ]
         );
