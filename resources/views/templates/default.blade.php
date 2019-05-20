@@ -19,9 +19,11 @@
     <link rel="stylesheet" href="{{asset('dist/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('dist/semantic.min.css')}}">
     <link href="{{asset('home_page/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
-    <link href="{{asset('icons/fontawesome.min.css')}}" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="{{asset('css/default.css')}}">
 
+    {{-- <link href="{{asset('icons/fontawesome.min.css')}}" rel="stylesheet" media="screen"> --}}
+    <link rel="stylesheet" href="{{asset('css/default.css')}}">
+	<script src="{{asset('js/Jquery.js')}}"></script>
+    <script src="{{asset('dist/semantic.min.js')}}"></script>
 
 
 
@@ -68,14 +70,13 @@
 
 
 
-    <script type="text/javascript">
+
         {{-- LES SCRIPTS UTILISÉS --}}
         @yield('script')
 
-    </script>
-    <script src=""></script>
-    <script src="{{asset('js/Jquery.js')}}"></script>
-    <script src="{{asset('dist/semantic.min.js')}}"></script>
+
+
+
 
     @include('flashy::message')
   </body>
