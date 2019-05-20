@@ -59,6 +59,13 @@ Route::view('edit', 'pages/livres/edit');
 
 
 
+Route::group(['prefix' => 'category'], function() {
+    Route::get('',function(){
+        return view('pages/livres/categorie/index');
+    })->name('category');
+});
+
+
 /****
  *
  * auth
