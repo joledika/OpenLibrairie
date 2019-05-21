@@ -56,7 +56,8 @@
 						Senior Creative
 						<span class="designer">Designer</span>
 						and Content
-						<span class="developer">Developer</span>
+                        <span class="developer">Developer</span>
+                        <a class="btn btn-primary" href="">Modifier mon profil</a>
 					</div>
 					<a href="#contacter" class="primary-btn" data-text="Contacter Moi">
 						<span>C</span>
@@ -82,8 +83,10 @@
 						<span>i</span>
                         <span>l</span>
 
-					</a>
-				</div>
+                    </a>
+
+                </div>
+
 				<div class="banner-img col-lg-6 col-md-6 align-self-end">
 					<img class="img-fluid" src="{{asset('profile/img/banner-img.png')}}" alt="">
 				</div>
