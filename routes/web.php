@@ -33,7 +33,7 @@ Route::group(['namespace' => 'Auth'], function() {
 // Route::get('/test', function () {
 //     return view('auth/login');
 // });
-
+// Route::view('profil','pages/membres/show');
 // Route::get('/posts', function () {
 //     return view('pages/blogs/posts');
 // })->name('home');
@@ -92,5 +92,5 @@ Route::group(['prefix' => 'category'], function() {
 
 
 
-
+Route::get('profil/{id}', 'UsersController@show')->name('profile_path');
 
