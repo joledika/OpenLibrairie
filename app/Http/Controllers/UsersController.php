@@ -15,6 +15,12 @@ class UsersController extends Controller
          *
          ******************************************************/
         $users = User::get();
-        return view('pages/membres/membres',compact('users'));
+        return view('pages/membres/index',compact('users'));
+    }
+
+    public function show($id)
+    {
+        $user = User::where('id' , $id)->first();
+        return view('pages/membres/show',compact('user'));
     }
 }
