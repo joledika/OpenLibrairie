@@ -28,7 +28,7 @@ class AddBookRequest extends FormRequest
             'category_id'=>'required',
             'user_id'=>'required',
             'description'=>'required|between:5,500',
-            'book'=>'required|file'
+
         ];
     }
 }

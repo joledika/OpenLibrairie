@@ -92,7 +92,8 @@
                 </div>
               </div>
             </div>
-            <img src="{{asset('img/helen.jpg')}}">
+            <img src="/storage/{{isset($livre->book)?$livre->book:'books/default.jpg'}}">
+
           </div>
           <div class="content text-center">
             <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="header">{{$livre->title}}</a>

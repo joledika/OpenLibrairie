@@ -62,6 +62,11 @@ class BookController extends Controller
 
     public function store(AddBookRequest $request)
     {
+        if(isset($request->book))
+        {
+
+            $path = request('book')->store('books','public');
+
 
         Book::create(
             [
@@ -69,27 +74,62 @@ class BookController extends Controller
                 'category_id'=>$request->category_id,
                 'user_id'=>$request->user_id,
                 'description'=>$request->description,
-                'book'=>$request->book, //a remplacer
+                'book'=>$path,
                 'slug'=>str_slug($request->title)
 
             ]
         );
+    }else{
+        Book::create(
+            [
+                'title'=>$request->title,
+                'category_id'=>$request->category_id,
+                'user_id'=>$request->user_id,
+                'description'=>$request->description,
+
+                'slug'=>str_slug($request->title)
+
+            ]);
+    }
+        flashy()->success('Ajout livre éffectué');
         return \back();
     }
 
     public function update(Request $request, $categorie,$slug)
     {
+
         $livre = Book::where('slug',$slug)->firstOrFail();
 
-        $livre->update(
-            [
-                'title' => $request->title,
-                'category_id' => $request->category_id,
-                'user_id' => auth()->user()->id,
-                'description' => $request->description,
+        if(isset($request->book))
+        {
+            $path = $request->file('book')->store('books','public');
 
-            ]
-        );
+            $livre->update(
+                [
+                    'title' => $request->title,
+                    'category_id' => $request->category_id,
+                    'user_id' => auth()->user()->id,
+                    'description' => $request->description,
+                    'book' => $path
+
+                ]
+            );
+
+        }else
+        {
+            $livre->update(
+                [
+                    'title' => $request->title,
+                    'category_id' => $request->category_id,
+                    'user_id' => auth()->user()->id,
+                    'description' => $request->description,
+
+
+                ]
+
+            );
+        }
+
 
         /**********************************************************
          * ***********petite message de notification****************

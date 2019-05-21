@@ -18,7 +18,7 @@ class CreateBooksTable extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->mediumText('description');
-            $table->string('book');
+            $table->string('book')->nullable();
             $table->unsignedInteger('category_id')->index();
             $table->unsignedInteger('user_id')->index();
             $table->timestamps();
