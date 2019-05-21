@@ -22,7 +22,7 @@
 
 
     <div style="margin-top:10px">
-        <img class="ui small centered circular image" src="{{asset('img/elliot.jpg')}}">
+        <img class="ui medium centered image" src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}"   >
     </div>
     <div class="ui one column grid mt-2">
 

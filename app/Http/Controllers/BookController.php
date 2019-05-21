@@ -62,30 +62,34 @@ class BookController extends Controller
 
     public function store(AddBookRequest $request)
     {
-        if(isset($request->book))
+        $pdf = request('book')->store('books/book','public');
+        if(isset($request->image))
         {
 
-            $path = request('book')->store('books','public');
+
+            $path = request('image')->store('books/image','public');
 
 
-        Book::create(
+            Book::create(
             [
                 'title'=>$request->title,
                 'category_id'=>$request->category_id,
                 'user_id'=>$request->user_id,
                 'description'=>$request->description,
-                'book'=>$path,
+                'book'=>$pdf,
+                'image'=>$path,
                 'slug'=>str_slug($request->title)
 
             ]
-        );
-    }else{
+            );
+        }else{
         Book::create(
             [
                 'title'=>$request->title,
                 'category_id'=>$request->category_id,
                 'user_id'=>$request->user_id,
                 'description'=>$request->description,
+                'book'=>$pdf,
 
                 'slug'=>str_slug($request->title)
 
@@ -124,6 +128,18 @@ class BookController extends Controller
                     'user_id' => auth()->user()->id,
                     'description' => $request->description,
 
+
+                ]
+
+            );
+        }
+        if(isset($request->image)){
+
+            $img = request('image')->store('books/image','public');
+            $livre->update(
+                [
+
+                'image' => $img,
 
                 ]
 

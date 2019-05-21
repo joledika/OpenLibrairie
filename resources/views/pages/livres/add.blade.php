@@ -49,8 +49,15 @@
                     </div>
                     <br>
                     <div class="ui form">
-                        <div class="field">
-                            <input class="ui text-black" type="file" name="book" id="book">
+                        <div class="two fields">
+                            <div class="field">
+                                    <label>Couverture</label>
+                                <input class="ui text-black" type="file" name="image" id="image">
+                            </div>
+                            <div class="field">
+                                    <label>Livre</label>
+                                <input class="ui text-black" type="file" name="book" id="book">
+                            </div>
                         </div>
                     </div>
                     <br>

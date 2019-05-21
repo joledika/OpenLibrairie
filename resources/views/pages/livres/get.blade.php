@@ -11,7 +11,7 @@
 
 
     <div style="margin-top:10px">
-        <img class="ui medium centered circular image" src="{{asset('home_page/img/intro/1.jpg')}}">
+        <img class="ui medium centered image" src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
     </div>
 
 
@@ -21,7 +21,7 @@
             Cet livre est pret à télécharger.
         </div>
 
-        <a href="#" class="ui orange button"><i class="download icon"></i>Télécharger</a>
+        <a href="/storage/{{$livre->book}}" target="_blank" class="ui orange button"><i class="download icon"></i>Télécharger</a>
     </div>
 
 
