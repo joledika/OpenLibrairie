@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Book;
+use App\Profile;
 use App\Commentary;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -47,5 +48,10 @@ class User extends Authenticatable
     public function commentaries()
     {
         return $this->hasMany(Commentary::class);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(Profile::class);
     }
 }

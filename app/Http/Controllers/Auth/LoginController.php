@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/posts';
+    protected $redirectTo = '/membres';
 
     /**
      * Create a new controller instance.
@@ -48,7 +48,7 @@ class LoginController extends Controller
          * *********************************
          ***********************************/
         if(auth()->check())
-            return redirect()->route('posts_path');
+            return redirect()->route('members_path');
 
         return view('auth.login');
     }

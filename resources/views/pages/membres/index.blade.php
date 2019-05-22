@@ -73,16 +73,16 @@
                     <div class="ui inverted dimmer">
                         <div class="content">
                         <div class="center">
-                            <a href="{{route('profile_path',$user->id)}}" class="ui primary button"><i class="ui eye icon"></i> voir son profil</a>
+                            <a href="profil/{{$user->id}}" class="ui primary button"><i class="ui eye icon"></i> voir son profil</a>
                         </div>
                         </div>
                     </div>
-                    <img src="{{asset('img/helen.jpg')}}">
+                    <img style="height:250px;" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/default.jpg'}}">
                     </div>
                     <div class="content">
                     <a class="header text-center">{{$user->name}}</a>
                     <div class="meta text-center">
-                        <span class="text">Prénom</span>
+                        <span class="text">{{$user->profile->lastName}}</span>
                     </div>
                     </div>
 

@@ -92,7 +92,7 @@
                 </div>
               </div>
             </div>
-            <img style="height:250px" width="auto" src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
+            <img style="height:250px;"  src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
 
           </div>
           <div class="content text-center">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use MercurySeries\Flashy\Flashy as flashy;
 
 class UsersController extends Controller
 {
@@ -20,7 +21,64 @@ class UsersController extends Controller
 
     public function show($id)
     {
-        $user = User::where('id' , $id)->first();
+        $user = User::where('id' , $id)->with(['profile'])->first();
         return view('pages/membres/show',compact('user'));
+    }
+
+    public function create($id)
+    {
+        $user = User::where('id' , $id)->with(['profile'])->first();
+
+        return view('pages/membres/edit',compact('user'));
+    }
+
+    public function update(Request $request,$id)
+    {
+
+        $user = User::where('id' , $id)->first();
+
+        if(isset($request->picture)){
+
+            $img = $request->file('picture')->store('users/image','public');
+            $user->profile->update(
+                [
+
+                    'picture' => $img,
+                    'address'=>$request->address,
+                    'birth'=>$request->birth,
+                    'description'=>$request->description,
+                    'firstName'=>$request->firstName,
+                    'lastName'=>$request->lastName,
+                    'gender'=>$request->gender,
+
+                ]
+
+            );
+        }else{
+            $user->profile->update(
+                [
+
+
+                    'address'=>$request->address,
+                    'birth'=>$request->birth,
+                    'description'=>$request->description,
+                    'firstName'=>$request->firstName,
+                    'lastName'=>$request->lastName,
+                    'gender'=>$request->gender,
+
+                ]
+
+            );
+        }
+        $user->update([
+            'name'=>$request->name
+        ]);
+
+         /**********************************************************
+         * ***********petite message de notification****************
+         **********************************************************/
+        flashy()->success('Modification éffectué');
+
+        return redirect()->route('profile_path',$id);
     }
 }

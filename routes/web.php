@@ -93,4 +93,8 @@ Route::group(['prefix' => 'category'], function() {
 
 
 Route::get('profil/{id}', 'UsersController@show')->name('profile_path');
+Route::get('profil/create/{id}', 'UsersController@create')->name('edit_profile_path');
+Route::put('profil/edit/{id}', 'UsersController@update')->name('put_profile_path');
+
+
 
