@@ -62,9 +62,10 @@
                     <td>{{$user->profile->birth}}</td>
 
                 </tr>
+
                 <tr>
-                    <td>Fonction :</td>
-                    <td>No Action</td>
+                        <td>Téléphone :</td>
+                        <td>{{$user->profile->phone}}</td>
 
                     </tr>
                 <tr>
@@ -80,16 +81,18 @@
         </div>
         <div class="rows mt-4">
             <div class="ui container">
-                <h3 class="ui header">Description</h3>
-                <p>
-                    {{$user->profile->description}}
-                </p>
+                <div class="ui container">
+                    <h3 class="ui header">Biographie</h3>
+                    <p>
+                        {{$user->profile->description}}
+                    </p>
 
+                </div>
             </div>
 
-        </div>
-        <div class="row mt-4">
-            <h3>Contact</h3>
+            <div class="row mt-4">
+                <div class="ui container">
+            <h3>Contacts</h3>
                 <table class="ui selectable table">
 
                     <tbody>
@@ -99,7 +102,7 @@
                             <div class="ui form">
                                 <div class="field">
 
-                                    <span>{{$user->contact->youtube}}</span>
+                                    <span>{{$user->contact->youtube??'non disponible'}}</span>
                                 </div>
                             </div>
 
@@ -112,7 +115,7 @@
                             <div class="ui form">
                                 <div class="field">
 
-                                    <span>{{$user->contact->facebook}}</span>
+                                    <span>{{$user->contact->facebook??'non disponible'}}</span>
                                 </div>
                             </div>
                         </td>
@@ -124,7 +127,7 @@
                             <div class="ui form">
                                 <div class="field">
 
-                                    <span>{{$user->contact->github}}</span>
+                                    <span>{{$user->contact->github??'non disponible'}}</span>
                                 </div>
                             </div>
                         </td>
@@ -136,7 +139,7 @@
                                 <div class="ui form">
                                     <div class="field">
 
-                                        <span>{{$user->contact->twitter}}</span>
+                                        <span>{{$user->contact->twitter??'non disponible'}}</span>
                                     </div>
                                 </div>
                             </td>
@@ -150,6 +153,8 @@
                     </tbody>
                 </table>
 
+        </div>
+        </div>
         </div>
     </div>
 

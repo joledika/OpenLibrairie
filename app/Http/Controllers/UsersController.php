@@ -50,6 +50,7 @@ class UsersController extends Controller
                     'firstName'=>$request->firstName,
                     'lastName'=>$request->lastName,
                     'gender'=>$request->gender,
+                    'phone'=>$request->phone,
 
                 ]
 
@@ -65,6 +66,7 @@ class UsersController extends Controller
                     'firstName'=>$request->firstName,
                     'lastName'=>$request->lastName,
                     'gender'=>$request->gender,
+                    'phone'=>$request->phone,
 
                 ]
 

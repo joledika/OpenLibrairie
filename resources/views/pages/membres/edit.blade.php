@@ -112,26 +112,19 @@
                     </td>
 
                 </tr>
-                <tr>
-                    <td><label for="function_id">Fonction :</label></td>
-                    <td>
-                        <div class="ui form">
-                            <div class="field">
 
-                                <div class="ui form">
-                                    <select name="" id="">
 
-                                        <option value="">Selectionner votre fonction</option>
+                    <tr>
+                        <td><label for="phone">Téléphone :</label></td>
+                        <td>
+                            <div class="ui form">
+                                <div class="field">
 
-                                        <option class="item"  value="male">Etudiant</option>
-                                        <option class="item"  value="female">Employeur</option>
-                                        <option class="item"  value="female">Autres</option>
-                                    </select>
-
+                                    <input type="tel" name="phone" value="{{$user->profile->phone}}" id="phone">
                                 </div>
                             </div>
-                        </div>
-                    </td>
+
+                        </td>
 
                     </tr>
                 <tr>
@@ -153,15 +146,17 @@
         </div>
         <div class="rows mt-4">
             <div class="ui container">
-                <h3 class="ui header">Description</h3>
+                <h3 class="ui header">Biographie</h3>
                 <div class="ui form">
                     <div class="field">
 
                         <textarea name="description" id="description" cols="30" rows="10">{{$user->profile->description}}</textarea>
                     </div>
                 </div>
+            </div>
+            <div class="ui container">
                 <div class="row mt-4">
-                    <h3>Contact</h3>
+                    <h3>Contacts</h3>
                         <table class="ui selectable celled table">
 
                             <tbody>

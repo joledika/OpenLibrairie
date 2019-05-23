@@ -19,12 +19,12 @@ class CreateProfilesTable extends Migration
             $table->string('lastName',100)->nullable();
             $table->string('gender')->default('male');
             $table->date('birth')->nullable();
-            $table->unsignedSmallInteger('function_id')->index()->nullable();
             $table->unsignedSmallInteger('account_id')->index()->nullable();
             $table->string('address')->nullable();
             $table->unsignedSmallInteger('contact_id')->index()->nullable();
             $table->string('picture')->nullable();
             $table->mediumText('description')->nullable();
+            $table->string('phone')->nullable();
             $table->unsignedInteger('user_id')->index();
             $table->timestamps();
         });
