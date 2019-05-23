@@ -8,7 +8,7 @@
 
 
 @section('content')
-<form action="{{route('put_profile_path',1)}}" method="post" enctype="multipart/form-data">
+<form action="{{route('put_profile_path',$user->id)}}" method="post" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 <div class="mt-3">
@@ -21,7 +21,7 @@
                 <div class="ui centered card">
                         <div class="image">
 
-                          <img class="ui medium rounded image" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/default.jpg'}}">
+                          <img class="ui medium rounded image" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'users/image/avatar/'.($user->profile->gender=='female'?'female':'male').'.png'}}">
                         </div>
                         <div class="content">
                           <a class="header"></a>

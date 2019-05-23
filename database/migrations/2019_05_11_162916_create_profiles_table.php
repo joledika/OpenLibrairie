@@ -20,9 +20,9 @@ class CreateProfilesTable extends Migration
             $table->string('gender')->default('male');
             $table->date('birth')->nullable();
             $table->unsignedSmallInteger('function_id')->index()->nullable();
-            $table->unsignedSmallInteger('account_id')->index();
+            $table->unsignedSmallInteger('account_id')->index()->nullable();
             $table->string('address')->nullable();
-            $table->unsignedSmallInteger('contact_id')->index();
+            $table->unsignedSmallInteger('contact_id')->index()->nullable();
             $table->string('picture')->nullable();
             $table->mediumText('description')->nullable();
             $table->unsignedInteger('user_id')->index();

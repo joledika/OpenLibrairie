@@ -79,6 +79,6 @@ class UsersController extends Controller
          **********************************************************/
         flashy()->success('Modification éffectué');
 
-        return redirect()->route('profile_path',$id);
+        return redirect()->route('profile_path',$user->id);
     }
 }

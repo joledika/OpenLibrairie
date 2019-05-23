@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
 use MercurySeries\Flashy\Flashy as flashy;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -90,10 +91,16 @@ class RegisterController extends Controller
          * *********************************
          ***********************************/
         //
-        User::create([
+       $user = User::create([
             'email' => $request->email,
             'name' => $request->name,
             'password' => bcrypt($request->password),
+            ]);
+
+            Profile::create([
+                'user_id'=>$user->id,
+                'gender'=>'male',
+
             ]);
 
         flashy()->success('Votre inscription est belle et bien effectué avec succéss',route('login'));

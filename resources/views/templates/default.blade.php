@@ -35,18 +35,29 @@
 
       <div class="ui heading vertical segment" style="padding-top:28px">
         <div class="ui container">
-          <h2 class="ui huge header">
-            <a href="{{route('home_path')}}"><span id="title"><i class="ui book icon"></i>OL </span></a>
-
+            <div class="text-center">
+                <h2 class="ui huge header text-center">
+                    <a href="{{route('home_path')}}"><span id="title"><i class="ui book icon"></i>OL </span></a>
+            </div>
             <div id="subtitle" class="sub header">
+                <div class="text-center">
                 {{env('APP_NAME')}}
+            </div>
+                <hr>
                   <div class="ui d-flex justify-content-end">
-                    <form action="{{route('logout')}}" method="get">
+                      <div class="avatar d-flex justify-content-start">
+                            <img style="width:5%" class="ui image circular" src="/storage/{{isset(auth()->user()->profile->picture)?auth()->user()->profile->picture:'users/image/avatar/'.(auth()->user()->profile->gender=='female'?'female':'male').'.png'}}">
+                            {{--  <img style="width:5%" class="ui image circular" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/avatar/'.($user->profile->gender? && $user->profile->gender=='female'?'female':'male').'png'}}">  --}}
+                        {{--  <img style="width:5%" class="ui image circular" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/default.jpg'}}">  --}}
+                        <p class="ml-2 mt-3">{{auth()->user()->name}}</p class="ml-2 mt-3">
+                    </div>
+                    <div>
+                        <form action="{{route('logout')}}" method="get">
                         @csrf
                         <button class="ui orange button" type="submit"><span id="title"><i class="ui logout icon"></i>Déconnexion</span></button>
                         {{--  <a class="ui orange button" href="{{route('home_path')}}"><span id="title"><i class="ui logout icon"></i>Déconnecter  </span></a>  --}}
                     </form>
-
+                    </div>
                   </div>
             </div>
           </h2>

@@ -18,7 +18,7 @@
                 <div class="ui centered card">
                         <div class="image">
 
-                          <img class="ui medium rounded image" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/default.jpg'}}">
+                          <img class="ui medium rounded image" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'users/image/avatar/'.($user->profile->gender=='female'?'female':'male').'.png'}}"}}">
                         </div>
                         <div class="content">
                           <a class="header">{{$user->name}}</a>
@@ -48,7 +48,12 @@
                     </tr>
                     <tr>
                     <td>Sexe :</td>
-                    <td>{{$user->profile->gender}}</td>
+
+                    @if($user->profile->gender=="female")
+                    <td>Femme</td>
+                    @else
+                    <td>Homme</td>
+                    @endif
 
                     </tr>
                     <tr>

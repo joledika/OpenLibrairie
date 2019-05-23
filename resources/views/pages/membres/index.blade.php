@@ -77,12 +77,12 @@
                         </div>
                         </div>
                     </div>
-                    <img style="height:250px;" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/default.jpg'}}">
+                    <img style="height:250px;" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'users/image/avatar/'.($user->profile->gender=='female'?'female':'male').'.png'}}">
                     </div>
                     <div class="content">
                     <a class="header text-center">{{$user->name}}</a>
                     <div class="meta text-center">
-                        <span class="text">{{$user->profile->lastName}}</span>
+                        <span class="text">{{$user->email}}</span>
                     </div>
                     </div>
 
