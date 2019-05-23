@@ -160,9 +160,67 @@
                         <textarea name="description" id="description" cols="30" rows="10">{{$user->profile->description}}</textarea>
                     </div>
                 </div>
-                <div class="row mt-3">
-                    <h3>contact</h3>
-                    <div>
+                <div class="row mt-4">
+                    <h3>Contact</h3>
+                        <table class="ui selectable celled table">
+
+                            <tbody>
+                                <tr>
+                                <td class="text-left"><i class="ui youtube icon"></i><label for="youtube">YouTube</label></td>
+                                <td>
+                                    <div class="ui form">
+                                        <div class="field">
+
+                                            <input type="text" name="youtube" value="{{$user->contact->youtube}}" id="youtube">
+                                        </div>
+                                    </div>
+
+                                </td>
+
+                                </tr>
+                                <tr>
+                                <td class="text-left"><i class="ui facebook icon"></i> <label for="facebook">FaceBook </label></td>
+                                <td>
+                                    <div class="ui form">
+                                        <div class="field">
+
+                                            <input type="text" name="facebook" value="{{$user->contact->facebook}}" id="facebook">
+                                        </div>
+                                    </div>
+                                </td>
+
+                                </tr>
+                                <tr>
+                                <td class="text-left"><i class="ui github icon"></i> <label for="github">GitHub </label></td>
+                                <td>
+                                    <div class="ui form">
+                                        <div class="field">
+
+                                            <input type="text" name="github" value="{{$user->contact->github}}" id="github">
+                                        </div>
+                                    </div>
+                                </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="text-left"><i class="ui twitter icon"></i> <label for="twitter">Twitter </label></td>
+                                    <td>
+                                        <div class="ui form">
+                                            <div class="field">
+
+                                                <input type="text" name="twitter" value="{{$user->contact->twitter}}" id="twitter">
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+
+
+
+                            </tbody>
+                        </table>
 
                 </div>
                 </div>

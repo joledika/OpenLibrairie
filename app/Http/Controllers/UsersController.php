@@ -21,7 +21,7 @@ class UsersController extends Controller
 
     public function show($id)
     {
-        $user = User::where('id' , $id)->with(['profile'])->first();
+        $user = User::where('id' , $id)->with(['profile','contact'])->first();
         return view('pages/membres/show',compact('user'));
     }
 
@@ -72,6 +72,13 @@ class UsersController extends Controller
         }
         $user->update([
             'name'=>$request->name
+        ]);
+
+        $user->contact->update([
+            'facebook'=>$request->facebook,
+            'github'=>$request->github,
+            'youtube'=>$request->youtube,
+            'twitter'=>$request->twitter,
         ]);
 
          /**********************************************************

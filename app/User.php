@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Book;
+use App\Contact;
 use App\Profile;
 use App\Commentary;
 use Illuminate\Notifications\Notifiable;
@@ -53,5 +54,10 @@ class User extends Authenticatable
     public function profile()
     {
         return $this->hasOne(Profile::class);
+    }
+
+    public function contact()
+    {
+        return $this->hasOne(Contact::class);
     }
 }

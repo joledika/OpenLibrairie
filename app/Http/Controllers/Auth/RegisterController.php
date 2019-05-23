@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Contact;
 use App\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -102,6 +103,12 @@ class RegisterController extends Controller
                 'gender'=>'male',
 
             ]);
+
+            Contact::create(
+                [
+                    'user_id'=>$user->id
+                ]
+            );
 
         flashy()->success('Votre inscription est belle et bien effectué avec succéss',route('login'));
 
