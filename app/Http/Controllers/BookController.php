@@ -7,7 +7,10 @@ use App\User;
 use App\Category;
 use App\Commentary;
 use Illuminate\Http\Request;
+
 use App\Http\Requests\AddBookRequest;
+use App\Http\Requests\EditBookRequest;
+
 use App\Http\Requests\CommentaryRequest;
 use MercurySeries\Flashy\Flashy as flashy;
 
@@ -99,7 +102,7 @@ class BookController extends Controller
         return \back();
     }
 
-    public function update(Request $request, $categorie,$slug)
+    public function update(EditBookRequest $request, $categorie,$slug)
     {
 
         $livre = Book::where('slug',$slug)->firstOrFail();

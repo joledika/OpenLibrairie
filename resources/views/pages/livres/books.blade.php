@@ -103,7 +103,7 @@
 
 
             <div class="meta ml-3">
-                <a class="ui orange small left ribbon label">{{$livre->category->name}}</a>
+                <a class="ui {{$livre->category->color}} small left ribbon label">{{$livre->category->name}}</a>
 
             </div>
 

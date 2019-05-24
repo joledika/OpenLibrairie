@@ -12,15 +12,25 @@
 @csrf
 @method('PUT')
     <div class="ui form">
-        <div class="field">
+        <div class="field {{ $errors->first('title')?'error':'' }}">
             <label for="title">Titre</label>
             <input required type="text" value="{{$livre->title}}" name="title" id="title" placeholder="Titre du livre.......">
+            @if($errors->first('title'))
+            <div class="ui pointing red basic label">
+              {{ $errors->first('title') }}
+            </div>
+            @endif
         </div>
 
     </div>
     <br>
     <div class="ui form">
-        <div class="required field">
+      @if($errors->first('category_id'))
+      <div class="ui pointing below red basic label">
+        {{ $errors->first('category_id') }}
+      </div>
+      @endif
+        <div class="required field {{ $errors->first('category_id')?'error':'' }}">
             <select required  name="category_id">
                 <option disabled value="">Catégorie</option>
                 @foreach($categories as $category)
@@ -44,8 +54,13 @@
     </div>
     <br>
     <div class="ui form">
+      @if($errors->first('description'))
+      <div class="ui pointing below red basic label">
+        {{ $errors->first('description') }}
+      </div>
+      @endif
         <div class="required field">
-            {{--  <label class="sronly">Description</label>  --}}
+
             <textarea required name="description" placeholder="description.....">{{$livre->description}}</textarea>
         </div>
 
@@ -62,5 +77,3 @@
 
 
 @endsection
-
-
