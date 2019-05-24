@@ -1,14 +1,15 @@
 @extends('templates.default')
 
 
-@section('title',"Livres")
-@section('description',"liste des livres")
+@section('title',"Catégories")
+@section('description',"liste des catégories")
 
-@section('heading',"liste des livres")
+@section('heading',"liste des catégories")
 
 
 @section('content')
 <div class="d-flex justify-content-end mb-3">
+  <a href="{{ route('add_category_path') }}" class="ui green button"><i class="ui add icon"></i>Ajout</a>
     <div class="ui floating dropdown violet labeled icon button">
         <i class="filter icon"></i>
         <span class="text">Filtrer </span>
@@ -64,19 +65,33 @@
     </div>
 </div>
 <div class="ui two column grid">
-    @for ($i = 0; $i < 40; $i++)
+
+@forelse ($categories as $category)
+
 
     <div class="column">
         <div class="ui raised segment">
-        <a class="ui red ribbon label">Overview</a>
-        <span>Account Details</span>
+        <a href="{{ route('edit_category_path',$category->slug) }}" class="ui {{$category->color}} ribbon label">{{$category->name}}</a>
+
         <p class="text-justify">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, at vitae incidunt et iure reiciendis sequi maiores explicabo expedita perspiciatis saepe quae neque dignissimos ullam quasi harum nihil dolor magnam amet, veritatis distinctio ab quod. Est ipsam autem aliquid laboriosam?
+            {{$category->description}}
+
         </p>
 
         </div>
     </div>
-    @endfor
+@empty
+  <div class="ui icon message mt-5" >
+      <i class="info icon"></i>
+      <div class="content">
+          <div class="header">
+              Auncun enregistrement
+          <p>Désolé, il n'y pas de catégories en ce moment.</p>
+          </div>
+      </div>
+  </div>
+
+@endforelse
 
 </div>
 

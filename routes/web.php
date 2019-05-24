@@ -61,9 +61,15 @@ Route::view('edit', 'pages/livres/edit');
 
 
 Route::group(['prefix' => 'category'], function() {
-    Route::get('',function(){
-        return view('pages/livres/categorie/index');
-    })->name('category');
+    Route::get('books','CategoryController@index')->name('category');
+    Route::get('add','CategoryController@create')->name('add_category_path');
+    Route::post('store','CategoryController@store')->name('store_category_path');
+    Route::get('edit/{slug}','CategoryController@edit')->name('edit_category_path');
+    Route::put('edit/{slug}','CategoryController@update')->name('update_category_path');
+    Route::delete('delete/{slug}','CategoryController@destroy')->name('delete_category_path');
+
+
+
 });
 
 
@@ -95,6 +101,3 @@ Route::group(['prefix' => 'category'], function() {
 Route::get('profil/{id}', 'UsersController@show')->name('profile_path');
 Route::get('profil/create/{id}', 'UsersController@create')->name('edit_profile_path');
 Route::put('profil/edit/{id}', 'UsersController@update')->name('put_profile_path');
-
-
-

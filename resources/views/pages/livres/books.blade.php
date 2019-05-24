@@ -14,6 +14,7 @@
 
 
         <div class="d-flex justify-content-end mb-3">
+                <a href="{{ route('category') }}" class="ui green button"><i class="ui tags icon"></i>Catégories</a>
                 <a class="ui blue button mr-3" href="{{route('add_book_path')}}"><i class="ui plus icon"></i> Ajout</a>
                     {{--  DROPDOWN FILTER  --}}
             <div class="ui multiple dropdown">
@@ -156,8 +157,3 @@ $('.special.cards .image').dimmer({
 ;
 </script>
 @endsection
-
-
-
-
-
