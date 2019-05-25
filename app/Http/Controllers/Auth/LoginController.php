@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use MercurySeries\Flashy\Flashy;
@@ -56,10 +57,35 @@ class LoginController extends Controller
 
     public function store(LoginRequest $request)
     {
+      /**********************************************
+       * ********************************************
+       * connection de l'utilisateur avec le remeber
+       * ********************************************
+       **********************************************/
 
-      $result = \Auth::attempt(['email' => $request->email, 'password' => $request->password]);
-      if($result)
-        return redirect()->route('books_path');
+
+
+       /************************************************
+       *******Connexion avec le pseudo ou l'email*******
+       *************************************************/
+      $user = User::where('name',$request->name)
+            ->orWhere('email',$request->name)
+            ->first();
+
+      if($user){
+
+        /***************************************
+        *******Verifier le mdp de l'user*******
+        ****************************************/
+
+
+        if(\Hash::check($request->password, $user->password))
+        {
+          auth()->login($user,$request->has('remember'));
+
+          return redirect()->route('books_path');
+        }
+      }
 
 
         Flashy::error('Email ou mot de passe invalid');

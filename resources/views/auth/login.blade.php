@@ -18,7 +18,7 @@
         </span>
 
         <div class="wrap-input100 validate-input" data-validate = "Entrer votre email">
-            <input value="{{ old('email') }}" class="input100" type="email" name="email" placeholder="Email">
+            <input value="{{ old('name') }}" class="input100" type="text" name="name" placeholder="Email or Pseudo">
             <span class="focus-input100" data-placeholder="&#xf207;"></span>
             {!! $errors->first('email','<span style="color:#9B1708">:message</span>')  !!}
         </div>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="contact100-form-checkbox">
-            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember">
             <label class="label-checkbox100" for="ckb1">
                 me souvenir
             </label>
