@@ -53,10 +53,12 @@ Route::put('books/get/{categorie}/{slug}', 'BookController@update')->name('put_b
 Route::get('books/edit/{categorie}/{slug}', 'BookController@create')->name('edit_book_path');
 Route::get('books/add','BookController@add')->name('add_book_path');
 Route::post('books/add','BookController@store');
+Route::delete('books/{id}/delete','BookController@destroy')->name('delete_book_path');
 
 Route::view('livre', 'pages/livres/show');
 Route::view('get', 'pages/livres/get');
 Route::view('edit', 'pages/livres/edit');
+
 
 
 

@@ -163,14 +163,29 @@ class BookController extends Controller
 
     public function create($categorie,$slug)
     {
-        /********************************************************************
-         *
-         **Récuperation de livre et renvoyer vers la formulaire les données**
-         *
-         ********************************************************************/
+      /********************************************************************
+       *
+       **Récuperation de livre et renvoyer vers la formulaire les données**
+       *
+       ********************************************************************/
         $livre = Book::where('slug',$slug)->firstOrFail();
         $categories = Category::get();
 
         return view('pages/livres/edit',compact('livre','categories'));
+    }
+
+    public function destroy($id)
+    {
+      /********************************************************************
+       *
+       **       Récuperation de livre a supprimer et supprimer
+       *
+       ********************************************************************/
+      $livre = Book::where('id',$id)->firstOrFail();
+      $livre->delete();
+
+      Flashy::message('Livre supprimé éffectué');
+
+      return redirect()->route('books_path');
     }
 }
