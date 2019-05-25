@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use MercurySeries\Flashy\Flashy;
 
 class LoginController extends Controller
 {
@@ -61,7 +62,8 @@ class LoginController extends Controller
         return redirect()->route('books_path');
 
 
-      return redirect()->back()->withErrors('identification incorrect')->withInput();
+        Flashy::error('Email ou mot de passe invalid');
+      return redirect()->back()->withInput();
 
     }
 

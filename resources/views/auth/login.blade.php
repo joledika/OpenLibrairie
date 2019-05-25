@@ -18,8 +18,9 @@
         </span>
 
         <div class="wrap-input100 validate-input" data-validate = "Entrer votre email">
-            <input class="input100" type="email" name="email" placeholder="Email">
+            <input value="{{ old('email') }}" class="input100" type="email" name="email" placeholder="Email">
             <span class="focus-input100" data-placeholder="&#xf207;"></span>
+            {!! $errors->first('email','<span style="color:#9B1708">:message</span>')  !!}
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Entrer le mot de passe">

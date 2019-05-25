@@ -62,7 +62,7 @@ Route::delete('books/{id}/delete','BookController@destroy')->name('delete_book_p
 Route::view('livre', 'pages/livres/show');
 Route::view('get', 'pages/livres/get');
 Route::view('edit', 'pages/livres/edit');
-Route::view('test', 'home/contact');
+Route::view('test', 'pages/admin/template/default');
 
 
 
