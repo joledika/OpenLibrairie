@@ -1,24 +1,26 @@
 
-  <div class="ui vertical stripe segment">
+  <div class="ui vertical stripe segment" id="apropos">
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="eight wide column">
           <h3 class="ui header">Qui somme nous?</h3>
-          <p>
-            We can give your company superpowers to do things that they
-            never thought possible. Let us delight your customers and
-            empower your needs...through pure data analytics.
+          <hr>
+          <p style="text-align:justify">
+            <span><strong>{{ env('APP_NAME') }}</strong></span> est<strong> un bibliothèque gratuit <i class="ui book icon"></i>  </strong>
+             en ligne accessible par tous le monde,
+            un site web <strong> multiplateforme </strong>c'est à dire responsive que vous ete sur pc
+             <i class="ui laptop icon"></i>, tablette <i class="ui tablet icon" ></i> , ou mobile <i class="ui mobile icon"></i>.
           </p>
-          <h3 class="ui header">We Make Bananas That Can Dance</h3>
-          <p>
-            Yes that's right, you thought it was the stuff of dreams, but
-            even bananas can be bioengineered.
+          <h3 class="ui header"></h3>
+          <p style="text-align:justify">
+            Cet application web vous facilite la vie et permet de consulter des livres et discuter <i class="ui chat icon"></i> avec les membres <i class="ui users icon"></i> .
+            Il suffit juste de s'inscrire ,c'est gratuit <i class="ui handshake icon"></i><i class="ui smile outline icon"></i> .
           </p>
         </div>
         <div class="six wide right floated column">
           <img
             class="ui large bordered rounded image"
-            src="{{asset('home_page/img/about-img.jpg')}}"
+            src="{{asset('home/img/intro/biblio.jpg')}}"
           />
         </div>
       </div>

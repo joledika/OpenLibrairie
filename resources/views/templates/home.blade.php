@@ -27,8 +27,12 @@
   <body id="root">
     <div class="ui large top fixed hidden menu">
       <div class="ui container">
-        <a class="active item"><i class="ui home icon"></i>Accueil</a> <a class="item"><i class="ui user secret icon"></i>Apropos</a>
-        <a class="item"><i class="ui copy icon"></i>Services</a> <a class="item"><i class="ui phone icon"></i>Contact</a>
+        <a href="{{ url('/') }}" class="{{set_active_route('home_path')}} item"><i class="ui home icon"></i>Accueil</a>
+        @if(set_active_route('home_path'))
+          <a href="#apropos" class="item"><i class="ui user secret icon"></i>Apropos</a>
+          <a class="item"><i class="ui copy icon"></i>Services</a>
+        @endif
+        <a  href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
         <div class="right menu">
           <div class="item"><a href="{{route('login')}}" class="ui button"><i class="ui sign-in icon"></i>Connexion</a></div>
           <div class="item"><a href="{{route('register')}}" class="ui pink button"><i class="ui save icon"></i>Inscription</a></div>
@@ -37,8 +41,12 @@
     </div>
     <!--Sidebar Menu-->
     <div class="ui vertical inverted sidebar menu">
-      <a class="active item"><i class="ui home icon"></i>Accueil</a> <a class="item"><i class="ui user secret icon"></i>Apropos</a>
-      <a class="item"><i class="ui copy icon"></i>Services</a> <a class="item"><i class="ui phone icon"></i>Contact</a>
+      <a href="{{ url('/') }}" class="{{set_active_route('home_path')}} item"><i class="ui home icon"></i>Accueil</a>
+      @if(set_active_route('home_path'))
+        <a href="#apropos" class="item"><i class="ui user secret icon"></i>Apropos</a>
+        <a class="item"><i class="ui copy icon"></i>Services</a>
+      @endif
+      <a href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
       <a href="{{route('login')}}" class="item"><i class="ui sign-in icon"></i>Connexion</a> <a href="{{route('register')}}" class="item"><i class="ui save icon"></i>Inscription</a>
     </div>
     <!--Page Contents-->
@@ -48,8 +56,12 @@
         <div class="ui container">
           <div class="ui large secondary inverted pointing menu">
             <a class="toc item"><i class="sidebar icon"></i></a>
-            <a href="{{ url('/') }}" class="{{set_active_route('home_path')}} item"><i class="ui home icon"></i>Accueil</a> <a class="item"><i class="ui user secret icon"></i>Apropos</a>
-            <a class="item"><i class="ui copy icon"></i>Services</a> <a href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
+            <a href="{{ url('/') }}" class="{{set_active_route('home_path')}} item"><i class="ui home icon"></i>Accueil</a>
+            @if(set_active_route('home_path'))
+              <a href="#apropos" class="item"><i class="ui user secret icon"></i>Apropos</a>
+              <a class="item"><i class="ui copy icon"></i>Services</a>
+            @endif
+            <a href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
             <div class="right item">
               <a href="{{route('login')}}" class="ui inverted button"><i class="ui sign-in icon"></i>Connexion</a>
               <a href="{{route('register')}}" class="ui inverted button"><i class="ui save icon"></i>Inscription</a>
