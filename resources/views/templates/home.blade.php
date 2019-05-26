@@ -30,7 +30,7 @@
         <a href="{{ url('/') }}" class="{{set_active_route('home_path')}} item"><i class="ui home icon"></i>Accueil</a>
         @if(set_active_route('home_path'))
           <a href="#apropos" class="item"><i class="ui user secret icon"></i>Apropos</a>
-          <a class="item"><i class="ui copy icon"></i>Services</a>
+          <a class="item" href="#services"><i class="ui copy icon"></i>Services</a>
         @endif
         <a  href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
         <div class="right menu">
@@ -44,7 +44,7 @@
       <a href="{{ url('/') }}" class="{{set_active_route('home_path')}} item"><i class="ui home icon"></i>Accueil</a>
       @if(set_active_route('home_path'))
         <a href="#apropos" class="item"><i class="ui user secret icon"></i>Apropos</a>
-        <a class="item"><i class="ui copy icon"></i>Services</a>
+        <a class="item" href="#services"><i class="ui copy icon"></i>Services</a>
       @endif
       <a href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
       <a href="{{route('login')}}" class="item"><i class="ui sign-in icon"></i>Connexion</a> <a href="{{route('register')}}" class="item"><i class="ui save icon"></i>Inscription</a>
@@ -59,7 +59,7 @@
             <a href="{{ url('/') }}" class="{{set_active_route('home_path')}} item"><i class="ui home icon"></i>Accueil</a>
             @if(set_active_route('home_path'))
               <a href="#apropos" class="item"><i class="ui user secret icon"></i>Apropos</a>
-              <a class="item"><i class="ui copy icon"></i>Services</a>
+              <a class="item" href="#services"><i class="ui copy icon"></i>Services</a>
             @endif
             <a href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
             <div class="right item">

@@ -1,19 +1,29 @@
 
-  <div class="ui vertical stripe quote segment">
+
+  <div class="ui vertical stripe quote segment" id="services">
+    <br>
+    <h3 class="ui header"><i class="ui copy icon"></i>Nos services</h3>
+    <hr>
     <div class="ui equal width stackable internally celled grid">
       <div class="center aligned row">
         <div class="column">
-          <h3>"What a Company"</h3>
-          <p>That is what they all say about us</p>
+          <h3>"Free"</h3>
+          <p>Vous ete libre et la totalité des services sont tous gratuits </p>
         </div>
         <div class="column">
-          <h3>"I shouldn't have gone with their competitor."</h3>
-          <p>
+          <h3>Notre embleme est </h3>
+          <p style="text-align:justify">
+            <code><quote> <i class="ui play circle outline icon"></i> lire est bien pour améliorer <i class="ui graduation cap icon"></i> ,
+            sans dépenser est bien pour amusé <i class="ui smile icon"></i></quote></code>
+          </p>
+          <p style="text-align:center">
             <img
-              class="ui avatar image"
-              src="{{asset('home_page/img/about-img.jpg')}}"
+              class="ui rounded image" style="width:40%;height:auto;margin:auto"
+              src="{{asset('home/img/administrator/Profil.jpg')}}"
             />
-            <b>Nan</b> Chief Fun Officer Acme Toys
+            <p>
+            Mamisoa Olivier <b>Randrianantenaina</b>
+            </p>
           </p>
         </div>
       </div>
@@ -21,24 +31,35 @@
   </div>
   <div class="ui vertical stripe segment">
     <div class="ui text container">
-      <h3 class="ui header">Breaking The Grid, Grabs Your Attention</h3>
+      <h4 class="ui large header"><i class="ui book icon"></i> Livres  </h4>
       <p>
-        Instead of focusing on content creation and hard work, we have
-        learned how to master the art of doing nothing by providing massive
-        amounts of whitespace and generic content that can seem massive,
-        monolithic and worth your attention.
+        Vous pouvez chercher, regarder , et meme télécharger <i class="ui download icon"></i> des livres sans
+        limite.
       </p>
-      <a class="ui large black button">Read More</a>
+      <p>
+        Vous povez aussi commenter les livres et meme rationner c'est à dire j'aimer comme les image sur
+        facebook <i class="ui facebook square icon"></i>.
+      </p>
+      <p>
+        Vous povez aussi ajouter des livres que vous voulez publier sur le site
+        a condition que celui ci ne dispose pas un droit d'auteur et
+        vous pouvez l'editer ,supprimer apres et les livres que vous publient appartient à vous.
+      </p>
       <h4 class="ui horizontal header divider">
-        <a href="#root"> Case Studies</a>
+        <hr>
       </h4>
-      <h3 class="ui header">Did We Tell You About Our Bananas?</h3>
+      <h4 class="ui large header"><i class="ui chat icon"></i> Discussions  </h4>
       <p>
-        Yes I know you probably disregarded the earlier boasts as
-        non-sequitur filler content, but its really true. It took years of
-        gene splicing and combinatory DNA research, but our bananas can
-        really dance.
+        Les membres peuvent envoyer des messages , discuter entre eux.
       </p>
-      <a class="ui large black button">I'm Still Quite Interested</a>
+      <p>
+        Tous le monde peuvent aussi commenter les livres et meme signaler en cas d'abus.
+      </p>
+      <p>
+        Les membres peuvent aussi contacter l'administrateur en cas de probleme ou
+        peut etre un simple discussion d'ami ca fait du bien <i class="ui thumbs up outline icon"></i> <i class="ui smile icon"></i>
+      </p>
+      <br>
+      <a href="{{ route('register') }}" class="ui large black button"><i class="ui heart icon"></i> Vous ete intéressé ?</a>
     </div>
   </div>

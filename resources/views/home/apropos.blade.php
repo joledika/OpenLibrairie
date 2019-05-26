@@ -3,7 +3,7 @@
     <div class="ui middle aligned stackable grid container">
       <div class="row">
         <div class="eight wide column">
-          <h3 class="ui header">Qui somme nous?</h3>
+          <h3 class="ui header"><i class="ui user secret icon"></i>Qui somme nous?</h3>
           <hr>
           <p style="text-align:justify">
             <span><strong>{{ env('APP_NAME') }}</strong></span> est<strong> un bibliothèque gratuit <i class="ui book icon"></i>  </strong>
