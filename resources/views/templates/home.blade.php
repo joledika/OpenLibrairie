@@ -64,8 +64,9 @@
           </div>
         </div>
       </div>
+      <div class="ui text container">
       @yield('content')
-
+    </div>
 
       <div class="ui inverted vertical footer segment">
         <div class="ui container">
@@ -95,5 +96,6 @@
     <script src="{{asset('dist/semantic.min.js')}}"></script>
     @include('templates/home/partials/_scripts')
 
+    @include('flashy::message')
   </body>
 </html>
