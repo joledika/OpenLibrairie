@@ -88,15 +88,17 @@
               <h4 class="ui inverted header">Copyright &copy; {{ date('Y') }}</h4>
               <div class="ui inverted link list">
                 <p>Auteur : <code>Mamisoa Olivier Randrianantenaina</code> </p>
+                <p>Téléphones :</p>
+                <code><i class="ui phone icon"></i>&nbsp;033 04 611 94 <br> <i class="ui phone icon"></i>&nbsp;032 75 434 49</code>
               </div>
             </div>
             <div class="seven wide column">
               <h4 class="ui inverted header">Réseaux sociaux</h4>
               <div class="ui inverted link list">
-                <a class="item" href="#"><i class="ui facebook icon"></i>&nbsp;Facebook</a>
+                <a class="item" href="https://web.facebook.com/joledika" target="_blank"><i class="ui facebook icon"></i>&nbsp;Facebook</a>
                 <a class="item" href="#"><i class="ui google icon"></i>&nbsp;Gmail</a>
                 <a class="item" href="#"><i class="ui twitter icon"></i>&nbsp;Twitter</a>
-                <a class="item" href="#"><i class="ui github icon"></i>&nbsp;Github</a>
+                <a class="item" href="https://github.com/joledika" target="_blank"><i class="ui github icon"></i>&nbsp;Github</a>
               </div>
             </div>
 
