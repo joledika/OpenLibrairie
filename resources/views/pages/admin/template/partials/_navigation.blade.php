@@ -1,57 +1,29 @@
-<div class="ui tablet computer only padded grid">
-  <div class="ui borderless fluid huge menu">
-    <a class="active item"><i class="ui home icon"></i>Accueil</a>
-    <a class="item"><i class="ui users icon"></i>Membres</a>
-    <a class="item"><i class="ui book icon"></i>Livres</a>
-    <a class="item"><i class="ui envelope icon"></i>Messages</a>
-
-    <a class="item"><i class="ui wechat icon"></i>Discussions</a>
-
-    {{-- <a class="ui dropdown item">
-      Dropdown <i class="dropdown icon"></i>
+<div class="ui attached stackable menu">
+  <div class="ui container">
+    <a class="active item">
+      <i class="home icon"></i> Accueil
+    </a>
+    <a class="item">
+      <i class="users icon"></i> Membres
+    </a>
+    <a class="item">
+      <i class="mail icon"></i> Messages
+    </a>
+    <a class="item">
+      <i class="wechat icon"></i> Discussions
+    </a>
+    <a class="item"><i class="user icon"></i>Profil</a>
+    <div class="ui simple dropdown item">
+      More
+      <i class="dropdown icon"></i>
       <div class="menu">
-        <div class="item">Action</div>
-        <div class="item">Another action</div>
-        <div class="item">Something else here</div>
-        <div class="ui divider"></div>
-        <div class="header">Navbar header</div>
-        <div class="item">Seperated link</div>
-        <div class="item">One more seperated link</div>
-      </div>
-    </a> --}}
-    <div class="right menu">
-      <form action="{{route('logout')}}" method="get">
-        @csrf
-      <button class="ui black button mt-2"><i class="ui logout icon"></i> Deconnexion</a></button>
-      </form>
-    </div>
-  </div>
-</div>
-<div class="ui mobile only padded grid">
-  <div class="ui borderless huge fluid menu">
-    <a class="header item"><i class="ui book icon"></i>{{env('APP_NAME')}}</a>
-    <div class="right menu">
-      <div class="item">
-        <button class="ui icon toggle basic button">
-          <i class="content icon"></i>
-        </button>
+        <a class="item"><i class="edit icon"></i> Edit Profile</a>
+        <a class="item"><i class="globe icon"></i> Choose Language</a>
+        <a class="item"><i class="settings icon"></i> Account Settings</a>
       </div>
     </div>
-    <div class="ui vertical borderless fluid menu">
-      <a class="active item"><i class="ui home icon"></i>Accueil</a>
-      <a class="item"><i class="ui users icon"></i>Membres</a>
-      <a class="item"><i class="ui book icon"></i>Livres</a>
-      <a class="item"><i class="ui envelope icon"></i>Messages</a>
-
-      <a class="item"><i class="ui wechat icon"></i>Discussions</a>
-
-
-      <div class="right menu">
-        <form action="{{route('logout')}}" method="get">
-          @csrf
-        <button class="ui black button"><i class="ui logout icon"></i>Deconnexion</a></button>
-        </form>
-      </div>
-
+    <div class="right item">
+      <a href="{{route('logout')}}" class="item"><i class="logout icon"></i>Deconnexion</a>
+    </div>
   </div>
 </div>
