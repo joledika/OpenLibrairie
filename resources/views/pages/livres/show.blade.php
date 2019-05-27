@@ -21,8 +21,12 @@
           <button type="submit" class="ui tiny orange button" type="submit"><i class="trash icon"></i>supprimer</button>
 
         </form>
-        <a href="{{route('get_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</a>
-
+        {{-- <a href="{{route('get_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</a> --}}
+        <form action="{{route('download_book_path',[$livre->category->name,$livre->slug])}}" method="post">
+          @csrf
+          @method('PUT')
+        <button class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</button>
+      </form>
     </div>
 
 

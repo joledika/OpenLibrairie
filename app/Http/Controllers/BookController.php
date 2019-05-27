@@ -6,6 +6,7 @@ use App\Book;
 use App\User;
 use App\Category;
 use App\Commentary;
+use App\Downloaded;
 use Illuminate\Http\Request;
 
 use App\Http\Requests\AddBookRequest;
@@ -73,7 +74,7 @@ class BookController extends Controller
             $path = request('image')->store('books/image','public');
 
 
-            Book::create(
+            $livre = Book::create(
             [
                 'title'=>$request->title,
                 'category_id'=>$request->category_id,
@@ -85,8 +86,11 @@ class BookController extends Controller
 
             ]
             );
+            Downloaded::create([
+              'book_id' => $livre->id
+            ]);
         }else{
-        Book::create(
+        $livre = Book::create(
             [
                 'title'=>$request->title,
                 'category_id'=>$request->category_id,
@@ -97,7 +101,11 @@ class BookController extends Controller
                 'slug'=>str_slug($request->title)
 
             ]);
+            Downloaded::create([
+              'book_id' => $livre->id
+            ]);
     }
+
         flashy()->success('Ajout livre éffectué');
         return \back();
     }

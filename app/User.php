@@ -4,6 +4,7 @@ namespace App;
 
 use App\Book;
 use App\Contact;
+use App\Ration;
 use App\Profile;
 use App\Commentary;
 use Illuminate\Notifications\Notifiable;
@@ -59,5 +60,10 @@ class User extends Authenticatable
     public function contact()
     {
         return $this->hasOne(Contact::class);
+    }
+
+    public function rations()
+    {
+      return $this->hasMany(Ration::class);
     }
 }

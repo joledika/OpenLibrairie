@@ -53,6 +53,9 @@ Route::get('books', 'BookController@index')->name('books_path');
 Route::get('books/{categorie}/{slug}', 'BookController@show')->name('book_path');
 Route::post('books/{categorie}/{slug}', 'CommentaryController@store')->name('add_commentary_path');
 Route::get('books/get/{categorie}/{slug}', 'BookController@get')->name('get_book_path');
+
+Route::put('books/down/{categorie}/{slug}', 'DownloadedController@update')->name('download_book_path');
+
 Route::put('books/get/{categorie}/{slug}', 'BookController@update')->name('put_book_path');;
 Route::get('books/edit/{categorie}/{slug}', 'BookController@create')->name('edit_book_path');
 Route::get('books/add','BookController@add')->name('add_book_path');

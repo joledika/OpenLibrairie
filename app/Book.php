@@ -3,6 +3,7 @@
 namespace App;
 
 use App\User;
+use App\Ration;
 use App\Category;
 use Illuminate\Database\Eloquent\Model;
 
@@ -32,5 +33,10 @@ class Book extends Model
     public function commentaries()
     {
         return $this->hasMany(Commentary::class);
+    }
+
+    public function downloaded()
+    {
+      return $this->hasOne(Downloaded::class);
     }
 }

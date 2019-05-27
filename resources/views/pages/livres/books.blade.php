@@ -110,9 +110,10 @@
 
             <div class="content">
             <span class="right floated">
-                {{--  <i class="heart outline like icon"></i>  --}}
-                <i class="heart like icon"></i>
-                17 likes
+              <i class="download icon"></i>
+
+            </button>
+                {{ $livre->downloaded->downloads }}
             </span>
             <i class="comment icon"></i>
             {{$livre->commentaries()->count()}} commentaires
