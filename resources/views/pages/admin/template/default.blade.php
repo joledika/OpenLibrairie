@@ -45,7 +45,7 @@
 
 
   @include('pages/admin/template/partials/_scripts')
-
+  @include('flashy::message')
   {{-- LES SCRIPTS --}}
   @yield('script')
   </body>

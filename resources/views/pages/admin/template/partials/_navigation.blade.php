@@ -1,18 +1,18 @@
 <div class="ui attached stackable menu">
   <div class="ui container">
-    <a class="active item">
+    <a class="item">
       <i class="home icon"></i> Accueil
     </a>
-    <a class="item">
+    <a href="{{ route('members_path') }}" class="item {{ set_active_route('members_path') }}{{  set_active_route('profile_path') }} {{  set_active_route('edit_profile_path') }}">
       <i class="users icon"></i> Membres
     </a>
-    <a class="item">
+    <a  href="{{ route('guard_contact_path') }}" class="item {{ set_active_route('guard_contact_path') }}{{  set_active_route('show_guard_contact_path') }}">
       <i class="mail icon"></i> Messages
     </a>
     <a class="item">
       <i class="wechat icon"></i> Discussions
     </a>
-    <a class="item"><i class="user icon"></i>Profil</a>
+    <a  href="{{ route('admin_profile_path',auth()->user()->id) }}" class="item {{ set_active_route('admin_profile_path')}}"><i class="user icon"></i>Profil</a>
     <div class="ui simple dropdown item">
       More
       <i class="dropdown icon"></i>

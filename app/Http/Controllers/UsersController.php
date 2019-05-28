@@ -16,18 +16,40 @@ class UsersController extends Controller
          *
          ******************************************************/
         $users = User::get();
+        if(auth()->user()->name=="Mamisoa")
+          return view('pages/admin/membres/index',compact('users'));
+
         return view('pages/membres/index',compact('users'));
     }
 
     public function show($id)
     {
         $user = User::where('id' , $id)->with(['profile','contact'])->first();
+
+        if (auth()->user()->name == "Mamisoa") {
+        return view('pages/admin/membres/show',compact('user'));
+
+        }
         return view('pages/membres/show',compact('user'));
+    }
+
+    public function profile($id)
+    {
+        // $user = User::where('id' , $id)->with(['profile','contact'])->first();
+
+        if (auth()->user()->name == "Mamisoa") {
+        return view('pages/admin/membres/profile');
+
+        }
+        // return view('pages/membres/show');
     }
 
     public function create($id)
     {
         $user = User::where('id' , $id)->with(['profile'])->first();
+
+        if(auth()->user()->name=="Mamisoa")
+          return view('pages/admin/membres/edit',compact('user'));
 
         return view('pages/membres/edit',compact('user'));
     }
@@ -87,6 +109,9 @@ class UsersController extends Controller
          * ***********petite message de notification****************
          **********************************************************/
         flashy()->success('Modification éffectué');
+
+
+
 
         return redirect()->route('profile_path',$user->id);
     }
