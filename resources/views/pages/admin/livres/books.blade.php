@@ -108,16 +108,17 @@
                           </div>
 
 
-                            <div class="meta ml-3">
+                          <div class="meta ml-3">
                                 <a class="ui {{$livre->category->color}} small left ribbon label">{{$livre->category->name}}</a>
 
                             </div>
 
                             <div class="content">
                             <span class="right floated">
+                              <i class="download icon"></i>
 
-                                <i class="heart like icon"></i>
-                                17 likes
+                            </button>
+                                {{ $livre->downloaded->downloads }}
                             </span>
                             <i class="comment icon"></i>
                             {{$livre->commentaries()->count()}} commentaires

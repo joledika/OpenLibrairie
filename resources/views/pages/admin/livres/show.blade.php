@@ -14,14 +14,19 @@
 
     <div class="d-flex justify-content-end mt-2">
 
-        <a href="{{route('edit_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny teal button" type="submit"><i class="edit icon"></i>Modifier</a>
-        <form action="{{ route('delete_book_path',$livre->id) }}" method="post">
-          @csrf
-          @method('delete')
-          <button type="submit" class="ui tiny orange button" type="submit"><i class="trash icon"></i>supprimer</button>
+            <a href="{{route('edit_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny teal button" type="submit"><i class="edit icon"></i>Modifier</a>
+            <form action="{{ route('delete_book_path',$livre->id) }}" method="post">
+              @csrf
+              @method('delete')
+              <button type="submit" class="ui tiny orange button" type="submit"><i class="trash icon"></i>supprimer</button>
 
-        </form>
-        <a href="{{route('get_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</a>
+            </form>
+            {{-- <a href="{{route('get_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</a> --}}
+            <form action="{{route('download_book_path',[$livre->category->name,$livre->slug])}}" method="post">
+              @csrf
+              @method('PUT')
+            <button class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</button>
+          </form>
 
     </div>
 
