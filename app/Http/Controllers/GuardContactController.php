@@ -27,4 +27,19 @@ class GuardContactController extends Controller
 
        return redirect()->route('home_path');
     }
+
+
+    public function index()
+    {
+      $messages = GuardContact::latest()->get();
+
+      return view('pages/admin/messages/index',compact('messages'));
+    }
+
+    public function show($id)
+    {
+      $message = GuardContact::find($id)->firstOrFail();
+
+      return view('pages/admin/messages/show',compact('message'));
+    }
 }

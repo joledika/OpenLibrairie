@@ -65,8 +65,19 @@ Route::delete('books/{id}/delete','BookController@destroy')->name('delete_book_p
 Route::view('livre', 'pages/livres/show');
 Route::view('get', 'pages/livres/get');
 Route::view('edit', 'pages/livres/edit');
-Route::view('test', 'home/contact');
+Route::view('test', 'pages/admin/template/default');
+Route::view('message', 'pages/admin/messages/index');
+Route::view('admin/membres', 'pages/admin/membres/index');
 
+
+/*********Route pour l'espace administration***************/
+Route::group(['prefix'=>'admin'],function(){
+
+  Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
+  Route::get('contact/{id}/show','GuardContactController@show')->name('show_guard_contact_path');
+  Route::get('profil/{id}', 'UsersController@profile')->name('admin_profile_path');
+
+});
 
 
 

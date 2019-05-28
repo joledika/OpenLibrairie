@@ -1,22 +1,22 @@
-@extends('templates.default')
+@extends('pages/admin/template/default')
 
 
-@section('title',"Livres")
+{{--  @section('title',"Livres")
 @section('description',"liste des livres")
 
-@section('heading',"liste des livres")
+@section('heading',"liste des livres")  --}}
 
 
 @section('content')
 
-<div class="mt-3">
+
 
 
 
         <div class="d-flex justify-content-end mb-3">
                 <a href="{{ route('category') }}" class="ui green button"><i class="ui tags icon"></i>Catégories</a>
                 <a class="ui blue button mr-3" href="{{route('add_book_path')}}"><i class="ui plus icon"></i> Ajout</a>
-                    {{--  DROPDOWN FILTER  --}}
+                     {{--  DROPDOWN FILTER  --}}
             <div class="ui multiple dropdown">
                 <input type="hidden" name="filters">
                 <i class="filter icon"></i>
@@ -70,56 +70,61 @@
         </div>
 
 
-
+<hr>
 
 
     {{--  END DROPDOWN FILTER  --}}
 
 
+    <div class="ui four column doubling stackable grid container">
 
-    <div class="ui special cards">
-    @forelse($livres as $livre)
-        <div class="card">
-            <div class="ui small content">
-                <div class="right floated meta">{{$livre->created_at->diffForHumans()}}</div>
-                    <img class="ui avatar image" src="/storage/{{isset($livre->user->profile->picture)?$livre->user->profile->picture:'users/image/avatar/'.($livre->user->profile->gender=='female'?'female':'male').'.png'}}">
-                    {{$livre->user->name}}
+
+
+        @forelse ($livres as $livre)
+        <div class="column">
+                <div class="ui special cards">
+
+                        <div class="card">
+                            <div class="ui small content">
+                                <div class="right floated meta">{{$livre->created_at->diffForHumans()}}</div>
+                                    <img class="ui avatar image" src="/storage/{{isset($livre->user->profile->picture)?$livre->user->profile->picture:'users/image/avatar/'.($livre->user->profile->gender=='female'?'female':'male').'.png'}}">
+                                    {{$livre->user->name}}
+                                </div>
+
+                          <div class="blurring dimmable image">
+                            <div class="ui dimmer">
+                              <div class="content">
+                                <div class="center">
+                                  <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="ui inverted button"><i class="ui eye icon"></i> Regarder</a>
+                                </div>
+                              </div>
+                            </div>
+                            <img style="height:250px;"  src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
+
+                          </div>
+                          <div class="content text-center">
+                            <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="header">{{$livre->title}}</a>
+
+                          </div>
+
+
+                            <div class="meta ml-3">
+                                <a class="ui {{$livre->category->color}} small left ribbon label">{{$livre->category->name}}</a>
+
+                            </div>
+
+                            <div class="content">
+                            <span class="right floated">
+
+                                <i class="heart like icon"></i>
+                                17 likes
+                            </span>
+                            <i class="comment icon"></i>
+                            {{$livre->commentaries()->count()}} commentaires
+                            </div>
+                            </div>
                 </div>
-
-          <div class="blurring dimmable image">
-            <div class="ui dimmer">
-              <div class="content">
-                <div class="center">
-                  <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="ui inverted button"><i class="ui eye icon"></i> Regarder</a>
-                </div>
-              </div>
-            </div>
-            <img style="height:250px;"  src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
-
-          </div>
-          <div class="content text-center">
-            <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="header">{{$livre->title}}</a>
-
-          </div>
-
-
-            <div class="meta ml-3">
-                <a class="ui {{$livre->category->color}} small left ribbon label">{{$livre->category->name}}</a>
-
-            </div>
-
-            <div class="content">
-            <span class="right floated">
-              <i class="download icon"></i>
-
-            </button>
-                {{ $livre->downloaded->downloads }}
-            </span>
-            <i class="comment icon"></i>
-            {{$livre->commentaries()->count()}} commentaires
-            </div>
-            </div>
-
+        </div>
 
         @empty
         <div class="ui icon message mt-5" >
@@ -132,8 +137,9 @@
             </div>
         </div>
         @endforelse
+
     </div>
-</div>
+
 
 
 
