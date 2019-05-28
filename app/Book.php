@@ -16,7 +16,7 @@ class Book extends Model
         parent::boot();
 
         static::creating(function($model){
-            $model->slug =str_slug($model->title.$model->id);
+            $model->slug =str_slug($model->title.\str_random(20));
         });
     }
 
