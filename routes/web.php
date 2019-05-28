@@ -63,7 +63,16 @@ Route::view('livre', 'pages/livres/show');
 Route::view('get', 'pages/livres/get');
 Route::view('edit', 'pages/livres/edit');
 Route::view('test', 'pages/admin/template/default');
+Route::view('message', 'pages/admin/messages/index');
 
+
+/*********Route pour l'espace administration***************/
+Route::group(['prefix'=>'admin'],function(){
+
+  Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
+  Route::get('contact/{id}/show','GuardContactController@show')->name('show_guard_contact_path');
+
+});
 
 
 
