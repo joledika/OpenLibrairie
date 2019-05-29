@@ -1,6 +1,6 @@
 <div class="ui attached stackable menu">
   <div class="ui container">
-    <a class="item">
+    <a href="{{ route('admin_home_path') }}" class="item {{ set_active_route('admin_home_path') }}">
       <i class="home icon"></i> Accueil
     </a>
     <a href="{{ route('members_path') }}" class="item {{ set_active_route('members_path') }}{{  set_active_route('profile_path') }} {{  set_active_route('edit_profile_path') }}">
