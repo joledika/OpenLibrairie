@@ -15,7 +15,7 @@ class UsersController extends Controller
          *Récuperation des utilisateur et renvoyer vers la vue
          *
          ******************************************************/
-        $users = User::get();
+        $users = User::latest()->paginate(16);
         if(auth()->user()->name=="Mamisoa")
           return view('pages/admin/membres/index',compact('users'));
 

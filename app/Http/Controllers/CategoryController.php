@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Http\Requests\CategoryRequest;
+use App\Book;
 use MercurySeries\Flashy\Flashy;
 
 class CategoryController extends Controller
@@ -16,7 +17,14 @@ class CategoryController extends Controller
       retourner tous les catégories vers la page index
 
       *************************************************/
-      return view('pages/livres/categorie/index',['categories'=> Category::get()]);
+
+      if (auth()->user()->name == 'Mamisoa') {
+
+        return view('pages/admin/livres/categorie/index',['categories'=> Category::latest()->paginate(10)]);
+
+      }
+
+      return view('pages/livres/categorie/index',['categories'=> Category::latest()->paginate(10)]);
     }
 
     public function create()
@@ -26,7 +34,9 @@ class CategoryController extends Controller
       retourner la vue formulaire d'ajout de categorie
 
       *************************************************/
-
+      if (auth()->user()->name == 'Mamisoa') {
+        return view('pages/admin/livres/categorie/add');
+      }
       return view('pages/livres/categorie/add');
     }
 
@@ -62,7 +72,9 @@ class CategoryController extends Controller
       *************************************************/
 
       $categorie = Category::where('slug',$slug)->firstOrFail();
-
+      if (auth()->user()->name == 'Mamisoa') {
+        return view('pages/admin/livres/categorie/edit',compact('categorie'));
+      }
       return view('pages/livres/categorie/edit',compact('categorie'));
     }
 
@@ -94,6 +106,11 @@ class CategoryController extends Controller
 
       $categorie = Category::where('slug', $slug)->firstOrFail();
       $categorie->delete();
+
+      $livres = $categorie->books();
+
+      $livres->delete();
+
 
       Flashy::message('Categorie supprimé avec success');
 

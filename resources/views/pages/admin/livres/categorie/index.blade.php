@@ -1,4 +1,4 @@
-@extends('templates.default')
+@extends('pages/admin/template/default')
 
 
 @section('title',"Catégories")
@@ -93,6 +93,12 @@
 
 @endforelse
 
+</div>
+<hr>
+
+<div class="d-flex justify-content-center mt-4">
+
+  {{$categories->links()}}
 </div>
 
 

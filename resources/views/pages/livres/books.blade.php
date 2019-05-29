@@ -140,6 +140,12 @@
         @endforelse
 
     </div>
+    <hr>
+
+    <div class="d-flex justify-content-center mt-4">
+
+      {{$livres->links()}}
+    </div>
 
 
 
@@ -166,4 +172,3 @@ $('.special.cards .image').dimmer({
 ;
 </script>
 @endsection
-

@@ -24,7 +24,7 @@ class BookController extends Controller
          *Récuperation des livres et renvoyer vers la vue
          *
          ******************************************************/
-        $livres = Book::with(['category','user'])->latest()->get();
+        $livres = Book::with(['category','user'])->latest()->paginate(20);
 
         if (auth()->user()->name == "Mamisoa") {
             return view('pages/admin/livres/books',compact('livres'));
