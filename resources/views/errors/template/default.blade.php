@@ -8,7 +8,7 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
 	<title>{{env('APP_NAME')}} | Page d'erreur</title>
-
+	
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
 
@@ -32,7 +32,7 @@
 			<h1>@yield('code')</h1>
 			<h2>Oops! @yield('header')</h2>
 			<p>@yield('message')</p>
-			<a class="btn btn-primary" href="{{ route('home_path') }}">Retour vers l'accueil</a>
+			<a class="btn btn-primary" href="{{ route('home_path') }}">Page d'acceuil</a>
 		</div>
 	</div>
 
