@@ -15,6 +15,7 @@ class UsersTableSeeder extends Seeder
 
 
         $user = factory('App\User',30)->create();
+        $user = factory('App\Account',2)->create();
         $category = factory('App\Category',10)->create();
 
         $user->each(function ($user){
@@ -51,7 +52,7 @@ class UsersTableSeeder extends Seeder
 
 
             });
-                    factory('App\Commentary',70)->create([
+                    factory('App\Commentary',20)->create([
                         'book_id'=>$book->random()->id,
                         'user_id'=>$user->id,
                     ]);

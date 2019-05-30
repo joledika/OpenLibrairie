@@ -6,6 +6,7 @@ use App\Book;
 use App\Contact;
 use App\Ration;
 use App\Profile;
+use App\Account;
 use App\Commentary;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -65,5 +66,10 @@ class User extends Authenticatable
     public function rations()
     {
       return $this->hasMany(Ration::class);
+    }
+
+    public function account()
+    {
+      return $this->belongsTo(Account::class);
     }
 }

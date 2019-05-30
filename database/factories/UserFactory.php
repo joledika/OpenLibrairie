@@ -5,6 +5,7 @@ use App\Book;
 use App\User;
 use App\Contact;
 use App\Profile;
+use App\Account;
 use App\Category;
 use App\Commentary;
 use App\Downloaded;
@@ -27,6 +28,7 @@ $factory->define(User::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
+        'account_id' => random_int(1, 2),
         'password' => bcrypt('password'), // password
         'remember_token' => Str::random(10),
     ];
@@ -43,6 +45,15 @@ $factory->define(Profile::class, function (Faker $faker) {
         'description' => $faker->text(100),
         'gender' => $gender[random_int(0,1)],
         'phone' => $faker->phoneNumber,
+    ];
+});
+$factory->define(Account::class, function (Faker $faker) {
+
+
+    return [
+        'rank' => random_int(1, 12),
+        'label' => $faker->text(10),
+
     ];
 });
 
@@ -100,4 +111,3 @@ $factory->define(Commentary::class, function (Faker $faker) {
 
     ];
 });
-
