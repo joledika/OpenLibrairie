@@ -34,6 +34,15 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
+$factory->define(Account::class, function (Faker $faker) {
+
+
+  return [
+    'rank' => random_int(1, 12),
+    'label' => $faker->text(10),
+
+  ];
+});
 
 $factory->define(Profile::class, function (Faker $faker) {
 
@@ -47,14 +56,17 @@ $factory->define(Profile::class, function (Faker $faker) {
         'phone' => $faker->phoneNumber,
     ];
 });
-$factory->define(Account::class, function (Faker $faker) {
+
+$factory->define(Contact::class, function (Faker $faker) {
+  return [
+    'facebook' => $faker->text(16),
+    'github' => $faker->text(16),
+    'twitter' => $faker->text(16),
+    'youtube' => $faker->text(16),
 
 
-    return [
-        'rank' => random_int(1, 12),
-        'label' => $faker->text(10),
 
-    ];
+  ];
 });
 
 
@@ -79,17 +91,6 @@ $factory->define(Downloaded::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(Contact::class, function (Faker $faker) {
-    return [
-        'facebook' => $faker->text(16),
-        'github' => $faker->text(16),
-        'twitter' => $faker->text(16),
-        'youtube' => $faker->text(16),
-
-
-
-    ];
-});
 
 $factory->define(Category::class, function (Faker $faker) {
     $couleurs = ['red','primary','pink','yellow','teal','orange'];

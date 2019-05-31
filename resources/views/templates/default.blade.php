@@ -46,9 +46,9 @@
                 <hr>
                   <div class="ui d-flex justify-content-end">
                       <div class="avatar d-flex justify-content-start">
-                            <img style="width:5%" class="ui image circular" src="/storage/{{isset(auth()->user()->profile->picture)?auth()->user()->profile->picture:'users/image/avatar/'.(auth()->user()->profile->gender=='female'?'female':'male').'.png'}}">
-                            {{--  <img style="width:5%" class="ui image circular" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/avatar/'.($user->profile->gender? && $user->profile->gender=='female'?'female':'male').'png'}}">  --}}
-                        {{--  <img style="width:5%" class="ui image circular" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/default.jpg'}}">  --}}
+                            <img style="width:5%;height:100%" class="ui image circular" src="/storage/{{isset(auth()->user()->profile->picture)?auth()->user()->profile->picture:'users/image/avatar/'.(auth()->user()->profile->gender=='female'?'female':'male').'.png'}}">
+                             {{-- <img style="width:5%" class="ui image circular" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/avatar/'.($user->profile->gender? && $user->profile->gender=='female'?'female':'male').'png'}}"> --}}
+                         {{-- <img style="width:5%" class="ui image circular" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/default.jpg'}}"> --}}
                         <p class="ml-2 mt-3">{{auth()->user()->name}}</p class="ml-2 mt-3">
                     </div>
                     <div>
