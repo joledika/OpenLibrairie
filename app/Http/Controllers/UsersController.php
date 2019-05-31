@@ -16,8 +16,8 @@ class UsersController extends Controller
          *
          ******************************************************/
         $users = User::latest()->paginate(16);
-        if(auth()->user()->name=="Mamisoa")
-          return view('pages/admin/membres/index',compact('users'));
+        // if(auth()->user()->name=="Mamisoa")
+        //   return view('pages/admin/membres/index',compact('users'));
 
         return view('pages/membres/index',compact('users'));
     }
@@ -26,7 +26,7 @@ class UsersController extends Controller
     {
         $user = User::where('id' , $id)->with(['profile','contact'])->first();
 
-        if (auth()->user()->name == "Mamisoa") {
+        if (auth()->user()->account->rank == 1) {
         return view('pages/admin/membres/show',compact('user'));
 
         }
@@ -35,20 +35,17 @@ class UsersController extends Controller
 
     public function profile($id)
     {
-        // $user = User::where('id' , $id)->with(['profile','contact'])->first();
+        $user = User::where('id' , $id)->with(['profile','contact'])->first();
 
-        if (auth()->user()->name == "Mamisoa") {
-        return view('pages/admin/membres/profile');
 
-        }
-        // return view('pages/membres/show');
+        return view('pages/membres/show',compact('user'));
     }
 
     public function create($id)
     {
         $user = User::where('id' , $id)->with(['profile'])->first();
 
-        if(auth()->user()->name=="Mamisoa")
+        if(auth()->user()->account->rank == 1)
           return view('pages/admin/membres/edit',compact('user'));
 
         return view('pages/membres/edit',compact('user'));

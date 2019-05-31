@@ -18,7 +18,7 @@ class CategoryController extends Controller
 
       *************************************************/
 
-      if (auth()->user()->name == 'Mamisoa') {
+      if (auth()->user()->account->rank == 1) {
 
         return view('pages/admin/livres/categorie/index',['categories'=> Category::latest()->paginate(10)]);
 
@@ -34,7 +34,7 @@ class CategoryController extends Controller
       retourner la vue formulaire d'ajout de categorie
 
       *************************************************/
-      if (auth()->user()->name == 'Mamisoa') {
+      if (auth()->user()->account->rank == 1) {
         return view('pages/admin/livres/categorie/add');
       }
       return view('pages/livres/categorie/add');
@@ -72,7 +72,7 @@ class CategoryController extends Controller
       *************************************************/
 
       $categorie = Category::where('slug',$slug)->firstOrFail();
-      if (auth()->user()->name == 'Mamisoa') {
+      if (auth()->user()->account->rank == 1) {
         return view('pages/admin/livres/categorie/edit',compact('categorie'));
       }
       return view('pages/livres/categorie/edit',compact('categorie'));

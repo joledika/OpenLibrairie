@@ -13,7 +13,7 @@
 @section('content')
 <div class="ui segments">
   <div class="ui segment">
-    <p>Suject</p>
+    <p>Suject</p
     <p>
       {{ $message->subject }}
     </p>

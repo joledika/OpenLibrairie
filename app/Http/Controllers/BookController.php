@@ -26,7 +26,7 @@ class BookController extends Controller
          ******************************************************/
         $livres = Book::with(['category','user'])->latest()->paginate(20);
 
-        if (auth()->user()->name == "Mamisoa") {
+        if (auth()->user()->account->rank == 1) {
             return view('pages/admin/livres/books',compact('livres'));
 
             }
@@ -39,7 +39,7 @@ class BookController extends Controller
         $categories = Category::get();
         $users = User::all();
 
-        if (auth()->user()->name == "Mamisoa") {
+        if (auth()->user()->account->rank == 1) {
             return view('pages/admin/livres/add',compact('categories','users'));
 
             }
@@ -58,7 +58,7 @@ class BookController extends Controller
         $livre = Book::where('slug',$slug)->firstOrFail();
         $commentaires = Commentary::where('book_id',$livre->id)->get();
 
-        if (auth()->user()->name == "Mamisoa") {
+        if (auth()->user()->account->rank == 1) {
             return view('pages/admin/livres/show',compact('livre','commentaires'));
 
             }
@@ -75,7 +75,7 @@ class BookController extends Controller
          ******************************************************/
         $livre = Book::where('slug',$slug)->first();
 
-        if (auth()->user()->name == "Mamisoa") {
+        if (auth()->user()->account->rank == 1) {
             return view('pages/admin/livres/get',compact('livre'));
 
             }

@@ -22,7 +22,7 @@
           <div class="ui inverted dimmer">
               <div class="content">
               <div class="center">
-                  <a href="{{route('admin_profile_path'),$user->id}}" class="ui primary button"><i class="ui eye icon"></i> voir son profil</a>
+                  <a href="{{route('profile_path',$user->id)}}" class="ui primary button"><i class="ui eye icon"></i> voir son profil</a>
               </div>
               </div>
           </div>

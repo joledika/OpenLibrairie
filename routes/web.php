@@ -87,8 +87,9 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
 
   Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
   Route::get('contact/{id}/show','GuardContactController@show')->name('show_guard_contact_path');
-  Route::get('{id}', 'UsersController@profile')->name('admin_profile_path');
+  Route::get('my/profile/{id}', 'AdminController@profile')->name('admin_profile_path');
   Route::get('home', 'AdminController@index')->name('admin_home_path');
+  Route::get('members', 'AdminController@members')->name('admin_members_path');
 
 });
 
