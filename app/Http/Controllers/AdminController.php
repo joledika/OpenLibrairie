@@ -20,7 +20,7 @@ class AdminController extends Controller
       $commentaires = Commentary::all()->count();
 
       $messages = GuardContact::all()->count();
-
+dd('dmin');
       return view('pages/admin/dashboard',compact('livres','membres','commentaires','messages'));
     }
 }

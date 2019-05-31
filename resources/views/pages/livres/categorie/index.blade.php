@@ -9,7 +9,10 @@
 
 @section('content')
 <div class="d-flex justify-content-end mb-3">
+@if (auth()->user()->account->rank == 1)
+
   <a href="{{ route('add_category_path') }}" class="ui green button"><i class="ui add icon"></i>Ajout</a>
+@endif
     <div class="ui floating dropdown violet labeled icon button">
         <i class="filter icon"></i>
         <span class="text">Filtrer </span>
@@ -71,7 +74,11 @@
 
     <div class="column">
         <div class="ui raised segment">
-        <a href="{{ route('edit_category_path',$category->slug) }}" class="ui {{$category->color}} ribbon label">{{$category->name}}</a>
+          @if (auth()->user()->account->rank == 1)
+          <a href="{{ route('edit_category_path',$category->slug) }}" class="ui {{$category->color}} ribbon label">{{$category->name}}</a>
+
+          @endif
+        <p class="ui {{$category->color}} ribbon label">{{$category->name}}</p>
 
         <p class="text-justify">
             {{$category->description}}
