@@ -82,8 +82,10 @@
       </div>
     </div>
 
+      <div class="mt-5">
 
-
+        @include('templates/partials/_footer')
+      </div>
 
         {{-- LES SCRIPTS UTILISÉS --}}
         @yield('script')
