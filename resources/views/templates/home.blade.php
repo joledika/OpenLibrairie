@@ -71,9 +71,9 @@
         <div class="ui text container">
           <h1 class="ui inverted header">{{env('APP_NAME')}}</h1>
           <h2>Bibliothèque numérique 100% <strong>gratuit</strong> <i class="ui smile icon"></i>.</h2>
-          <div class="ui huge pink button">
+          <a href="{{ route('login') }}" class="ui huge pink button">
             Get Started <i class="right arrow icon"></i>
-          </div>
+          </a>
         </div>
       </div>
       <div class="ui text container">
