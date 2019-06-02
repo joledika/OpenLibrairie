@@ -50,7 +50,7 @@ class LoginController extends Controller
          * *********************************
          ***********************************/
         if(auth()->check())
-            return redirect()->route('members_path');
+            return redirect()->route('dashboard_path');
 
         return view('auth.login');
     }
@@ -83,7 +83,7 @@ class LoginController extends Controller
         {
           auth()->login($user,$request->has('remember'));
 
-          return redirect()->route('books_path');
+          return redirect()->route('dashboard_path');
         }
       }
 

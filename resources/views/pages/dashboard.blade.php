@@ -59,10 +59,10 @@
                             <i class="download icon"></i>
 
                           </button>
-
+                            {{ $livre->downloaded->downloads }}
                           </span>
                           <i class="comment icon"></i>
-                          commentaires
+                          {{$livre->commentaries()->count()}} commentaires
                           </div>
                           </div>
               </div>
@@ -135,10 +135,10 @@
                             <i class="download icon"></i>
 
                           </button>
-
+                            {{ $livre->downloaded->downloads }}
                           </span>
                           <i class="comment icon"></i>
-                          commentaires
+                          {{$livre->commentaries()->count()}} commentaires
                           </div>
                           </div>
               </div>
