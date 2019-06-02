@@ -44,9 +44,12 @@ Route::group(['namespace' => 'Auth'], function() {
 // })->name('home');
 
 
+Route::group(['prefix'=>'members','middleware'=>'auth'],function(){
 
+  Route::get('', 'UsersController@index')->name('members_path');
+  
 
-Route::get('membres', 'UsersController@index')->name('members_path')->middleware('auth');
+});
 // Route::get('posts', 'PostController@index')->name('posts_path');
 // Route::get('posts/{id}', 'PostController@show')->name('post_path');
 

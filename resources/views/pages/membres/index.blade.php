@@ -8,61 +8,36 @@
 
 
 @section('content')
-<div class="filter d-flex justify-content-end">
-    <div class="ui floating dropdown violet labeled icon button">
-        <i class="filter icon"></i>
-        <span class="text">Filtre</span>
-        <div class="menu">
-            <div class="ui icon search input">
-            <i class="search icon"></i>
-            <input type="text" placeholder="Search tags...">
-            </div>
-            <div class="divider"></div>
-            <div class="header">
-            <i class="tags icon"></i>
-            Tag Label
-            </div>
-            <div class="scrolling menu">
-            <div class="item">
-                <div class="ui red empty circular label"></div>
-                Important
-            </div>
-            <div class="item">
-                <div class="ui blue empty circular label"></div>
-                Announcement
-            </div>
-            <div class="item">
-                <div class="ui black empty circular label"></div>
-                Cannot Fix
-            </div>
-            <div class="item">
-                <div class="ui purple empty circular label"></div>
-                News
-            </div>
-            <div class="item">
-                <div class="ui orange empty circular label"></div>
-                Enhancement
-            </div>
-            <div class="item">
-                <div class="ui empty circular label"></div>
-                Change Declined
-            </div>
-            <div class="item">
-                <div class="ui yellow empty circular label"></div>
-                Off Topic
-            </div>
-            <div class="item">
-                <div class="ui pink empty circular label"></div>
-                Interesting
-            </div>
-            <div class="item">
-                <div class="ui green empty circular label"></div>
-                Discussion
-            </div>
-            </div>
-        </div>
-    </div>
-</div>
+  <div class="d-flex justify-content-end">
+
+               {{--  DROPDOWN FILTER  --}}
+               <div class="mr-3">
+                 <div class="ui icon search input">
+                   {{-- <form class="ui form" action="{{route('members_path')}}" method="get">
+                     @csrf
+                     <input type="text" name="recherche" value="{{ $recherche??'' }}" placeholder="recherche">
+                     <button class="ui button" type="submit"><i class="ui icon search input"></i></button>
+                   </form> --}}
+
+                   <form class="ui form" action="{{route('members_path')}}" method="get">
+                   <div class="ui action input">
+                       @csrf
+                       <input type="text" name="recherche" value="{{ $recherche??'' }}" placeholder="Rechercher.....">
+                          <button class="ui icon button">
+                            <i class="search icon"></i>
+                          </button>
+                    </div>
+                  </form>
+                 </div>
+               </div>
+
+
+
+
+  </div>
+
+
+<hr>
 <div class="mt-3">
     <div class="ui four column doubling stackable grid container">
             @forelse($users as $user)

@@ -3,23 +3,41 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Profile;
 use Illuminate\Http\Request;
 use MercurySeries\Flashy\Flashy as flashy;
 
 class UsersController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         /******************************************************
          *
          *Récuperation des utilisateur et renvoyer vers la vue
          *
          ******************************************************/
-        $users = User::latest()->paginate(16);
-        // if(auth()->user()->name=="Mamisoa")
-        //   return view('pages/admin/membres/index',compact('users'));
 
-        return view('pages/membres/index',compact('users'));
+         if($request->recherche)
+         {
+           $recherche = $request->recherche;
+
+            $users = User::where('name','like',"%$recherche%")
+                          ->orWhere('email','like',"%$recherche%")
+                          ->latest()
+                          ->paginate(16);
+
+
+
+
+         }else {
+           $recherche = null;
+           $users = User::latest()->paginate(16);
+         }
+
+
+
+
+        return view('pages/membres/index',compact('users','recherche'));
     }
 
     public function show($id)
