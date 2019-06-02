@@ -26,16 +26,10 @@ class UsersController extends Controller
                           ->latest()
                           ->get();
 
-
-
-
          }else {
            $recherche = null;
            $users = User::latest()->paginate(16);
          }
-
-
-
 
         return view('pages/membres/index',compact('users','recherche'));
     }

@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{asset('dist/semantic.min.css')}}">
     <link href="{{asset('home_page/font-awesome/css/font-awesome.css')}}" rel="stylesheet" />
 
-    {{-- <link href="{{asset('icons/fontawesome.min.css')}}" rel="stylesheet" media="screen"> --}}
+
     <link rel="stylesheet" href="{{asset('css/default.css')}}">
 	<script src="{{asset('js/Jquery.js')}}"></script>
     <script src="{{asset('dist/semantic.min.js')}}"></script>
@@ -49,9 +49,8 @@
 
 
                             <img style="width:5%;height:100%" class="ui image circular" src="/storage/{{isset(auth()->user()->profile->picture)?auth()->user()->profile->picture:'users/image/avatar/'.(auth()->user()->profile->gender=='female'?'female':'male').'.png'}}">
-                             {{-- <img style="width:5%" class="ui image circular" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/avatar/'.($user->profile->gender? && $user->profile->gender=='female'?'female':'male').'png'}}"> --}}
-                         {{-- <img style="width:5%" class="ui image circular" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'books/image/default.jpg'}}"> --}}
-                       <a href="{{ route('profile_path',auth()->user()->id) }}">
+
+                       <a style="color:teal;text-shadow:1px 1px grey" href="{{ route('profile_path',auth()->user()->id) }}">
                         <p class="ml-2 mt-3">{{auth()->user()->name}}</p>
                       </a>
                     </div>

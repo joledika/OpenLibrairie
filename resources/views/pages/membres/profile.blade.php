@@ -1,10 +1,10 @@
 @extends('templates.default')
 
 
-@section('title',"Membres")
-@section('description',"liste des membres")
+@section('title',"Mon compte")
+@section('description',"Profil personnel d'un membre")
 
-@section('heading',"liste des membres")
+@section('heading',"Mon profil")
 
 
 @section('content')
