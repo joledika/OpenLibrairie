@@ -50,7 +50,7 @@
 
                             <img style="width:5%;height:100%" class="ui image circular" src="/storage/{{isset(auth()->user()->profile->picture)?auth()->user()->profile->picture:'users/image/avatar/'.(auth()->user()->profile->gender=='female'?'female':'male').'.png'}}">
 
-                       <a style="color:teal;text-shadow:1px 1px grey" href="{{ route('profile_path',auth()->user()->id) }}">
+                       <a style="color:black;" href="{{ route('profile_path',auth()->user()->id) }}">
                         <p class="ml-2 mt-3">{{auth()->user()->name}}</p>
                       </a>
                     </div>
@@ -58,7 +58,7 @@
                         <form action="{{route('logout')}}" method="get">
                         @csrf
                         <button class="ui orange button" type="submit"><span id="title"><i class="ui logout icon"></i>Déconnexion</span></button>
-                        {{--  <a class="ui orange button" href="{{route('home_path')}}"><span id="title"><i class="ui logout icon"></i>Déconnecter  </span></a>  --}}
+
                     </form>
                     </div>
                   </div>
@@ -69,7 +69,7 @@
           {{-- NAVIGATION --}}
           @include('templates/partials/_navigation')
 
-          <h3 class="ui purge header"><u>@yield('heading',"Titre")</u></h3>
+          <h3 style="color:#1e70bf;font-family:monospace;" class="ui purge header"><u>@yield('heading',"Titre")</u></h3>
 
         </div>
       </div>
