@@ -17,13 +17,16 @@ use MercurySeries\Flashy\Flashy as flashy;
 
 class BookController extends Controller
 {
-    public function index($category = null)
+    public function index($category = null ,Request $request)
     {
         /******************************************************
          *
          *Récuperation des livres et renvoyer vers la vue
          *
          ******************************************************/
+
+
+
 
          if ($category) {
            $cat = Category::where('slug', $category)->first();
@@ -34,12 +37,32 @@ class BookController extends Controller
 
          }
 
+         //s'il y a un recherche a faire
+         if($request->recherche)
+         {
+           $recherche = $request->recherche;
+
+            $livres = Book::where('title','like',"%$recherche%")
+                          ->orWhere('description','like',"%$recherche%")
+                          ->latest()
+                          ->get();
+
+
+
+
+         }else {
+           $recherche = null;
+
+         }
+
+
          if (isset($cat)) {
            if (auth()->user()->account->rank == 1) {
                return view('pages/admin/livres/books',[
                  'livres' => $livres,
                  'categories'=> Category::get(),
                  'cat'=>$cat,
+                 'recherche'=>$recherche,
                ]);
 
                }
@@ -48,6 +71,7 @@ class BookController extends Controller
              'livres' => $livres,
              'categories'=> Category::get(),
              'cat'=>$cat,
+             'recherche'=>$recherche,
            ]);
          }
 
@@ -55,6 +79,7 @@ class BookController extends Controller
             return view('pages/admin/livres/books',[
               'livres' => $livres,
               'categories'=> Category::get(),
+              'recherche'=>$recherche,
             ]);
 
             }
@@ -62,6 +87,7 @@ class BookController extends Controller
         return view('pages/livres/books',[
           'livres' => $livres,
           'categories'=> Category::get(),
+          'recherche'=>$recherche,
         ]);
     }
 

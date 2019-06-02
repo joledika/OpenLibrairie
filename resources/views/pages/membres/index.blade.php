@@ -10,7 +10,7 @@
 @section('content')
   <div class="d-flex justify-content-end">
 
-               
+
                <div class="mr-4">
                  <div class="ui icon search input mr-3">
                   <form class="ui form" action="{{route('members_path')}}" method="get">
@@ -83,8 +83,10 @@
 <hr>
 
 <div class="d-flex justify-content-center mt-4">
-
+@if (!isset($recherche))
   {{$users->links()}}
+
+@endif
 </div>
 
 

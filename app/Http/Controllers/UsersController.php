@@ -24,7 +24,7 @@ class UsersController extends Controller
             $users = User::where('name','like',"%$recherche%")
                           ->orWhere('email','like',"%$recherche%")
                           ->latest()
-                          ->paginate(16);
+                          ->get();
 
 
 

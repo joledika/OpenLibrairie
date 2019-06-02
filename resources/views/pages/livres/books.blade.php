@@ -10,10 +10,22 @@
 @section('content')
 
 
+  <div class="ui icon search input ml-3">
+   <form class="ui form" action="" method="get">
+    <div class="ui action input">
+        @csrf
+        <input type="text" name="recherche" value="{{ $recherche??'' }}" placeholder="Rechercher.....">
+           <button class="ui icon button">
+             <i class="search icon"></i>
+           </button>
+     </div>
+   </form>
+  </div>
+  <hr>
 
 
+                <div class="d-flex justify-content-end mr-4">
 
-        <div class="d-flex justify-content-end">
                 <a title="Voir les catégories" href="{{ route('category') }}" class="ui green button tags icon"><i class="ui tags icon"></i></a>
                 <a title="Ajouter un livre" class="ui blue button plus icon mr-1" href="{{route('add_book_path')}}"><i class="ui plus icon"></i> </a>
                      {{--  DROPDOWN FILTER  --}}
@@ -87,7 +99,7 @@
                             <div class="ui small content">
                                 <div class="right floated meta">{{$livre->created_at->diffForHumans()}}</div>
                                     <img class="ui avatar image" src="/storage/{{isset($livre->user->profile->picture)?$livre->user->profile->picture:'users/image/avatar/'.($livre->user->profile->gender=='female'?'female':'male').'.png'}}">
-                                    
+
                                 </div>
 
                           <div class="blurring dimmable image">
@@ -142,8 +154,10 @@
     <hr>
 
     <div class="d-flex justify-content-center mt-4">
+      @if (!isset($recherche))
+        {{$livres->links()}}
 
-      {{$livres->links()}}
+      @endif
     </div>
 
 
