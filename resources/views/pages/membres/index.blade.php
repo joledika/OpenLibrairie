@@ -10,17 +10,11 @@
 @section('content')
   <div class="d-flex justify-content-end">
 
-               {{--  DROPDOWN FILTER  --}}
-               <div class="mr-3">
-                 <div class="ui icon search input">
-                   {{-- <form class="ui form" action="{{route('members_path')}}" method="get">
-                     @csrf
-                     <input type="text" name="recherche" value="{{ $recherche??'' }}" placeholder="recherche">
-                     <button class="ui button" type="submit"><i class="ui icon search input"></i></button>
-                   </form> --}}
-
-                   <form class="ui form" action="{{route('members_path')}}" method="get">
-                   <div class="ui action input">
+               
+               <div class="mr-4">
+                 <div class="ui icon search input mr-3">
+                  <form class="ui form" action="{{route('members_path')}}" method="get">
+                   <div class="ui action input mr-3">
                        @csrf
                        <input type="text" name="recherche" value="{{ $recherche??'' }}" placeholder="Rechercher.....">
                           <button class="ui icon button">
