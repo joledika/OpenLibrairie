@@ -17,21 +17,52 @@ use MercurySeries\Flashy\Flashy as flashy;
 
 class BookController extends Controller
 {
-    public function index()
+    public function index($category = null)
     {
         /******************************************************
          *
          *Récuperation des livres et renvoyer vers la vue
          *
          ******************************************************/
-        $livres = Book::with(['category','user'])->latest()->paginate(20);
+
+         if ($category) {
+           $cat = Category::where('slug', $category)->first();
+           $livres = Book::where('category_id',$cat->id)->with(['category','user'])->latest()->paginate(20);
+
+         }else{
+           $livres = Book::with(['category','user'])->latest()->paginate(20);
+
+         }
+
+         if (isset($cat)) {
+           if (auth()->user()->account->rank == 1) {
+               return view('pages/admin/livres/books',[
+                 'livres' => $livres,
+                 'categories'=> Category::get(),
+                 'cat'=>$cat,
+               ]);
+
+               }
+
+           return view('pages/livres/books',[
+             'livres' => $livres,
+             'categories'=> Category::get(),
+             'cat'=>$cat,
+           ]);
+         }
 
         if (auth()->user()->account->rank == 1) {
-            return view('pages/admin/livres/books',compact('livres'));
+            return view('pages/admin/livres/books',[
+              'livres' => $livres,
+              'categories'=> Category::get(),
+            ]);
 
             }
 
-        return view('pages/livres/books',compact('livres'));
+        return view('pages/livres/books',[
+          'livres' => $livres,
+          'categories'=> Category::get(),
+        ]);
     }
 
     public function add()

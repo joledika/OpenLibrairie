@@ -13,60 +13,59 @@
 
 
 
-        <div class="d-flex justify-content-end mb-3">
-                <a href="{{ route('category') }}" class="ui green button"><i class="ui tags icon"></i>Catégories</a>
-                <a class="ui blue button mr-3" href="{{route('add_book_path')}}"><i class="ui plus icon"></i> Ajout</a>
+        <div class="d-flex justify-content-end">
+                <a title="Voir les catégories" href="{{ route('category') }}" class="ui green button tags icon"><i class="ui tags icon"></i></a>
+                <a title="Ajouter un livre" class="ui blue button plus icon mr-1" href="{{route('add_book_path')}}"><i class="ui plus icon"></i> </a>
                      {{--  DROPDOWN FILTER  --}}
-            <div class="ui multiple dropdown">
-                <input type="hidden" name="filters">
-                <i class="filter icon"></i>
-                <span class="text">Filter Posts</span>
-                <div class="menu">
-                  <div class="ui icon search input">
-                    <i class="search icon"></i>
-                    <input type="text" placeholder="Search tags...">
-                  </div>
-                  <div class="divider"></div>
-                  <div class="header">
-                    <i class="tags icon"></i>
-                    Tag Label
-                  </div>
-                    <div class="scrolling menu">
-                        <div class="item" data-value="important">
-                            <div class="ui red empty circular label"></div>
-                        Important
-                        </div>
-                        <div class="item" data-value="announcement">
-                            <div class="ui blue empty circular label"></div>
-                        Announcement
-                        </div>
-                        <div class="item" data-value="cannotfix">
-                        <div class="ui black empty circular label"></div>
-                      Cannot Fix
-                    </div>
-                    <div class="item" data-value="news">
-                      <div class="ui purple empty circular label"></div>
-                      News
-                    </div>
-                    <div class="item" data-value="enhancement">
-                      <div class="ui orange empty circular label"></div>
-                      Enhancement
-                    </div>
-                    <div class="item" data-value="off-topic">
-                      <div class="ui yellow empty circular label"></div>
-                      Off Topic
-                    </div>
-                    <div class="item" data-value="interesting">
-                      <div class="ui pink empty circular label"></div>
-                      Interesting
-                    </div>
-                    <div class="item" data-value="discussion">
-                      <div class="ui green empty circular label"></div>
-                      Discussion
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+
+                     <div class="ui floating dropdown labeled icon button">
+                         <i class="filter icon"></i>
+                         <span class="text">
+                           @if(isset($cat))
+
+                           <span  class="item">
+                               <div class="ui {{$cat->color}} empty circular label"></div>
+                               {{ $cat->name }}
+                           </span>
+                         @else
+                           Filtre
+                         @endif
+                         </span>
+
+                         <div class="menu">
+                             <div class="ui icon search input">
+                             <i class="search icon"></i>
+                             <input type="text" placeholder="Search tags...">
+                             </div>
+                             <div class="divider"></div>
+                             @if(isset($cat))
+                               <div style="background-color:pink" class="header p-4">
+
+
+                               <a href="{{ route('books_path') }}" style="color:crimson;cursor:pointer" >
+                                 <i class="delete icon"></i>
+                                 <code>Effacer le filtre</code>
+                               </a>
+                               </div>
+                            @endif
+                             <div class="divider"></div>
+                             <div class="header">
+                             <i class="tags icon"></i>
+                             Catégorie
+                             </div>
+                             <div class="scrolling menu">
+                               @foreach($categories as $category)
+                               <a href="{{ route('books_filter_path',$category->slug) }}" class="item">
+                                   <div class="ui {{$category->color}} empty circular label"></div>
+                                   {{ $category->name }}
+                               </a>
+                             @endforeach
+                           </div>
+                         </div>
+                     </div>
+
         </div>
 
 
@@ -88,7 +87,7 @@
                             <div class="ui small content">
                                 <div class="right floated meta">{{$livre->created_at->diffForHumans()}}</div>
                                     <img class="ui avatar image" src="/storage/{{isset($livre->user->profile->picture)?$livre->user->profile->picture:'users/image/avatar/'.($livre->user->profile->gender=='female'?'female':'male').'.png'}}">
-                                    {{$livre->user->name}}
+                                    
                                 </div>
 
                           <div class="blurring dimmable image">
@@ -109,7 +108,7 @@
 
 
                           <div class="meta ml-3">
-                                <a class="ui {{$livre->category->color}} small left ribbon label">{{$livre->category->name}}</a>
+                                <a href="{{ route('books_filter_path',$livre->category) }}" class="ui {{$livre->category->color}} small left ribbon label">{{$livre->category->name}}</a>
 
                             </div>
 
