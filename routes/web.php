@@ -82,6 +82,8 @@ Route::group(['prefix'=>'book','middleware'=>'auth'],function(){
 // Route::view('message', 'pages/admin/messages/index');
 // Route::view('admin/membres', 'pages/admin/membres/index');
 // Route::view('admin/dashboard', 'pages/admin/dashboard');
+// Route::view('msg', 'pages/contacts/index');
+Route::get('msg', 'MessageController@index')->name('message_path');
 Route::get('dashboard', 'DashboardController@index')->name('dashboard_path');
 
 

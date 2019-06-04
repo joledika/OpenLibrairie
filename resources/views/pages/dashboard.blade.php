@@ -35,11 +35,11 @@
                           <div class="ui dimmer">
                             <div class="content">
                               <div class="center">
-                                <a href="" class="ui inverted button"><i class="ui eye icon"></i> Regarder</a>
+                                <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="ui inverted button"><i class="ui eye icon"></i> Regarder</a>
                               </div>
                             </div>
                           </div>
-                          {{-- <img style="height:250px;"  src="/storage/{{isset($liv re->image)?$livre->image:'books/image/default.jpg'}}"> --}}
+
                           <img style="height:250px;"  src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
 
                         </div>
@@ -87,6 +87,7 @@
 
   <div class="ui section divider"></div>
   <h3 style="color:teal" class="ui header"><i class="star icon"></i>Top livres</h3>
+
 <div class="ui section divider"></div>
 
   <div class="ui four column doubling stackable grid container">
@@ -111,11 +112,11 @@
                           <div class="ui dimmer">
                             <div class="content">
                               <div class="center">
-                                <a href="" class="ui inverted button"><i class="ui eye icon"></i> Regarder</a>
+                                <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="ui inverted button"><i class="ui eye icon"></i> Regarder</a>
                               </div>
                             </div>
                           </div>
-                          {{-- <img style="height:250px;"  src="/storage/{{isset($liv re->image)?$livre->image:'books/image/default.jpg'}}"> --}}
+
                           <img style="height:250px;"  src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
 
                         </div>
