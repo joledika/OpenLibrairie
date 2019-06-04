@@ -63,6 +63,9 @@ Route::group(['prefix'=>'book','middleware'=>'auth'],function(){
   Route::get('index/{category}', 'BookController@index')->name('books_filter_path');
   Route::get('{categorie}/{slug}', 'BookController@show')->name('book_path');
   Route::post('{categorie}/{slug}', 'CommentaryController@store')->name('add_commentary_path');
+  Route::get('{categorie}/{slug}/comment/{id}/edit', 'CommentaryController@edit')->name('edit_commentary_path');
+  Route::put('{categorie}/{slug}/comment/{id}/update', 'CommentaryController@update')->name('update_commentary_path');
+  Route::delete('{categorie}/{slug}/comment/{id}/delete', 'CommentaryController@destroy')->name('delete_commentary_path');
   Route::get('get/{categorie}/{slug}', 'BookController@get')->name('get_book_path');
 
   Route::put('down/{categorie}/{slug}', 'DownloadedController@update')->name('download_book_path');
@@ -74,6 +77,7 @@ Route::group(['prefix'=>'book','middleware'=>'auth'],function(){
   Route::delete('{id}/delete','BookController@destroy')->name('delete_book_path');
 
 });
+
 
 // Route::view('livre', 'pages/livres/show');
 // Route::view('get', 'pages/livres/get');

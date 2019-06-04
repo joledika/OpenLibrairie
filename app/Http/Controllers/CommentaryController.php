@@ -40,4 +40,32 @@ class CommentaryController extends Controller
          **********************************************************/
         return redirect()->back();
     }
+
+
+    public function edit($category,$slug,$id)
+    {
+      $commentary = Commentary::where('id',$id)->firstOrFail();
+      return view('pages/livres/commentaires/edit',compact('category','slug','commentary'));
+    }
+
+    public function update(CommentaryRequest $request,$category,$slug,$id)
+    {
+      $commentary = Commentary::where('id',$id)->firstOrFail();
+      $commentary->update([
+        'commentary'=>$request->commentary,
+      ]);
+
+
+      Flashy::message('modification éffectué');
+      return redirect()->route('book_path',[$category,$slug]);
+    }
+
+    public function destroy($category,$slug,$id)
+    {
+      $commentaire = Commentary::where('id',$id)->firstOrFail();
+      $commentaire->delete();
+
+      Flashy::message('Commentaire effacé avec succés');
+      return redirect()->route('book_path',[$category,$slug]);
+    }
 }

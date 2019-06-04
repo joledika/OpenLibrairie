@@ -51,14 +51,14 @@
         </div>
 
     </div>
-
+    <hr>
     <div class="ui comments">
         @forelse($commentaires as $commentaire)
 
 
         <div class="comment">
             <a class="avatar">
-            <img src="{{asset('img/elliot.jpg')}}">
+            <img src="/storage/{{isset($commentaire->user->profile->picture)?$commentaire->user->profile->picture:'users/image/avatar/'.($commentaire->user->profile->gender=='female'?'female':'male').'.png'}}">
             </a>
             <div class="content">
             <a class="author">{{$commentaire->user->name}}</a>
@@ -70,13 +70,23 @@
                 <p class="mt-3">
                     {!! $commentaire->commentary !!}
                 </p>
-
+            @if(auth()->user()->id == $commentaire->user_id)
+            <div class="d-flex justify-content-end">
+              <a href="{{ route('edit_commentary_path',[$livre->category->name,$livre->slug,$commentaire->id]) }}" class="ui small purple button"><i class="edit icon"></i>modifier</a>
+              <form action="{{ route('delete_commentary_path',[$livre->category->name,$livre->slug,$commentaire->id])  }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="ui small orange button"><i class="trash icon"></i>supprimer</button>
+              </form>
+            </div>
+            @endif
             </div>
           </div>
         </div>
         <hr>
         @empty
         @endforelse
+
     </div>
 
 
@@ -92,7 +102,7 @@
             @endif
             </div>
             <div class="d-flex justify-content-end">
-                <button class="ui primary button" type="submit"><span id="title"><i class="ui add icon"></i>Ajouter commentaire</span></button>
+                <button class="ui primary button" type="submit"><span id="title"><i class="ui comment icon"></i>commenter</span></button>
             </div>
         </form>
 
