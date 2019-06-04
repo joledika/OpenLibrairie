@@ -43,7 +43,6 @@ class BookController extends Controller
            $recherche = $request->recherche;
 
             $livres = Book::where('title','like',"%$recherche%")
-                          ->orWhere('description','like',"%$recherche%")
                           ->latest()
                           ->get();
 

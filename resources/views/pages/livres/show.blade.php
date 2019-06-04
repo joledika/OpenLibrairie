@@ -1,10 +1,18 @@
 @extends('templates.default')
 
 
-{{--  @section('title',"Livres")
-@section('description',"liste des livres")
+ @section('title')
+   {{ $livre->title }}
+ @stop
+@section('description')
+  {{ str_limit($livre->description,100) }}
 
-@section('heading',"liste des livres")  --}}
+@stop
+
+@section('heading')
+
+{{ $livre->title }}
+@stop
 
 
 @section('content')
@@ -24,7 +32,8 @@
 
         </form>
     @endif
-        {{-- <a href="{{route('get_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny green button" type="submit"><i class="download icon"></i>télécharger</a> --}}
+
+      
         <form action="{{route('download_book_path',[$livre->category->name,$livre->slug])}}" method="post">
           @csrf
           @method('PUT')
@@ -35,7 +44,13 @@
 
     <div style="margin-top:10px">
         <img class="ui medium centered image" src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}"   >
+        <div class="text-center mt-3">
+          <p class="ui tiny header" style="color:teal">Livre de <br></p>
+          <img class="ui avatar image" src="/storage/{{isset($livre->user->profile->picture)?$livre->user->profile->picture:'users/image/avatar/'.($livre->user->profile->gender=='female'?'female':'male').'.png'}}">
+          <p><code>{{ $livre->user->name }}</code></p>
+        </div>
     </div>
+
     <div class="ui one column grid mt-2">
 
         <div class="column">

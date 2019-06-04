@@ -11,7 +11,7 @@
 
 <div class="mt-3">
 
-        <form action="{{url('books/add')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('store_book_path')}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                     <div class="ui form">

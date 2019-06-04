@@ -73,7 +73,7 @@ Route::group(['prefix'=>'book','middleware'=>'auth'],function(){
   Route::put('get/{categorie}/{slug}', 'BookController@update')->name('put_book_path');;
   Route::get('edit/{categorie}/{slug}', 'BookController@create')->name('edit_book_path');
   Route::get('add','BookController@add')->name('add_book_path');
-  Route::post('add','BookController@store');
+  Route::post('add','BookController@store')->name('store_book_path');
   Route::delete('{id}/delete','BookController@destroy')->name('delete_book_path');
 
 });

@@ -46,10 +46,10 @@
                         </div>
                         </div>
                     </div>
-                    <img style="height:250px;" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'users/image/avatar/'.($user->profile->gender=='female'?'female':'male').'.png'}}">
+                    <img class="ui image" style="height:200px;" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'users/image/avatar/'.($user->profile->gender=='female'?'female':'male').'.png'}}">
                     </div>
                     <div class="content">
-                    <a class="header text-center">{{$user->name}}</a>
+                    <a style="font-family:monospace" href="profil/{{$user->id}}" class="header text-center">{{$user->name}}</a>
                     <div class="meta text-center">
                         <span class="text">{{$user->email}}</span>
                     </div>

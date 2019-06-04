@@ -44,17 +44,18 @@
                 {{env('APP_NAME')}}
             </div>
                 <hr>
-                  <div class="ui d-flex justify-content-end">
-                      <div class="avatar d-flex justify-content-start">
+                <div>
+                  <div class="ui d-flex justify-content-between  text-center">
+                      <div style="display:inline-block;">
 
 
-                            <img style="width:5%;height:100%" class="ui image circular" src="/storage/{{isset(auth()->user()->profile->picture)?auth()->user()->profile->picture:'users/image/avatar/'.(auth()->user()->profile->gender=='female'?'female':'male').'.png'}}">
+                            <img class="ui avatar image" src="/storage/{{isset(auth()->user()->profile->picture)?auth()->user()->profile->picture:'users/image/avatar/'.(auth()->user()->profile->gender=='female'?'female':'male').'.png'}}">
 
                        <a style="color:black;" href="{{ route('profile_path',auth()->user()->id) }}">
-                        <p class="ml-2 mt-3">{{auth()->user()->name}}</p>
+                        <p class="mt-2"><code>{{auth()->user()->name}}</code></p>
                       </a>
                     </div>
-                    <div>
+                    <div class="ml-4 d-flex justify-content-end">
                         <form action="{{route('logout')}}" method="get">
                         @csrf
                         <button class="ui orange button" type="submit"><span id="title"><i class="ui logout icon"></i>Déconnexion</span></button>
@@ -62,6 +63,7 @@
                     </form>
                     </div>
                   </div>
+                </div>
             </div>
           </h2>
 
