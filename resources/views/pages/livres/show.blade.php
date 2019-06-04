@@ -65,13 +65,14 @@
             <div class="metadata">
                 <div class="date">{{$commentaire->created_at->diffForHumans()}}</div>
             </div>
-            <div class="text">
-                <p>
+
+            <div class="text-justify">
+                <p class="mt-3">
                     {!! $commentaire->commentary !!}
                 </p>
 
             </div>
-
+          </div>
         </div>
         <hr>
         @empty
@@ -94,7 +95,7 @@
                 <button class="ui primary button" type="submit"><span id="title"><i class="ui add icon"></i>Ajouter commentaire</span></button>
             </div>
         </form>
-    </div>
+
 
 
 
