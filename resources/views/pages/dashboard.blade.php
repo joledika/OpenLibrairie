@@ -40,11 +40,11 @@
                             </div>
                           </div>
 
-                          <img style="height:250px;"  src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
+                          <img class="ui image" style="height:200px;"  src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
 
                         </div>
                         <div class="content text-center">
-                          <a href="" class="header"></a>
+                          <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="header">{{ $livre->title }}</a>
 
                         </div>
 
@@ -55,16 +55,18 @@
                           </div>
 
                           <div class="content">
-                          <span class="right floated">
+                            <span class="right floated" style="{{ $livre->downloaded->downloads != 0 ? "color:teal" : ""}}">
                             <i class="download icon"></i>
 
                           </button>
                             {{ $livre->downloaded->downloads }}
                           </span>
+                          <div style='{{ $livre->commentaries()->count() != 0 ? "color:teal " : "color:grey"}}'>
                           <i class="comment icon"></i>
                           {{$livre->commentaries()->count()}} commentaires
                           </div>
                           </div>
+                        </div>
               </div>
       </div>
 
@@ -117,11 +119,11 @@
                             </div>
                           </div>
 
-                          <img style="height:250px;"  src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
+                          <img class="ui image" style="height:200px;"  src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}">
 
                         </div>
                         <div class="content text-center">
-                          <a href="" class="header"></a>
+                          <a href="{{route('book_path',[$livre->category->name,$livre->slug])}}" class="header">{{ $livre->title }}</a>
 
                         </div>
 
@@ -132,14 +134,16 @@
                           </div>
 
                           <div class="content">
-                          <span class="right floated">
+                          <span class="right floated" style="{{ $livre->downloaded->downloads != 0 ? "color:teal" : ""}}">
                             <i class="download icon"></i>
 
                           </button>
                             {{ $livre->downloaded->downloads }}
                           </span>
+                          <div style='{{ $livre->commentaries()->count() != 0 ? "color:teal " : "color:grey"}}'>
                           <i class="comment icon"></i>
                           {{$livre->commentaries()->count()}} commentaires
+                          </div>
                           </div>
                           </div>
               </div>

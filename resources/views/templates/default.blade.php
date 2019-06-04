@@ -37,7 +37,7 @@
         <div class="ui container">
             <div class="text-center">
                 <h2 class="ui huge header text-center">
-                    <a href="{{route('home_path')}}"><span id="title"><i class="ui book icon"></i>OL </span></a>
+                    <a class="ui" href="{{route('home_path')}}"><span id="title"><i class="ui book icon"></i>OL </span></a>
             </div>
             <div id="subtitle" class="sub header">
                 <div class="text-center">
@@ -45,7 +45,7 @@
             </div>
                 <hr>
                 <div>
-                  <div class="ui d-flex justify-content-between  text-center">
+                  <div class="ui d-flex justify-content-between text-center">
                       <div style="display:inline-block;">
 
 
@@ -55,6 +55,11 @@
                         <p class="mt-2"><code>{{auth()->user()->name}}</code></p>
                       </a>
                     </div>
+                    @if(auth()->user()->account->rank == 1)
+                    <div class="text-center" style="margin-left:8%;">
+                      <a title="Espace d'administration" class="ui black button ml-5" href="#"><i class="icon user secret"></i>Administration</a>
+                    </div>
+                    @endif
                     <div class="ml-4 d-flex justify-content-end">
                         <form action="{{route('logout')}}" method="get">
                         @csrf
