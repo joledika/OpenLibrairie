@@ -56,15 +56,15 @@ class BookController extends Controller
 
 
          if (isset($cat)) {
-           if (auth()->user()->account->rank == 1) {
-               return view('pages/admin/livres/books',[
-                 'livres' => $livres,
-                 'categories'=> Category::get(),
-                 'cat'=>$cat,
-                 'recherche'=>$recherche,
-               ]);
-
-               }
+           // if (auth()->user()->account->rank == 1) {
+           //     return view('pages/admin/livres/books',[
+           //       'livres' => $livres,
+           //       'categories'=> Category::get(),
+           //       'cat'=>$cat,
+           //       'recherche'=>$recherche,
+           //     ]);
+           //
+           //     }
 
            return view('pages/livres/books',[
              'livres' => $livres,
@@ -74,14 +74,14 @@ class BookController extends Controller
            ]);
          }
 
-        if (auth()->user()->account->rank == 1) {
-            return view('pages/admin/livres/books',[
-              'livres' => $livres,
-              'categories'=> Category::get(),
-              'recherche'=>$recherche,
-            ]);
-
-            }
+        // if (auth()->user()->account->rank == 1) {
+        //     return view('pages/admin/livres/books',[
+        //       'livres' => $livres,
+        //       'categories'=> Category::get(),
+        //       'recherche'=>$recherche,
+        //     ]);
+        //
+        //     }
 
         return view('pages/livres/books',[
           'livres' => $livres,
@@ -95,10 +95,10 @@ class BookController extends Controller
         $categories = Category::get();
         $users = User::all();
 
-        if (auth()->user()->account->rank == 1) {
-            return view('pages/admin/livres/add',compact('categories','users'));
-
-            }
+        // if (auth()->user()->account->rank == 1) {
+        //     return view('pages/admin/livres/add',compact('categories','users'));
+        //
+        //     }
         return view('pages/livres/add',compact('categories','users'));
     }
 
@@ -114,10 +114,10 @@ class BookController extends Controller
         $livre = Book::where('slug',$slug)->firstOrFail();
         $commentaires = Commentary::where('book_id',$livre->id)->get();
 
-        if (auth()->user()->account->rank == 1) {
-            return view('pages/admin/livres/show',compact('livre','commentaires'));
-
-            }
+        // if (auth()->user()->account->rank == 1) {
+        //     return view('pages/admin/livres/show',compact('livre','commentaires'));
+        //
+        //     }
 
         return view('pages/livres/show',compact('livre','commentaires'));
     }
@@ -131,10 +131,10 @@ class BookController extends Controller
          ******************************************************/
         $livre = Book::where('slug',$slug)->first();
 
-        if (auth()->user()->account->rank == 1) {
-            return view('pages/admin/livres/get',compact('livre'));
-
-            }
+        // if (auth()->user()->account->rank == 1) {
+        //     return view('pages/admin/livres/get',compact('livre'));
+        //
+        //     }
 
         return view('pages/livres/get',compact('livre'));
     }
