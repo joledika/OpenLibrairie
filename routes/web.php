@@ -13,6 +13,12 @@
 |
 */
 Route::view('adm','administration/layout/master');
+Route::view('adm/membres','administration/membres/index');
+Route::view('adm/livres','administration/livres/index');
+Route::view('adm/mails','administration/mails/index');
+Route::view('adm/profil','administration/profils/show');
+Route::view('adm/dashboard','administration/welcome');
+
 
 Route::get('/', function () {
     return view('welcome');

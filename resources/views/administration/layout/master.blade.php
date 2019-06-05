@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <!-- Required meta tags-->
@@ -10,14 +10,15 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>{{env('APP_NAME')}} | admin | @yield('title','dashboard')</title>
 
     <!-- Fontfaces CSS-->
-    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="{{asset('dist/components/icon.min.css')}}">
+    <link href="{{asset('css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/font-awesome-5/css/fontawesome-all.min.css')}}" rel="stylesheet" media="all">
     <link href="{{asset('admin/vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
-
+    <link rel="shortcut icon" href="{{asset('icons/favicon.png')}}" alt="{{env('APP_NAME')}}">
     <!-- Bootstrap CSS-->
     <link href="{{asset('admin/vendor/bootstrap-4.1/bootstrap.min.css')}}" rel="stylesheet" media="all">
 
