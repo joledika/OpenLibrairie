@@ -29,8 +29,8 @@
                     <a href="#">
                         <i class="fas fa-envelope"></i>Mails</a>
                 </li>
-                <li>
-                    <a href="map.html">
+                <li class="{{set_active_route('admin_profile_path')}}">
+                    <a href="{{route('admin_profile_path')}}">
                         <i class="fas fa-user"></i>Comptes</a>
                 </li>
 
