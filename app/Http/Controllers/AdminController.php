@@ -26,8 +26,8 @@ class AdminController extends Controller
 
     public function members()
     {
-      $users = User::latest()->paginate(16);
-      return view('pages/admin/membres/index',compact('users'));
+      $users = User::latest()->paginate(15);
+      return view('administration/membres/index',compact('users'));
     }
 
     public function profile($id)

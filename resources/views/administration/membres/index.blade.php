@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="row">
-  @for ($i=1; $i < 5; $i++)
+  @forelse($users as $user)
 
 
   <div class="col-md-4">
@@ -15,10 +15,13 @@
         </div>
         <div class="card-body">
             <div class="mx-auto d-block">
-                <img class="rounded-circle mx-auto d-block" src="{{asset('home/img/team/'.$i.'.jpg')}}" alt="Card image cap">
-                <h5 class="text-sm-center mt-2 mb-1">Steven Lee</h5>
+                <img class="image rounded mx-auto d-block"
+                  style="height:250px;"
+                  src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'users/image/avatar/'.($user->profile->gender=='female'?'female':'male').'.png'}}"
+                  alt="Card image cap">
+                <h5 class="text-sm-center mt-2 mb-1">{{$user->name}}</h5>
                 <div class="location text-sm-center">
-                    <i class="mail icon"></i> California, United States</div>
+                    <i class="mail icon"></i> {{$user->email}}</div>
             </div>
             <hr>
             <div class="card-text text-sm-center">
@@ -38,7 +41,16 @@
         </div>
     </div>
 </div>
-@endfor
+@empty
+@endforelse
+</div>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3 mr-auto ml-auto">
+    
+      <div class="card-body text-secondary">{{$users->links()}}</div>
+    
+  </div>
 </div>
 
 @endsection

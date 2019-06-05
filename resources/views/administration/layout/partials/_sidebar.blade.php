@@ -14,7 +14,7 @@
 
                 </li>
                 <li>
-                    <a href="chart.html">
+                    <a href="{{route('admin_members_path')}}">
                         <i class="fas fa-users"></i>Membres</a>
                 </li>
                 <li>
