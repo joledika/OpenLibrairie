@@ -57,7 +57,7 @@
                     </div>
                     @if(auth()->user()->account->rank == 1)
                     <div class="text-center" style="margin-left:8%;">
-                      <a title="Espace d'administration" class="ui black button ml-5" href="#"><i class="icon user secret"></i>Administration</a>
+                      <a title="Espace d'administration" class="ui black button ml-5" href="{{ route('admin_home_path') }}"><i class="icon user secret"></i>Administration</a>
                     </div>
                     @endif
                     <div class="ml-4 d-flex justify-content-end">

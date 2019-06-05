@@ -153,8 +153,8 @@
                                             <i class="zmdi zmdi-settings"></i>Setting</a>
                                     </div>
                                     <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-money-box"></i>Billing</a>
+                                        <a href="{{ route('dashboard_path') }}">
+                                            <i class="zmdi zmdi-home"></i>Espace membres</a>
                                     </div>
                                 </div>
                                 <div class="account-dropdown__footer">
