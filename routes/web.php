@@ -29,6 +29,7 @@ Route::group(['prefix'=>'adm','middleware'=>'admin'],function(){
   Route::get('my/profile/{id}', 'AdminController@profile')->name('admin_profile_path');
   Route::get('home', 'AdminController@index')->name('admin_home_path');
   Route::get('members', 'AdminController@members')->name('admin_members_path');
+  Route::get('livres', 'AdminController@books')->name('admin_books_path');
 
 });
 

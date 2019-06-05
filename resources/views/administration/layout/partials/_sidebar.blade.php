@@ -8,17 +8,17 @@
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
-                <li class="active has-sub">
+                <li class="{{set_active_route('admin_home_path')}} has-sub">
                     <a class="js-arrow" href="{{ route('admin_home_path') }}">
                         <i class="fas fa-tachometer-alt"></i>Dashboard</a>
 
                 </li>
-                <li>
+                <li class="{{set_active_route('admin_members_path')}}">
                     <a href="{{route('admin_members_path')}}">
                         <i class="fas fa-users"></i>Membres</a>
                 </li>
-                <li>
-                    <a href="table.html">
+                <li class="{{set_active_route('admin_books_path')}}">
+                    <a href="{{route('admin_books_path')}}">
                         <i class="fas fa-book"></i>Livres</a>
                 </li>
                 <li>
