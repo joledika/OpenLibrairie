@@ -13,7 +13,7 @@
                         <i class="zmdi zmdi-account-o"></i>
                     </div>
                     <div class="text">
-                        <h2>10368</h2>
+                        <h2>{{$membres}}</h2>
                         <span>Nombres membres</span>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                         <i class="zmdi zmdi-book"></i>
                     </div>
                     <div class="text">
-                        <h2>388,688</h2>
+                        <h2>{{$livres}}</h2>
                         <span>Nombres livres</span>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                         <i class="zmdi zmdi-calendar-note"></i>
                     </div>
                     <div class="text">
-                        <h2>1,086</h2>
+                        <h2>{{$messages}}</h2>
                         <span>Nombres des mails</span>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                         <i class="zmdi zmdi-comment"></i>
                     </div>
                     <div class="text">
-                        <h2>$1,060,386</h2>
+                        <h2>{{$commentaires}}</h2>
                         <span>Commentaires</span>
                     </div>
                 </div>

@@ -17,7 +17,20 @@ Route::view('adm/membres','administration/membres/index');
 Route::view('adm/livres','administration/livres/index');
 Route::view('adm/mails','administration/mails/index');
 Route::view('adm/profil','administration/profils/show');
-Route::view('adm/dashboard','administration/welcome');
+// Route::view('adm/dashboard','administration/welcome');
+
+/***************************************************************
+ ***********Route pour l'espace administration*****************
+ ***************************************************************/
+Route::group(['prefix'=>'adm','middleware'=>'admin'],function(){
+
+  Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
+  Route::get('contact/{id}/show','GuardContactController@show')->name('show_guard_contact_path');
+  Route::get('my/profile/{id}', 'AdminController@profile')->name('admin_profile_path');
+  Route::get('home', 'AdminController@index')->name('admin_home_path');
+  Route::get('members', 'AdminController@members')->name('admin_members_path');
+
+});
 
 
 Route::get('/', function () {
@@ -98,18 +111,18 @@ Route::get('msg', 'MessageController@index')->name('message_path');
 Route::get('dashboard', 'DashboardController@index')->name('dashboard_path');
 
 
-/***************************************************************
- ***********Route pour l'espace administration*****************
- ***************************************************************/
-Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
-
-  Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
-  Route::get('contact/{id}/show','GuardContactController@show')->name('show_guard_contact_path');
-  Route::get('my/profile/{id}', 'AdminController@profile')->name('admin_profile_path');
-  Route::get('home', 'AdminController@index')->name('admin_home_path');
-  Route::get('members', 'AdminController@members')->name('admin_members_path');
-
-});
+// /***************************************************************
+//  ***********Route pour l'espace administration*****************
+//  ***************************************************************/
+// Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
+//
+//   Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
+//   Route::get('contact/{id}/show','GuardContactController@show')->name('show_guard_contact_path');
+//   Route::get('my/profile/{id}', 'AdminController@profile')->name('admin_profile_path');
+//   Route::get('home', 'AdminController@index')->name('admin_home_path');
+//   Route::get('members', 'AdminController@members')->name('admin_members_path');
+//
+// });
 
 /***************************************************************
 ********************Route pour les catégories*******************

@@ -21,7 +21,7 @@ class AdminController extends Controller
 
       $messages = GuardContact::all()->count();
 
-      return view('pages/admin/dashboard',compact('livres','membres','commentaires','messages'));
+      return view('administration/welcome',compact('livres','membres','commentaires','messages'));
     }
 
     public function members()
