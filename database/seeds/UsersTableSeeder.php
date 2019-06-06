@@ -43,11 +43,16 @@ class UsersTableSeeder extends Seeder
                 'category_id'=>$category->random()->id,
             ]);
 
-            $book->each(function ($book){
+            $book->each(function ($book) use ($user) {
                 factory('App\Downloaded',1)->create([
                     'book_id'=>$book->id,
 
                 ]);
+
+             // factory('App\Commentary',6)->create([
+             //        'book_id'=>$book->id,
+             //        'user_id'=>$user->id,
+             //    ]);
 
 
 

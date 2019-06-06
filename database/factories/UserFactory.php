@@ -34,15 +34,18 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(Account::class, function (Faker $faker) {
+
+  $factory->define(Account::class, function (Faker $faker) {
 
 
-  return [
-    'rank' => random_int(1, 12),
-    'label' => $faker->text(10),
+    return [
+      'rank' => $faker->randomDigitNotNull,
+      'label' => $faker->text(10),
 
-  ];
-});
+    ];
+  });
+
+
 
 $factory->define(Profile::class, function (Faker $faker) {
 
@@ -54,6 +57,7 @@ $factory->define(Profile::class, function (Faker $faker) {
         'description' => $faker->text(100),
         'gender' => $gender[random_int(0,1)],
         'phone' => $faker->phoneNumber,
+        'birth' =>$faker->date,
     ];
 });
 
@@ -72,7 +76,7 @@ $factory->define(Contact::class, function (Faker $faker) {
 
 $factory->define(Book::class, function (Faker $faker) {
     return [
-        'title' => $faker->title,
+        'title' => $faker->name,
         'description' => $faker->text(900),
 
         'book'=>$faker->paragraph,
@@ -93,9 +97,9 @@ $factory->define(Downloaded::class, function (Faker $faker) {
 
 
 $factory->define(Category::class, function (Faker $faker) {
-    $couleurs = ['red','primary','pink','yellow','teal','orange'];
+    $couleurs = ['red','primary','pink','yellow','violet','black','teal','orange'];
     return [
-        'color' => $couleurs[random_int(0,5)],
+        'color' => $couleurs[random_int(0,7)],
         'description' => $faker->text(60),
         'name' => $faker->name,
 
@@ -112,3 +116,7 @@ $factory->define(Commentary::class, function (Faker $faker) {
 
     ];
 });
+
+
+
+
