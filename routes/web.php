@@ -33,11 +33,11 @@ Route::group(['prefix'=>'adm','middleware'=>'admin'],function(){
 
 });
 
-Route::group(['middleware'=>'confirmed'],function(){
-  Route::get('/', function () {
-      return view('welcome');
-  })->name('home_path');
-});
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('home_path');
+
 
 Route::get('contact', function () {
     return view('home/contact');
