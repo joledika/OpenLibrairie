@@ -19,7 +19,6 @@ class CreateProfilesTable extends Migration
             $table->string('lastName',100)->nullable();
             $table->string('gender')->default('male');
             $table->date('birth')->nullable();
-            $table->unsignedSmallInteger('account_id')->index()->nullable();
             $table->string('address')->nullable();
             $table->unsignedSmallInteger('contact_id')->index()->nullable();
             $table->string('picture')->nullable();

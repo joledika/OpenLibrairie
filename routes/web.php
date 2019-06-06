@@ -12,10 +12,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::view('adm','administration/layout/master');
-Route::view('adm/membres','administration/membres/index');
-Route::view('adm/livres','administration/livres/index');
-Route::view('adm/mails','administration/mails/index');
+// Route::view('adm','administration/layout/master');
+// Route::view('adm/membres','administration/membres/index');
+// Route::view('adm/livres','administration/livres/index');
+// Route::view('adm/mails','administration/mails/index');
 // Route::view('adm/profil','administration/profils/show');
 // Route::view('adm/dashboard','administration/welcome');
 
@@ -33,10 +33,11 @@ Route::group(['prefix'=>'adm','middleware'=>'admin'],function(){
 
 });
 
-
-Route::get('/', function () {
-    return view('welcome');
-})->name('home_path');
+Route::group(['middleware'=>'confirmed'],function(){
+  Route::get('/', function () {
+      return view('welcome');
+  })->name('home_path');
+});
 
 Route::get('contact', function () {
     return view('home/contact');
@@ -66,7 +67,7 @@ Route::group(['namespace' => 'Auth'], function() {
 // })->name('home');
 
 
-Route::group(['prefix'=>'members','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'members','middleware'=>'confirmed'],function(){
 
   Route::get('', 'UsersController@index')->name('members_path');
 
@@ -79,7 +80,7 @@ Route::group(['prefix'=>'members','middleware'=>'auth'],function(){
 **********************Route pour les livres*********************
 ****************************************************************/
 
-Route::group(['prefix'=>'book','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'book','middleware'=>'confirmed'],function(){
 
   Route::get('index', 'BookController@index')->name('books_path');
   Route::get('index/{category}', 'BookController@index')->name('books_filter_path');
@@ -110,7 +111,7 @@ Route::group(['prefix'=>'book','middleware'=>'auth'],function(){
 // Route::view('admin/dashboard', 'pages/admin/dashboard');
 // Route::view('msg', 'pages/contacts/index');
 Route::get('msg', 'MessageController@index')->name('message_path');
-Route::get('dashboard', 'DashboardController@index')->name('dashboard_path');
+Route::get('dashboard', 'DashboardController@index')->name('dashboard_path')->middleware('confirmed');
 
 
 // /***************************************************************
@@ -130,7 +131,7 @@ Route::get('dashboard', 'DashboardController@index')->name('dashboard_path');
 ********************Route pour les catégories*******************
 ****************************************************************/
 
-Route::group(['prefix' => 'category','middleware'=>'auth'], function() {
+Route::group(['prefix' => 'category','middleware'=>'confirmed'], function() {
 
     Route::get('books','CategoryController@index')->name('category');
 
@@ -175,7 +176,7 @@ Route::group(['prefix' => 'category','middleware'=>'auth'], function() {
  /***************************************************************
  **********************Route pour mon profil*********************
  ****************************************************************/
-Route::group(['prefix'=>'profil','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'profil','middleware'=>['auth','confirmed']],function(){
 
   Route::get('{id}', 'UsersController@show')->name('profile_path');
   Route::get('create/{id}', 'UsersController@create')->name('edit_profile_path');

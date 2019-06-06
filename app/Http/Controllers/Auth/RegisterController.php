@@ -94,12 +94,14 @@ class RegisterController extends Controller
          ***********************************/
         //
 
-        
+
        $user = User::create([
             'email' => $request->email,
             'name' => $request->name,
             'password' => bcrypt($request->password),
             'token' => $request->_token,
+            'account_id'=> 2,
+
             ]);
 
             Profile::create([
