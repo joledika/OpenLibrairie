@@ -30,6 +30,7 @@ Route::group(['namespace' => 'Auth'], function() {
 
     Route::get('register', 'RegisterController@create')->name('register')->middleware('guest');
     Route::post('register', 'RegisterController@store');
+    Route::get('confirmation/{user}/{token}', 'ConfirmationsController@store')->name('confirmation');
 
     Route::get('logout', 'LoginController@logout')->name('logout')->middleware('auth');
 });

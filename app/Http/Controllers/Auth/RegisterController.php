@@ -8,6 +8,7 @@ use App\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\RegisterRequest;
+use App\Mail\RegisterMail;
 use Illuminate\Support\Facades\Validator;
 use MercurySeries\Flashy\Flashy as flashy;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -92,10 +93,13 @@ class RegisterController extends Controller
          * *********************************
          ***********************************/
         //
+
+        
        $user = User::create([
             'email' => $request->email,
             'name' => $request->name,
             'password' => bcrypt($request->password),
+            'token' => $request->_token,
             ]);
 
             Profile::create([
@@ -109,6 +113,8 @@ class RegisterController extends Controller
                     'user_id'=>$user->id
                 ]
             );
+
+            \Mail::to($user)->send(new RegisterMail($user));
 
         flashy()->success('Votre inscription est belle et bien effectué avec succéss',route('login'));
 
