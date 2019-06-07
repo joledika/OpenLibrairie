@@ -85,7 +85,7 @@
                 <p class="mt-3">
                     {!! $commentaire->commentary !!}
                 </p>
-            @if(auth()->user()->id == $commentaire->user_id)
+            @if(auth()->user()->id == $commentaire->user_id || auth()->user()->account->rank== 1)
             <div class="d-flex justify-content-end">
               <a href="{{ route('edit_commentary_path',[$livre->category->name,$livre->slug,$commentaire->id]) }}" class="ui small purple button"><i class="edit icon"></i>modifier</a>
               <form action="{{ route('delete_commentary_path',[$livre->category->name,$livre->slug,$commentaire->id])  }}" method="post">
