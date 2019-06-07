@@ -15,7 +15,7 @@
 Route::view('adm','administration/layout/master');
 Route::view('adm/membres','administration/membres/index');
 Route::view('adm/livres','administration/livres/index');
-Route::view('adm/mails','administration/mails/index');
+// Route::view('adm/mail','administration/mails/show');
 // Route::view('adm/profil','administration/profils/show');
 // Route::view('adm/dashboard','administration/welcome');
 
@@ -24,8 +24,10 @@ Route::view('adm/mails','administration/mails/index');
  ***************************************************************/
 Route::group(['prefix'=>'adm','middleware'=>'admin'],function(){
 
-  Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
-  Route::get('contact/{id}/show','GuardContactController@show')->name('show_guard_contact_path');
+  // Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
+  Route::get('contacts','GuardContactController@index')->name('admin_guard_contact_path');
+  Route::get('contact/{id}/show','GuardContactController@show')->name('admin_show_guard_contact_path');
+  Route::delete('contact/{id}/delete','GuardContactController@destroy')->name('admin_delete_guard_contact_path');
   Route::view('profil', 'administration/profils/show')->name('admin_profile_path');
   Route::get('home', 'AdminController@index')->name('admin_home_path');
   Route::get('members', 'AdminController@members')->name('admin_members_path');

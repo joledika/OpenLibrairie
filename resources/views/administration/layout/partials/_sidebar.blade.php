@@ -25,8 +25,8 @@
                     <a href="form.html">
                         <i class="far fa-comments"></i>Messages</a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="{{set_active_route('admin_guard_contact_path')}}">
+                    <a href="{{ route('admin_guard_contact_path') }}">
                         <i class="fas fa-envelope"></i>Mails</a>
                 </li>
                 <li class="{{set_active_route('admin_profile_path')}}">

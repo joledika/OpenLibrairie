@@ -69,9 +69,9 @@
         </div>
 
     </div>
-
     <!--SCRIPTS-->
     @include('administration/layout/partials/_scripts')
+    @include('flashy::message')
 
 
 </body>
