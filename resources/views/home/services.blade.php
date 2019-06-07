@@ -9,6 +9,12 @@
         <div class="column">
           <h3>"Free"</h3>
           <p>Vous ete libre et la totalité des services sont tous gratuits </p>
+          <br>
+          <br>
+          <img
+            class="ui rounded image" style="width:100%;height:auto;margin:auto"
+            src="{{asset('home/img/screenshots/default.jpg')}}"
+          />
         </div>
         <div class="column">
           <h3>Notre embleme est </h3>
@@ -18,12 +24,10 @@
           </p>
           <p style="text-align:center">
             <img
-              class="ui rounded image" style="width:40%;height:auto;margin:auto"
-              src="{{asset('home/img/administrator/Profil.jpg')}}"
+              class="ui rounded image" style="width:100%;height:auto;margin:auto"
+              src="{{asset('home/img/screenshots/2.png')}}"
             />
-            <p>
-            Mamisoa Olivier <b>Randrianantenaina</b>
-            </p>
+
           </p>
         </div>
       </div>
@@ -37,8 +41,8 @@
         limite.
       </p>
       <p>
-        Vous povez aussi commenter les livres et meme rationner c'est à dire j'aimer comme les image sur
-        facebook <i class="ui facebook square icon"></i>.
+        Vous povez aussi commenter les livres et meme les partagés librement
+        <i class="ui share icon"></i>.
       </p>
       <p>
         Vous povez aussi ajouter des livres que vous voulez publier sur le site
@@ -49,15 +53,13 @@
         <hr>
       </h4>
       <h4 class="ui large header"><i class="ui chat icon"></i> Discussions  </h4>
+
       <p>
-        Les membres peuvent envoyer des messages , discuter entre eux.
-      </p>
-      <p>
-        Tous le monde peuvent aussi commenter les livres et meme signaler en cas d'abus.
+        Tous le monde peuvent aussi commenter les livres .
       </p>
       <p>
         Les membres peuvent aussi contacter l'administrateur en cas de probleme ou
-        peut etre un simple discussion d'ami ca fait du bien <i class="ui thumbs up outline icon"></i> <i class="ui smile icon"></i>
+        peut etre un simple discussion amical ca fait du bien <i class="ui thumbs up outline icon"></i> <i class="ui smile icon"></i>
       </p>
       <br>
       <a href="{{ route('register') }}" class="ui large black button"><i class="ui heart icon"></i> Vous ete intéressé ?</a>

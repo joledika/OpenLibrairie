@@ -13,7 +13,7 @@
           </p>
           <h3 class="ui header"></h3>
           <p style="text-align:justify">
-            Cet application web vous facilite la vie et permet de consulter des livres et discuter <i class="ui chat icon"></i> avec les membres <i class="ui users icon"></i> .
+            Cet application web vous facilite la vie et permet de consulter des livres gratuitement avec les membres <i class="ui users icon"></i> .
             Il suffit juste de s'inscrire ,c'est gratuit <i class="ui handshake icon"></i><i class="ui smile outline icon"></i> .
           </p>
         </div>
