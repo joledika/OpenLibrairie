@@ -46,8 +46,12 @@
         <img class="ui medium centered image" src="/storage/{{isset($livre->image)?$livre->image:'books/image/default.jpg'}}"   >
         <div class="text-center mt-3">
           <p class="ui tiny header" style="color:teal">Livre de <br></p>
-          <img class="ui avatar image" src="/storage/{{isset($livre->user->profile->picture)?$livre->user->profile->picture:'users/image/avatar/'.($livre->user->profile->gender=='female'?'female':'male').'.png'}}">
-          <p><code>{{ $livre->user->name }}</code></p>
+          <div>
+            <a href="{{route('profile_path',$livre->user->id)}}">
+              <img class="ui avatar image" src="/storage/{{isset($livre->user->profile->picture)?$livre->user->profile->picture:'users/image/avatar/'.($livre->user->profile->gender=='female'?'female':'male').'.png'}}">
+              <p><code>{{ $livre->user->name }}</code></p>
+            </a>
+          </div>
         </div>
     </div>
 
@@ -76,7 +80,7 @@
             <img src="/storage/{{isset($commentaire->user->profile->picture)?$commentaire->user->profile->picture:'users/image/avatar/'.($commentaire->user->profile->gender=='female'?'female':'male').'.png'}}">
             </a>
             <div class="content">
-            <a class="author">{{$commentaire->user->name}}</a>
+            <a class="author" href="{{ route('profile_path',$commentaire->user->id) }}">{{$commentaire->user->name}}</a>
             <div class="metadata">
                 <div class="date">{{$commentaire->created_at->diffForHumans()}}</div>
             </div>
@@ -85,7 +89,7 @@
                 <p class="mt-3">
                     {!! $commentaire->commentary !!}
                 </p>
-            @if(auth()->user()->id == $commentaire->user_id || auth()->user()->account->rank== 1)
+            @if(auth()->user()->id == $commentaire->user_id || auth()->user()->account->    rank== 1)
             <div class="d-flex justify-content-end">
               <a href="{{ route('edit_commentary_path',[$livre->category->name,$livre->slug,$commentaire->id]) }}" class="ui small purple button"><i class="edit icon"></i>modifier</a>
               <form action="{{ route('delete_commentary_path',[$livre->category->name,$livre->slug,$commentaire->id])  }}" method="post">
