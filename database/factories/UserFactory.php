@@ -9,6 +9,7 @@ use App\Account;
 use App\Category;
 use App\Commentary;
 use App\Downloaded;
+use App\GuardContact;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -22,6 +23,17 @@ use Faker\Generator as Faker;
 | model instances for testing / seeding your application's database.
 |
 */
+$factory->define(GuardContact::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
+        'subject' => $faker->text(10),
+        'email' => $faker->safeEmail,
+        'message' => $faker->text(200),
+        'created_at' => $faker->dateTime,
+        
+    ];
+});
+
 
 $factory->define(User::class, function (Faker $faker) {
     return [

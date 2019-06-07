@@ -102,7 +102,7 @@
 <script id="flashy-template" type="text/template">
     <div class="flashy flashy--{{ Session::get('flashy_notification.type') }}">
 
-            <span class="ui info icon"></span>
+            <span class="fa fa-info"></span>
 
 
         &nbsp;&nbsp;

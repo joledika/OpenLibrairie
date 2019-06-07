@@ -24,8 +24,11 @@
  ***************************************************************/
 Route::group(['prefix'=>'adm','middleware'=>'admin'],function(){
 
-  Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
-  Route::get('contact/{id}/show','GuardContactController@show')->name('show_guard_contact_path');
+  // Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
+  Route::get('contacts','GuardContactController@index')->name('admin_guard_contact_path');
+  Route::get('contact/{id}/show','GuardContactController@show')->name('admin_show_guard_contact_path');
+  Route::delete('contact/{id}/delete','GuardContactController@destroy')->name('admin_delete_guard_contact_path');
+  Route::get('contact/response/{email}/{name}/mail','GuardContactController@responseMail')->name('admin_response_guard_contact_path');
   Route::view('profil', 'administration/profils/show')->name('admin_profile_path');
   Route::get('home', 'AdminController@index')->name('admin_home_path');
   Route::get('members', 'AdminController@members')->name('admin_members_path');

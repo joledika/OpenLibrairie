@@ -69,11 +69,11 @@
         </div>
 
     </div>
-
     <!--SCRIPTS-->
     @include('administration/layout/partials/_scripts')
+    @include('flashy::message')
 
-
+    @yield('modal')
 </body>
 
 </html>
