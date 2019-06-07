@@ -31,7 +31,7 @@
           {{-- <section class="card"> --}}
           <div class="card-body text-secondary">
               <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-primary mr-3">
+                <button type="button" class="btn btn-primary mr-3" data-toggle="modal" data-target="#largeModal">
                   <i class="fa fa-envelope"></i>&nbsp; Repondre
                 </button>
                 <form class="" action="{{ route('admin_delete_guard_contact_path',$message->id) }}" method="post">
@@ -57,5 +57,34 @@
 
 
 
+@stop
 
+@section('modal')
+<!-- modal large -->
+<form class="form" action="{{route('admin_response_guard_contact_path',[$message->email,$message->name])}}" method="get">
+  @csrf
+  <div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="largeModalLabel"><i class="fa fa-envelope"></i> Reponse mail</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <label for="msg">Message</label>
+            <textarea class="form-control" name="msg" id="msg" rows="8" cols="80"></textarea>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<!-- end modal large -->
 @stop

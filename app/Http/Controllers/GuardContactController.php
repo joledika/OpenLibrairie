@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\GuardContact;
 use Illuminate\Http\Request;
 use App\Http\Requests\GuardContactRequest;
+use App\User;
+use App\Notifications\SendResponseMailUser;
 use MercurySeries\Flashy;
 
 
@@ -65,5 +67,21 @@ class GuardContactController extends Controller
 
       \Flashy::success('Suppression éffectué!');
       return redirect()->route('admin_guard_contact_path');
+    }
+
+    public function responseMail(Request $request,$email,$name)
+    {
+
+      $msg = $request->msg;
+
+      $user = new User([
+        'name' => $name,
+        'email'=>$email,
+      ]);
+
+      \Flashy::success("Mail envoyer vers $email");
+      \Notification::send($user, new SendResponseMailUser($msg));
+
+      return back();
     }
 }
