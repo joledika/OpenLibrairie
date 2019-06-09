@@ -4,7 +4,7 @@
 
 
 @section('form')
-    <form class="login100-form validate-form" method="POST" action="{{ route('new_password',$user) }}">
+    <form class="login100-form validate-form" method="POST" action="{{ route('new_password',[$user,$user->remember_token]) }}">
       @csrf
 
         <a href="{{route('home_path')}}">

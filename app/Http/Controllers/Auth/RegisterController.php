@@ -101,6 +101,7 @@ class RegisterController extends Controller
             'password' => bcrypt($request->password),
             'token' => $request->_token,
             'account_id'=> 2,
+            'remember_token'=>str_random(60),
 
             ]);
 

@@ -17,10 +17,10 @@
            mot de passe perdu
         </span>
 
-        <div class="wrap-input100 validate-input" data-validate = "Entrer votre email">
+        <div class="wrap-input100 validate-input" data-validate = "Entrer votre email ou Pseudo">
             <input value="{{ old('name') }}" class="input100" type="text" name="name" placeholder="Email or Pseudo">
             <span class="focus-input100" data-placeholder="&#xf207;"></span>
-            {!! $errors->first('email','<span style="color:#9B1708">:message</span>')  !!}
+            {!! $errors->first('name','<span style="color:#9B1708">:message</span>')  !!}
         </div>
 
 

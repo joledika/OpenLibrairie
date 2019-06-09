@@ -40,11 +40,12 @@ class ResetPasswordUser extends Notification
      */
     public function toMail($notifiable)
     {
+
         return (new MailMessage)
                     ->subject('Réinitialisation de mot de passe')
                     ->greeting("Salut $notifiable->name")
                     ->line('Pour réinitialiser ton mot de passe, cliquer sur le bouton si dessous.')
-                    ->action('Réinitialiser', url(route('new_password_create',$notifiable->name)))
+                    ->action('Réinitialiser', route('new_password_create',[$notifiable->name,$notifiable->remember_token]))
                     ->line('Merci pour l\'utilisation de notre application!');
     }
 

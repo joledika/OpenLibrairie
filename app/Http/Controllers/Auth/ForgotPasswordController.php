@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ResetPasswordRequest;
 use App\User;
 use App\Notifications\ResetPasswordUser;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
@@ -40,6 +41,10 @@ class ForgotPasswordController extends Controller
 
     public function check(Request $request)
     {
+      if($request->name===null){
+        \Flashy::error('veillez remplir le champ');
+        return back();
+      }
       $user = User::where('name',$request->name)
                     ->orWhere('email',$request->name)
                     ->firstOrFail();
@@ -56,15 +61,20 @@ class ForgotPasswordController extends Controller
     }
 
 
-    public function newPass($user)
+    public function newPass($user,$token)
     {
+      $user = User::where('name',$user)->firstOrFail();
 
-      return view('auth.newPass')->with('user', $user);
+
+      if($token==$user->remember_token)
+        return view('auth.newPass')->with('user', $user);
+
+      return abort(404);
     }
 
-    public function editPass(Request $request, $user)
+    public function editPass(ResetPasswordRequest $request, $user)
     {
-      $user = User::where('name',$user)->orWhere('email',$user)->firstOrFail();
+      $user = User::where('name',$user)->orWhere('email',$user)->orWhere('id',$user)->firstOrFail();
       $user->update(
         [
           'password' => bcrypt($request->password)

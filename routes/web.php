@@ -62,7 +62,7 @@ Route::group(['namespace' => 'Auth'], function() {
     //modification de mot de passe
     Route::get('reset/pass','ForgotPasswordController@index')->name('forgot_password');
     Route::post('reset','ForgotPasswordController@check')->name('check_user');
-    Route::get('reset/{user}','ForgotPasswordController@newPass')->name('new_password_create');
+    Route::get('reset/{user}/{token}','ForgotPasswordController@newPass')->name('new_password_create');
     Route::post('reset/{user}','ForgotPasswordController@editPass')->name('new_password');
 });
 
