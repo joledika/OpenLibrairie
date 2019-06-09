@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\User;
+use App\Notifications\ResetPasswordUser;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Illuminate\Http\Request;
 
 class ForgotPasswordController extends Controller
 {
@@ -28,5 +31,47 @@ class ForgotPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    public function index()
+    {
+      return view('auth.reset_password');
+    }
+
+    public function check(Request $request)
+    {
+      $user = User::where('name',$request->name)
+                    ->orWhere('email',$request->name)
+                    ->firstOrFail();
+      \Notification::send($user,new ResetPasswordUser());
+
+      \Flashy::success('Un mail de réinitialisation de mot de passe est envoyeé vers ton mail!');
+
+      return redirect('/');
+    }
+
+    public function sendMail()
+    {
+
+    }
+
+
+    public function newPass($user)
+    {
+
+      return view('auth.newPass')->with('user', $user);
+    }
+
+    public function editPass(Request $request, $user)
+    {
+      $user = User::where('name',$user)->orWhere('email',$user)->firstOrFail();
+      $user->update(
+        [
+          'password' => bcrypt($request->password)
+        ]
+      );
+
+      \Flashy::success('Ton mot de passe a été réinitialisé');
+      return redirect()->route('login');
     }
 }

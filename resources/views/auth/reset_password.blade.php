@@ -4,7 +4,7 @@
 
 
 @section('form')
-    <form class="login100-form validate-form" method="POST" action="{{url('login')}}">
+    <form class="login100-form validate-form" method="POST" action="{{ route('check_user') }}">
       @csrf
 
         <a href="{{route('home_path')}}">
@@ -14,7 +14,7 @@
         </a>
 
         <span class="login100-form-title p-b-34 p-t-27">
-           Page de connexion
+           mot de passe perdu
         </span>
 
         <div class="wrap-input100 validate-input" data-validate = "Entrer votre email">
@@ -23,28 +23,17 @@
             {!! $errors->first('email','<span style="color:#9B1708">:message</span>')  !!}
         </div>
 
-        <div class="wrap-input100 validate-input" data-validate="Entrer le mot de passe">
-            <input class="input100" type="password" name="password" placeholder="Mot de passe">
-            <span class="focus-input100" data-placeholder="&#xf191;"></span>
-        </div>
-
-        <div class="contact100-form-checkbox">
-            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember">
-            <label class="label-checkbox100" for="ckb1">
-                me souvenir
-            </label>
-        </div>
 
         <div class="container-login100-form-btn">
-            <button type="submit" value="Connexion" class="login100-form-btn">
-                Connexion
+            <button type="submit" class="login100-form-btn">
+                Réinitialiser
             </button>
 
         </div>
 
         <div class="text-center mt-3">
-            <a class="txt1 pr-4" href="{{ route('forgot_password') }}">
-                Mot de passe oublié?
+            <a class="txt1 pr-4" href="{{ route('login') }}">
+                Revenir en arrière
             </a>
             <a class="txt1 pl-4" href="{{route('register')}}">
                 Créer un compte

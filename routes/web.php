@@ -58,6 +58,12 @@ Route::group(['namespace' => 'Auth'], function() {
     Route::get('confirmation/{user}/{token}', 'ConfirmationsController@store')->name('confirmation');
 
     Route::get('logout', 'LoginController@logout')->name('logout')->middleware('auth');
+
+    //modification de mot de passe
+    Route::get('reset/pass','ForgotPasswordController@index')->name('forgot_password');
+    Route::post('reset','ForgotPasswordController@check')->name('check_user');
+    Route::get('reset/{user}','ForgotPasswordController@newPass')->name('new_password_create');
+    Route::post('reset/{user}','ForgotPasswordController@editPass')->name('new_password');
 });
 
 
@@ -69,6 +75,7 @@ Route::group(['namespace' => 'Auth'], function() {
 //     return view('pages/blogs/posts');
 // })->name('home');
 
+// Route::View('pass','auth.reset_password');
 
 Route::group(['prefix'=>'members','middleware'=>'confirmed'],function(){
 
