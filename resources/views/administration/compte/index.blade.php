@@ -89,9 +89,14 @@
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Modifier">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Supprimer">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </button>
+                                <form action="{{route('admin_delete_account_path',$user->id)}}" method="POST">
+                                    @csrf
+                                    @method('delete')
+
+                                    <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Supprimer">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </button>
+                                </form>
                             </div>
 
                             </td>

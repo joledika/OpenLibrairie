@@ -36,4 +36,16 @@ class AdminAccountController extends Controller
 
         return redirect()->route('admin_account_path');
     }
+
+
+    public function destroy($user)
+    {
+        $deleting = User::where('id',$user)->firstOrFail();
+
+        $deleting->delete();
+
+        \Flashy::info('Utilisateur supprimé');
+
+        return back();
+    }
 }
