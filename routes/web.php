@@ -33,7 +33,9 @@ Route::group(['prefix'=>'adm','middleware'=>'admin'],function(){
   Route::get('home', 'AdminController@index')->name('admin_home_path');
   Route::get('members', 'AdminController@members')->name('admin_members_path');
   Route::get('livres', 'AdminController@books')->name('admin_books_path');
-
+  Route::get('account', 'AdminAccountController@index')->name('admin_account_path');
+  Route::get('account/{user}/change', 'AdminAccountController@change')->name('admin_change_account_type');
+  Route::delete('account/{user}/delete', 'AdminAccountController@destroy')->name('admin_delete_account_path');
 });
 
 
