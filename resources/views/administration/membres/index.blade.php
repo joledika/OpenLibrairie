@@ -47,9 +47,9 @@
 
 <div class="row">
   <div class="col-md-6 offset-md-3 mr-auto ml-auto">
-    
+
       <div class="card-body text-secondary">{{$users->links()}}</div>
-    
+
   </div>
 </div>
 

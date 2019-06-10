@@ -16,7 +16,7 @@
                 <div class="col-12 col-md-9">
                 <form class="form-header" action="" method="get">
                     @csrf
-                    <input class="au-input au-input--xl" type="text" name="recherche" value="" placeholder="Rechercher membres...">
+                    <input class="au-input au-input--xl" type="text" name="recherche" value="{{ $recherche??'' }}" placeholder="Rechercher membres...">
                     <button class="au-btn--submit" type="submit">
                         <i class="zmdi zmdi-search"></i>
                     </button>
@@ -110,12 +110,14 @@
                     </tbody>
                 </table>
             </div>
-            <div class="user-data__footer">
-                <div class="d-flex justify-content-center">
-                    {{$users->links()}}
+            @if(!isset($recherche))
+                <div class="user-data__footer">
+                    <div class="d-flex justify-content-center">
+                        {{$users->links()}}
 
+                    </div>
                 </div>
-            </div>
+            @endif
         </div>
         <!-- END USER DATA-->
     </div>

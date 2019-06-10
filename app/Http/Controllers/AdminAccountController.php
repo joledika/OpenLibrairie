@@ -7,8 +7,17 @@ use Illuminate\Http\Request;
 
 class AdminAccountController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        if (isset($request->recherche)) {
+            $recherche = $request->recherche;
+
+            $users = User::where('name','like',"%$recherche%")
+                        ->orWhere('email','like',"%$recherche%")
+                        ->latest()
+                        ->get();
+        return view('administration/compte/index',compact('users','recherche'));
+        }
         $users = User::latest()->paginate(15);
         return view('administration/compte/index',compact('users'));
     }
