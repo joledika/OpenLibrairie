@@ -12,4 +12,28 @@ class AdminAccountController extends Controller
         $users = User::latest()->paginate(10);
         return view('administration/compte/index',compact('users'));
     }
+
+    public function change($user)
+    {
+        $user = User::where('id',$user)->firstOrFail();
+
+
+        if($user->account_id == 1){
+            $user->update([
+                'account_id' => 2
+            ]
+            );
+        \Flashy::message("Le type de compte de $user->name est maintenant en membre");
+
+        }elseif($user->account_id == 2){
+            $user->update([
+                'account_id' => 1
+            ]
+            );
+        \Flashy::message("Le type de compte de $user->name est maintenant en administrateur");
+        }
+
+
+        return redirect()->route('admin_account_path');
+    }
 }

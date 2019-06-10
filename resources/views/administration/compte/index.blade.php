@@ -72,11 +72,14 @@
                                 <span class="role {{$user->account_id==1?'admin':'user'}}">{{$user->account_id==1?'admin':'membre'}}</span>
                             </td>
                             <td>
-                                <label class="switch switch-3d switch-primary mr-3">
-                                    <input type="checkbox" class="switch-input" {{$user->account_id==1?"checked":""}}>
-                                    <span class="switch-label"></span>
-                                    <span class="switch-handle"></span>
-                                </label>
+
+
+                                <a class="{{$user->account_id==1?"btn btn-outline-primary":"btn btn-outline-danger"}}"
+                                    href="{{route('admin_change_account_type',$user->id)}}">
+                                    Changer en {{$user->account_id==1?"membre":"admin"}}
+                                </a>
+
+
                             </td>
                             <td>
                                 <div class="d-flex justify-content-between">
