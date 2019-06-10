@@ -21,9 +21,9 @@
                     <a href="{{route('admin_books_path')}}">
                         <i class="fas fa-book"></i>Livres</a>
                 </li>
-                <li>
-                    <a href="form.html">
-                        <i class="far fa-comments"></i>Messages</a>
+                <li class="{{set_active_route('admin_account_path')}}">
+                    <a href="{{route('admin_account_path')}}">
+                        <i class="fa fa-gears"></i>Type du Comptes</a>
                 </li>
                 <li class="{{set_active_route('admin_guard_contact_path')}}
                 {{set_active_route('admin_show_guard_contact_path')}}">
