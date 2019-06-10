@@ -41,7 +41,7 @@
 
                 <i class="zmdi zmdi-account-calendar"></i>Tous les membres</h3>
 
-            <div class="table-responsive table-data">
+            <div class="table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
@@ -86,9 +86,12 @@
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Envoyer un message">
                                     <i class="zmdi zmdi-mail-send"></i>
                                 </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Modifier">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </button>
+                                <form action="{{route('profile_path',$user)}}" method="get">
+                                    @csrf
+                                    <button class="item" href="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Modifier">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </button>
+                                </form>
                                 <form action="{{route('admin_delete_account_path',$user->id)}}" method="POST">
                                     @csrf
                                     @method('delete')
