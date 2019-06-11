@@ -8,7 +8,7 @@
                 </form>
                 <div class="header-button">
                     <div class="noti-wrap">
-                        <div class="noti__item js-item-menu">
+                        {{--  <div class="noti__item js-item-menu">
                             <i class="zmdi zmdi-comment-more"></i>
                             <span class="quantity">1</span>
                             <div class="mess-dropdown js-dropdown">
@@ -117,7 +117,7 @@
                                     <a href="#">All notifications</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>  --}}
                     </div>
                     <div class="account-wrap">
                         <div class="account-item clearfix js-item-menu">
@@ -125,31 +125,28 @@
                                 <img src="/storage/{{isset(auth()->user()->profile->picture)?auth()->user()->profile->picture:'users/image/avatar/'.(auth()->user()->profile->gender=='female'?'female':'male').'.png'}}" alt="{{auth()->user()->name}}" />
                             </div>
                             <div class="content">
-                                <a class="js-acc-btn" href="#">{{auth()->user()->name}}</a>
+                                <a class="js-acc-btn" href="{{route('admin_profile_path')}}">{{auth()->user()->name}}</a>
                             </div>
                             <div class="account-dropdown js-dropdown">
                                 <div class="info clearfix">
                                     <div class="image">
-                                        <a href="#">
+                                        <a href="{{route('admin_profile_path')}}">
                                             <img src="/storage/{{isset(auth()->user()->profile->picture)?auth()->user()->profile->picture:'users/image/avatar/'.(auth()->user()->profile->gender=='female'?'female':'male').'.png'}}" alt="{{auth()->user()->name}}" />
                                         </a>
                                     </div>
                                     <div class="content">
                                         <h5 class="name">
-                                            <a href="#">{{auth()->user()->name}}</a>
+                                            <a href="{{route('admin_profile_path')}}">{{auth()->user()->name}}</a>
                                         </h5>
                                         <span class="email">{{auth()->user()->email}}</span>
                                     </div>
                                 </div>
                                 <div class="account-dropdown__body">
                                     <div class="account-dropdown__item">
-                                        <a href="#">
+                                        <a href="{{route('admin_profile_path')}}">
                                             <i class="zmdi zmdi-account"></i>Mon compte</a>
                                     </div>
-                                    <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-settings"></i>Setting</a>
-                                    </div>
+
                                     <div class="account-dropdown__item">
                                         <a href="{{ route('dashboard_path') }}">
                                             <i class="zmdi zmdi-home"></i>Espace membres</a>

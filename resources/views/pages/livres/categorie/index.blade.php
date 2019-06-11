@@ -13,7 +13,7 @@
 
   <a href="{{ route('add_category_path') }}" class="ui green button"><i class="ui add icon"></i>Ajout</a>
 @endif
-    <div class="ui floating dropdown violet labeled icon button">
+    {{--  <div class="ui floating dropdown violet labeled icon button">
         <i class="filter icon"></i>
         <span class="text">Filtrer </span>
         <div class="menu">
@@ -65,7 +65,7 @@
             </div>
             </div>
         </div>
-    </div>
+    </div>  --}}
 </div>
 <div class="ui two column grid">
 

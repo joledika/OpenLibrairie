@@ -10,6 +10,7 @@
 @section('content')
 <div class="mt-3">
 <div class="mb-3 d-flex justify-content-end">
+    {{-- <button class="ui primary button"><i class="mail icon"></i>Envoyer un message</button> --}}
   @if ($user->name == auth()->user()->name || auth()->user()->account->rank == 1)
     <a href="{{route('edit_profile_path',$user->id)}}" class="ui violet button"><i class="ui edit icon"></i>Modifier</a>
   @endif
@@ -20,7 +21,7 @@
                 <div class="ui centered card">
                         <div class="image">
 
-                          <img class="ui medium rounded image" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'users/image/avatar/'.($user->profile->gender=='female'?'female':'male').'.png'}}"}}">
+                          <img class="ui medium rounded image" src="/storage/{{isset($user->profile->picture)?$user->profile->picture:'users/image/avatar/'.($user->profile->gender=='female'?'female':'male').'.png'}}">
                         </div>
                         <div class="content">
                           <a class="header">{{$user->name}}</a>

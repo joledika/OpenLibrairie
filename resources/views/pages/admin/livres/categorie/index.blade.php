@@ -8,7 +8,7 @@
 
 
 @section('content')
-<div class="d-flex justify-content-end mb-3">
+{{--  <div class="d-flex justify-content-end mb-3">
   <a href="{{ route('add_category_path') }}" class="ui green button"><i class="ui add icon"></i>Ajout</a>
     <div class="ui floating dropdown violet labeled icon button">
         <i class="filter icon"></i>
@@ -63,7 +63,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>  --}}
 <div class="ui two column grid">
 
 @forelse ($categories as $category)

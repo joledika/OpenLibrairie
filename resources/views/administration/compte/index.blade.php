@@ -82,22 +82,20 @@
 
                             </td>
                             <td>
-                                <div class="d-flex justify-content-between">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Envoyer un message">
-                                    <i class="zmdi zmdi-mail-send"></i>
-                                </button>
+                                <div class="d-flex justify-content-around">
+
                                 <form action="{{route('profile_path',$user)}}" method="get">
                                     @csrf
                                     <button class="item" href="" data-toggle="tooltip" data-placement="top" title="" data-original-title="Modifier">
                                         <i class="zmdi zmdi-edit"></i>
                                     </button>
                                 </form>
-                                <form action="{{route('admin_delete_account_path',$user->id)}}" method="POST">
+                                <form action="{{route('admin_delete_account_path',$user->id)}}" method="POST" onsubmit="return confirm('Ete vous sur');">
                                     @csrf
                                     @method('delete')
 
                                     <button type="submit" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Supprimer">
-                                        <i class="zmdi zmdi-delete"></i>
+                                        <i class="zmdi zmdi-delete text-danger"></i>
                                     </button>
                                 </form>
                             </div>
@@ -124,3 +122,7 @@
 
 
 @endsection
+
+
+
+

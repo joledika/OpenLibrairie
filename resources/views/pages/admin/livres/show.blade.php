@@ -15,7 +15,7 @@
     <div class="d-flex justify-content-end mt-2">
 
             <a href="{{route('edit_book_path',[$livre->category->name,$livre->slug])}}" class="ui tiny teal button" type="submit"><i class="edit icon"></i>Modifier</a>
-            <form action="{{ route('delete_book_path',$livre->id) }}" method="post">
+            <form action="{{ route('delete_book_path',$livre->id) }}" onsubmit="return confirm('Ete vous sure?')" method="post">
               @csrf
               @method('delete')
               <button type="submit" class="ui tiny orange button" type="submit"><i class="trash icon"></i>supprimer</button>

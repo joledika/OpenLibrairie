@@ -13,7 +13,7 @@
 <div class="mt-3">
 
 <div class="d-flex justify-content-end">
-  <form action="{{ route('delete_category_path',$categorie->slug) }}" method="post">
+  <form action="{{ route('delete_category_path',$categorie->slug) }}" onsubmit="return confirm('Ete vous sure?')" method="post">
     @csrf
     @method('delete')
     <button type="submit" class="ui red button" name="delete"><i class="ui trash icon"></i> Supprimer</button>

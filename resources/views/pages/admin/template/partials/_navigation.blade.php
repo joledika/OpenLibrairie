@@ -9,9 +9,9 @@
     <a href="{{ route('books_path') }}" class="item {{ set_active_route('books_path') }}{{  set_active_route('edit_book_path') }} {{  set_active_route('get_book_path') }}">
         <i class="book icon"></i> Livres
     </a>
-    <a  href="{{ route('guard_contact_path') }}" class="item {{ set_active_route('guard_contact_path') }}{{  set_active_route('show_guard_contact_path') }}">
+    {{--  <a  href="{{ route('guard_contact_path') }}" class="item {{ set_active_route('guard_contact_path') }}{{  set_active_route('show_guard_contact_path') }}">
       <i class="mail icon"></i> Messages
-    </a>
+    </a>  --}}
     <a class="item">
       <i class="wechat icon"></i> Discussions
     </a>

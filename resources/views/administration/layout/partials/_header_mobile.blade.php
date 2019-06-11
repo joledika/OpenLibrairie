@@ -32,8 +32,8 @@
                         <i class="fas fa-book"></i>Livres</a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="far fa-comments"></i>Messages</a>
+                    <a href="{{route('admin_account_path')}}">
+                        <i class="far fa-comments"></i>Type compte</a>
                 </li>
                 <li class="{{set_active_route('admin_guard_contact_path')}}
                 {{set_active_route('admin_show_guard_contact_path')}}">
