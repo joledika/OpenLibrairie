@@ -147,13 +147,13 @@ Route::group(['prefix' => 'category','middleware'=>'confirmed'], function() {
 
     Route::get('books','CategoryController@index')->name('category');
 
-    Route::group(['middleware'=>'admin'],function(){
+    Route::group([],function(){
 
       Route::get('add','CategoryController@create')->name('add_category_path');
       Route::post('store','CategoryController@store')->name('store_category_path');
-      Route::get('edit/{slug}','CategoryController@edit')->name('edit_category_path');
+      Route::get('edit/{slug}','CategoryController@edit')->name('edit_category_path')->middleware('admin');
       Route::put('edit/{slug}','CategoryController@update')->name('update_category_path');
-      Route::delete('delete/{slug}','CategoryController@destroy')->name('delete_category_path');
+      Route::delete('delete/{slug}','CategoryController@destroy')->name('delete_category_path')->middleware('admin');
 
     });
 
