@@ -12,6 +12,7 @@
 <div class="mb-3 d-flex justify-content-end">
     {{-- <button class="ui primary button"><i class="mail icon"></i>Envoyer un message</button> --}}
   @if ($user->name == auth()->user()->name || auth()->user()->account->rank == 1)
+    <a href="{{route('get_my_book_path',$user->id)}}" class="ui pink button"><i class="ui book icon"></i>Mes Livres</a>
     <a href="{{route('edit_profile_path',$user->id)}}" class="ui violet button"><i class="ui edit icon"></i>Modifier</a>
   @endif
 </div>

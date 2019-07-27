@@ -111,6 +111,8 @@ Route::group(['prefix'=>'book','middleware'=>'confirmed'],function(){
   Route::post('add','BookController@store')->name('store_book_path');
   Route::delete('{id}/delete','BookController@destroy')->name('delete_book_path');
 
+  Route::get('mes/books/{id}', 'BookController@myBook')->name('get_my_book_path');
+
 });
 
 

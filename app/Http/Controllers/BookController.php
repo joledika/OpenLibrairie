@@ -271,4 +271,12 @@ class BookController extends Controller
 
       return redirect()->route('books_path');
     }
+
+    public function myBook($id)
+    {
+        $categories = Category::get();
+        $livres = Book::where('user_id',$id)->latest()->paginate(12);
+
+        return view('pages/livres/myBooks', compact('livres','categories'));
+    }
 }

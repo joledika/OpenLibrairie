@@ -98,10 +98,12 @@
                         <div class="card">
                             <div class="ui small content">
                                 <div class="right floated meta">{{$livre->created_at->diffForHumans()}}</div>
-                                  <a href="{{route('profile_path',$livre->user->id)}}"
-                                    title="{{$livre->user->name}}">
-                                    <img class="ui avatar image" src="/storage/{{isset($livre->user->profile->picture)?$livre->user->profile->picture:'users/image/avatar/'.($livre->user->profile->gender=='female'?'female':'male').'.png'}}">
-                                  </a>
+                                  @if (isset($livre->user->id) && $livre->user->name)
+                                        <a href="{{route('profile_path',$livre->user->id)}}"
+                                        title="{{$livre->user->name}}">
+                                            <img class="ui avatar image" src="/storage/{{isset($livre->user->profile->picture)?$livre->user->profile->picture:'users/image/avatar/'.($livre->user->profile->gender=='female'?'female':'male').'.png'}}">
+                                        </a>
+                                  @endif
                                 </div>
 
                           <div class="blurring dimmable image">
