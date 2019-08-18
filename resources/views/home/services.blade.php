@@ -8,7 +8,7 @@
       <div class="center aligned row">
         <div class="column">
           <h3>"Free"</h3>
-          <p>Vous ete libre et la totalité des services sont tous gratuits </p>
+          <p>Vous ête libre et la totalité des services sont tous gratuits </p>
           <br>
           <br>
           <img
@@ -20,7 +20,7 @@
           <h3>Notre embleme est </h3>
           <p style="text-align:justify">
             <code><quote> <i class="ui play circle outline icon"></i> lire est bien pour améliorer <i class="ui graduation cap icon"></i> ,
-            sans dépenser est bien pour amusé <i class="ui smile icon"></i></quote></code>
+            sans dépenser est bien pour amuser <i class="ui smile icon"></i></quote></code>
           </p>
           <p style="text-align:center">
             <img
@@ -37,17 +37,17 @@
     <div class="ui text container">
       <h4 class="ui large header"><i class="ui book icon"></i> Livres  </h4>
       <p>
-        Vous pouvez chercher, regarder , et meme télécharger <i class="ui download icon"></i> des livres sans
+        Vous pouvez chercher, regarder , et même télécharger <i class="ui download icon"></i> des livres sans
         limite.
       </p>
       <p>
-        Vous povez aussi commenter les livres et meme les partagés librement
+        Vous pouvez aussi commenter les livres et même les partagés librement
         <i class="ui share icon"></i>.
       </p>
       <p>
-        Vous povez aussi ajouter des livres que vous voulez publier sur le site
-        a condition que celui ci ne dispose pas un droit d'auteur et
-        vous pouvez l'editer ,supprimer apres et les livres que vous publient appartient à vous.
+        Vous pouvez aussi ajouter des livres que vous voulez publier sur le site
+        a condition que  celui-ci  ne dispose pas un droit d'auteur et
+        vous pouvez l'editer ,supprimer après et les livres que vous publient appartiennent à vous.
       </p>
       <h4 class="ui horizontal header divider">
         <hr>
@@ -55,11 +55,11 @@
       <h4 class="ui large header"><i class="ui chat icon"></i> Discussions  </h4>
 
       <p>
-        Tous le monde peuvent aussi commenter les livres .
+        Tout le monde peut aussi commenter les livres.
       </p>
       <p>
-        Les membres peuvent aussi contacter l'administrateur en cas de probleme ou
-        peut etre un simple discussion amical ca fait du bien <i class="ui thumbs up outline icon"></i> <i class="ui smile icon"></i>
+        Les membres peuvent aussi contacter l'administrateur en cas de problème ou
+         peut-être une simple discussion amicale, ça fait du bien <i class="ui thumbs up outline icon"></i> <i class="ui smile icon"></i>
       </p>
       <br>
       <a href="{{ route('register') }}" class="ui large black button"><i class="ui heart icon"></i> Vous ete intéressé ?</a>

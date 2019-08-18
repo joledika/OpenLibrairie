@@ -48,6 +48,11 @@ Route::get('contact', function () {
     return view('home/contact');
 })->name('contact_path');
 
+/*Route pour le code source*/
+Route::get('source',function(){
+  return view('home/source');
+})->name('source_path');
+
 /***************************************************************
 *************Route pour la connexion et inscription************
 ****************************************************************/
