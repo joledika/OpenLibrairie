@@ -9,12 +9,7 @@
     <h2 style="text-align:center">Code source de l'application <i class="ui smile icon"></i>.</h2>
     <hr>
     <br>
-    <!-- <div class="">
-      <p class="ui primary button">Télecharger directe</p>
-      <p class="ui grey button">télécharger via github</p>
-      <p class="ui violet button">via heroku</p>
-      <p class="ui violet button">via heroku</p>
-    </div> -->
+
 
     <div class="">
       <div class="ui three column doubling stackable grid container">
@@ -43,7 +38,7 @@
 
                             </div>
                             <div class="content text-center">
-                              <a href="" class="header">Direct <i class="ui download icon"></i></a>
+                              <a href="/storage/source/code.tar.gz" target="_blank" class="header">Direct <i class="ui download icon"></i></a>
 
                             </div>
 
@@ -55,7 +50,7 @@
 
                               <div class="content">
                               <span class="right floated">
-                                <a class="ui primary button">Télechargement direct</a>
+                                <a href="/storage/source/code.tar.gz" target="_blank" class="ui primary button">Télechargement direct</a>
                               </span>
                               <div>
 
@@ -129,7 +124,7 @@
 
                             </div>
                             <div class="content text-center">
-                              <a href="" class="header">Heroku <span><b>h</b></span></a>
+                              <a href="http://openlibrairies.herokuapp.com" target="_blank" class="header">Heroku <span><b>h</b></span></a>
 
                             </div>
 
@@ -141,7 +136,7 @@
 
                               <div class="content">
                               <span class="right floated">
-                                <a class="ui violet button">Visualiser sur heroku</a>
+                                <a href="http://openlibrairies.herokuapp.com" target="_blank" class="ui violet button">Visualiser sur heroku</a>
 
                               </span>
                               <div>
