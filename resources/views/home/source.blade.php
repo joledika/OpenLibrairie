@@ -34,7 +34,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <img class="ui image" style="height:200px;"  src="/storage/books/image/default.jpg">
+                              <img class="ui image" style="height:200px;"  src="/storage/source/direct.png">
 
                             </div>
                             <div class="content text-center">
@@ -78,11 +78,11 @@
                                   </div>
                                 </div>
                               </div>
-                              <img class="ui image" style="height:200px;"  src="/storage/books/image/default.jpg">
+                              <img class="ui image" style="height:200px;"  src="/storage/source/github.jpg">
 
                             </div>
                             <div class="content text-center">
-                              <a href="" class="header">Github <i class="ui github icon"></i></a>
+                              <a href="https://github.com/joledika/OpenLibrairie" target="_blank" class="header">Github <i class="ui github icon"></i></a>
 
                             </div>
 
@@ -94,7 +94,7 @@
 
                               <div class="content">
                               <span class="right floated">
-                                <a class="ui grey button">télécharger via github</a>
+                                <a href="https://github.com/joledika/OpenLibrairie" target="_blank" class="ui grey button">télécharger via github</a>
 
                               </span>
                               <div>
@@ -120,7 +120,7 @@
                                 <div class="content">
                                 </div>
                               </div>
-                              <img class="ui image" style="height:200px;"  src="/storage/books/image/default.jpg">
+                              <img class="ui image" style="height:200px;"  src="/storage/source/heroku.jpg">
 
                             </div>
                             <div class="content text-center">
