@@ -6,7 +6,7 @@
 
 
   <div class="form" style="margin:4% auto">
-    <h2 style="text-align:center">Bibliothèque numérique 100% <strong>gratuit</strong> <i class="ui smile icon"></i>.</h2>
+    <h2 style="text-align:center">Bibliothèque numérique 100% <strong>gratuite</strong> <i class="ui smile icon"></i>.</h2>
     <hr>
     <br>
     <form action="{{URL('contact/store')}}" method="post" class="ui form">

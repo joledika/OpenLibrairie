@@ -9,10 +9,10 @@
     />
     <meta
       name="description"
-      content="Semantic-UI-Forest, collection of design, themes and templates for Semantic-UI."
+      content="Page d'accueil."
     />
-    <meta name="keywords" content="Semantic-UI, Theme, Design, Template" />
-    <meta name="author" content="PPType" />
+    <meta name="keywords" content="{{env('APP_NAME')}}, Laravel, PHP, WEB,Book" />
+    <meta name="author" content="Mamisoa Olivier RANDRIANANTENAINA" />
     <meta name="theme-color" content="#ffffff" />
     <title>{{env('APP_NAME')}}</title>
     <link rel="shortcut icon" href="{{asset('icons/favicon.png')}}" type="image/x-icon">
@@ -33,6 +33,7 @@
           <a class="item" href="#services"><i class="ui copy icon"></i>Services</a>
         @endif
         <a  href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
+        <a href="{{ route('source_path') }}" class="item {{set_active_route('source_path')}}"><i class="ui code icon"></i>Code source</a>
         <div class="right menu">
           <div class="item"><a href="{{route('login')}}" class="ui button"><i class="ui sign-in icon"></i>Connexion</a></div>
           <div class="item"><a href="{{route('register')}}" class="ui pink button"><i class="ui save icon"></i>Inscription</a></div>
@@ -47,6 +48,7 @@
         <a class="item" href="#services"><i class="ui copy icon"></i>Services</a>
       @endif
       <a href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
+      <a href="{{ route('source_path') }}" class="item {{set_active_route('source_path')}}"><i class="ui code icon"></i>Code source</a>
       <a href="{{route('login')}}" class="item"><i class="ui sign-in icon"></i>Connexion</a> <a href="{{route('register')}}" class="item"><i class="ui save icon"></i>Inscription</a>
     </div>
     <!--Page Contents-->
@@ -62,6 +64,7 @@
               <a class="item" href="#services"><i class="ui copy icon"></i>Services</a>
             @endif
             <a href="{{ route('contact_path') }}" class="item {{set_active_route('contact_path')}}"><i class="ui phone icon"></i>Contact</a>
+            <a href="{{ route('source_path') }}" class="item {{set_active_route('source_path')}}"><i class="ui code icon"></i>Code source</a>
             <div class="right item">
               <a href="{{route('login')}}" class="ui inverted button"><i class="ui sign-in icon"></i>Connexion</a>
               <a href="{{route('register')}}" class="ui inverted button"><i class="ui save icon"></i>Inscription</a>
@@ -70,7 +73,7 @@
         </div>
         <div class="ui text container">
           <h1 class="ui inverted header">{{env('APP_NAME')}}</h1>
-          <h2>Bibliothèque numérique 100% <strong>gratuit</strong> <i class="ui smile icon"></i>.</h2>
+          <h2>Bibliothèque numérique 100% <strong>gratuite</strong> <i class="ui smile icon"></i>.</h2>
           <a href="{{ route('login') }}" class="ui huge pink button">
             Get Started <i class="right arrow icon"></i>
           </a>

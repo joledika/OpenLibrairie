@@ -12,19 +12,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::view('adm','administration/layout/master');
-// Route::view('adm/membres','administration/membres/index');
-// Route::view('adm/livres','administration/livres/index');
-// Route::view('adm/mails','administration/mails/index');
-// Route::view('adm/profil','administration/profils/show');
-// Route::view('adm/dashboard','administration/welcome');
+
 
 /***************************************************************
  ***********Route pour l'espace administration*****************
  ***************************************************************/
 Route::group(['prefix'=>'adm','middleware'=>'admin'],function(){
 
-  // Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
+
   Route::get('contacts','GuardContactController@index')->name('admin_guard_contact_path');
   Route::get('contact/{id}/show','GuardContactController@show')->name('admin_show_guard_contact_path');
   Route::delete('contact/{id}/delete','GuardContactController@destroy')->name('admin_delete_guard_contact_path');
@@ -39,6 +34,7 @@ Route::group(['prefix'=>'adm','middleware'=>'admin'],function(){
 });
 
 
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home_path');
@@ -47,6 +43,11 @@ Route::get('/', function () {
 Route::get('contact', function () {
     return view('home/contact');
 })->name('contact_path');
+
+/*Route pour le code source*/
+Route::get('source',function(){
+  return view('home/source');
+})->name('source_path');
 
 /***************************************************************
 *************Route pour la connexion et inscription************
@@ -69,15 +70,7 @@ Route::group(['namespace' => 'Auth'], function() {
 });
 
 
-// Route::get('/test', function () {
-//     return view('auth/login');
-// });
-// Route::view('profil','pages/membres/show');
-// Route::get('/posts', function () {
-//     return view('pages/blogs/posts');
-// })->name('home');
 
-// Route::View('pass','auth.reset_password');
 
 Route::group(['prefix'=>'members','middleware'=>'confirmed'],function(){
 
@@ -85,8 +78,6 @@ Route::group(['prefix'=>'members','middleware'=>'confirmed'],function(){
 
 
 });
-// Route::get('posts', 'PostController@index')->name('posts_path');
-// Route::get('posts/{id}', 'PostController@show')->name('post_path');
 
 /***************************************************************
 **********************Route pour les livres*********************
@@ -116,30 +107,12 @@ Route::group(['prefix'=>'book','middleware'=>'confirmed'],function(){
 });
 
 
-// Route::view('livre', 'pages/livres/show');
-// Route::view('get', 'pages/livres/get');
-// Route::view('edit', 'pages/livres/edit');
-// Route::view('test', 'pages/admin/template/default');
-// Route::view('message', 'pages/admin/messages/index');
-// Route::view('admin/membres', 'pages/admin/membres/index');
-// Route::view('admin/dashboard', 'pages/admin/dashboard');
-// Route::view('msg', 'pages/contacts/index');
+
 Route::get('msg', 'MessageController@index')->name('message_path');
 Route::get('dashboard', 'DashboardController@index')->name('dashboard_path')->middleware('confirmed');
 
 
-// /***************************************************************
-//  ***********Route pour l'espace administration*****************
-//  ***************************************************************/
-// Route::group(['prefix'=>'admin','middleware'=>'admin'],function(){
-//
-//   Route::get('contacts','GuardContactController@index')->name('guard_contact_path');
-//   Route::get('contact/{id}/show','GuardContactController@show')->name('show_guard_contact_path');
-//   Route::get('my/profile/{id}', 'AdminController@profile')->name('admin_profile_path');
-//   Route::get('home', 'AdminController@index')->name('admin_home_path');
-//   Route::get('members', 'AdminController@members')->name('admin_members_path');
-//
-// });
+
 
 /***************************************************************
 ********************Route pour les catégories*******************
@@ -171,10 +144,7 @@ Route::group(['prefix' => 'category','middleware'=>'confirmed'], function() {
  */
 
 
-//  Route::group(['namespace' => 'Auth'], function() {
-//     Route::get('login', 'LoginController@create')->name('login');
-//     Route::get('register', 'RegisterController@create')->name('register');
-//  });
+
 
 
 
